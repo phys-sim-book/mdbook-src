@@ -1,7 +1,7 @@
 ## Case Study: Compressing Square
 
 We simulate compressing an elastic square using a ceiling. 
-The excutable Python project for this section can be found in <p style="color:red;">TODO: get a git org to host the code</p>
+The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `5_mov_dirichlet` folder.
 
 The ceiling in our simulation is modeled as a half-space with a downward normal vector $\mathbf{n}=(0,-1)$. The distance from the ceiling to other simulated Degrees of Freedom (DOFs) can be calculated using Equation {{eqref: eq:lec7:half_space_dist}}. To effectively apply the penalty method, it's necessary that the ceiling's height also serves as a DOF.
 

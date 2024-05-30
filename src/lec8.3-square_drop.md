@@ -2,7 +2,7 @@
 
 To conclude, let's consider a case study where we simulate a square dropped onto a fixed planar ground. Building on our previous mass-spring model for an elastic square, we augment a barrier potential into its Incremental Potential and apply the filter line search scheme to manage the contact between the square's degrees of freedom (DOFs) and the ground.
 
-The excutable Python project for this section can be found in <p style="color:red;">TODO: get a git org to host the code</p>
+The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `3_contact` folder.
 
 If we further limit the planar ground to be horizontal, e.g. at \\(y=y_0\\), its signed distance function can be made even simpler than Equation {{eqref: eq:lec7:half_space_dist}}:
 $$

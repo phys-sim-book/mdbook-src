@@ -12,7 +12,7 @@ $$
 {{numeq}}{eq:lec16:mass_conservation}
 $$
 
-<p style="color:red">TODO: modify derivation</p>
+<!-- <p style="color:red">TODO: modify derivation</p> -->
 
 Now, with a change of variables, we have $\int_{B^t_\epsilon} d\mathbf{x} = \int_{B^0_\epsilon} J(\mathbf{X}, t) d\mathbf{X}$, so Equation {{eqref: eq:lec16:mass_def}} becomes
 $$
