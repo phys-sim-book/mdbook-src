@@ -6,7 +6,7 @@ md files of each chapter of the book is in `src/`.
 
 [Python implementations](https://github.com/phys-sim-book/solid-sim-tutorial) of certain topics are included as submodules and discussed in the book. Thus, to clone the source with submodules:
 ```
-git clone --recurse-submodules https://github.com/liminchen/phys_anim_book
+git clone --recurse-submodules https://github.com/phys-sim-book/mdbook-src.git
 ```
 To update submodules:
 ```
