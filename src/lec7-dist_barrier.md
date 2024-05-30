@@ -1,0 +1,3 @@
+# Distance Barrier for Nonpenetration
+
+Contact modeling is a crucial aspect of ensuring that solids do not intersect with obstacles or themselves. This topic was briefly touched upon in a previous [section](lec2.3-contact.md). In this lecture, we delve deeper into the specifics of non-interpenetration within the framework of the Incremental Potential Contact (IPC) method. Our focus will be on a simplified yet significant scenario: contact between solids and obstacles that have closed boundaries. This specific focus allows us to thoroughly explore the mechanics and principles of the IPC method in a controlled setting.

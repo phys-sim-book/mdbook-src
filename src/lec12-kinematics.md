@@ -1,0 +1,9 @@
+# Kinematics Theory
+
+In previous case studies, we've relied on the mass-spring model to simulate the elastic behaviors of solids. This model approximates 2D and 3D elasticity by connecting multiple springs in various directions, each responding only to stretch and compression. However, this simple approximation often fails to capture the complexities of real-world phenomena. Starting with this lecture, we will delve into the mathematical description of deformation and introduce a more rigorous approach to modeling elasticity for continuum bodies.
+
+When discussing continuum bodies or continuum mechanics, we operate under the **continuum assumption**. This perspective treats materials—whether solid, liquid, or gas—as continuous entities, avoiding the need to account for microscopic interactions between molecules and atoms. This assumption is not only practical in engineering and graphics applications but is also prevalent in everyday scenarios.
+
+In graphics simulations, the continuum assumption applies to a wide range of materials, including deformable objects (both elastic and plastic), muscle, flesh, cloth, hair, liquids, smoke, gas, and granular materials like sand, snow, mud, and soil. In continuum mechanics, properties such as density, velocity, and force are defined as continuous functions of position. We have explored their discrete counterparts in the [Discrete Space and Time](lec1-discrete_space_time.md) section.
+
+Equations of motion, based on Newton's 2nd law, are solved within the spatial domain and evolved over time to simulate the dynamic behaviors of these materials.

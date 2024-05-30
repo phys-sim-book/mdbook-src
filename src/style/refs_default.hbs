@@ -1,0 +1,22 @@
+{{#if citation_key}}
+
+<div class="bib_div">
+<details data-key="{{citation_key}}" class=ref>
+{{!-- citation --}}
+<summary class=citation>
+<a id="{{citation_key}}">[{{authors.[0].[0]}}{{#if authors.[2]}} et al.{{else}}{{#if authors.[1]}} & {{authors.[1].[0]}}{{/if}}{{/if}} {{pub_year}}]</a> - {{#if authors}}{{#each authors as |author|}}{{#each author as |name|}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}{{#unless @last}} and {{/unless}}{{/each}} - {{/if}}{{#if title}}{{#if url}}<a href="{{url}}" target="_blank">{{/if}}<cite>{{title}}</cite>{{#if url}}</a>{{/if}}.{{/if}} - {{#if pub_year}}{{pub_year}}.{{/if}} -
+<button onclick="copyToClipboard('\{\{ #cite {{citation_key}} \}\}')">Copy citation_key</button>
+</summary>
+{{!-- summary/abstract --}}
+{{#if summary}}
+<section class=abstract>
+<h1>Summary/Abstract</h1>
+<div>{{summary}}</div>
+</section>
+{{/if}}
+</details>
+</div>
+
+{{/if}}
+
+<br/>

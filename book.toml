@@ -1,0 +1,30 @@
+[book]
+authors = ["Minchen Li", "Chenfanfu Jiang"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Physics-Based Simulation"
+[output.html]
+mathjax-support = true
+
+[preprocessor.katex]
+after = ["links"]
+trust = true
+
+[preprocessor.numeq]
+prefix = true
+
+[preprocessor.numthm]
+prefix = true
+custom_environments = [
+  ["exp", "Example", "**"],
+  ["met", "Method", "**"],
+  ["fig", "Figure", ""],
+  ["alg", "Algorithm", ""],
+  ["imp", "Implementation", "**"]
+]
+
+[preprocessor.bib]
+bibliography = "references.bib"
+hb-tpl = "style/refs_default.hbs"
+cite-hb-tpl = "style/cite_author_year.hbs"

@@ -1,0 +1,3 @@
+[submodule "src/solid-sim-tutorial"]
+	path = src/solid-sim-tutorial
+	url = https://github.com/liminchen/solid-sim-tutorial

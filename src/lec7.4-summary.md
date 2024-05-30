@@ -1,0 +1,13 @@
+## Summary
+
+In simulating contact between solids and obstacles, we primarily focus on enforcing non-negativity on the signed distances between solid degrees of freedom (DOFs) and obstacles, in conjunction with minimizing the Incremental Potential.
+
+- **Transformation to an Unconstrained Problem:** The inherent inequality-constrained minimization issue for each time step is transformed into an unconstrained problem. This is achieved through the introduction of a barrier potential. This potential rises to infinity as distances approach zero, effectively generating large repulsion forces that prevent interpenetration.
+
+- **Outcomes at Local Minimum:** At the local minimum of this barrier-augmented Incremental Potential, we attain a balance of momentum, ensure non-interpenetration, and generate contact forces that only push but do not pull. The only exception in the Karush-Kuhn-Tucker (KKT) conditions is the complementarity slackness, which is not strictly satisfied. The accuracy in satisfying this condition can be controlled by adjusting the distance threshold $\hat{d}$, albeit at the expense of computational efficiency.
+
+- **Limitations and Next Steps:** While the distance barrier method effectively addresses many contact scenarios, it cannot alone prevent artificial **tunneling** in dynamic simulations. To overcome this limitation, our next lecture will introduce the filtered line search scheme, an advanced technique designed to provide more guarantees to our simulations.
+
+> **{{rem}}{rm:lec7:tunneling}[Tunneling]** Artificial tunneling in the context of simulations, particularly in computational physics and computer graphics, refers to a phenomenon where fast-moving objects pass through other objects or barriers without physically interacting with them, as if there were a tunnel through the barrier. This typically happens in scenarios involving discrete time steps, such as in computer simulations of physical systems.
+> 
+> In a real-world scenario, when two objects collide, there should be a physical interaction like a bounce, a stop, or a deformation. However, in a simulation with discrete time steps, if an object is moving very fast or the time steps are too large, the object's position might be calculated as being on one side of a barrier in one step and then on the other side in the next, without ever detecting a collision. This "skipping" of the collision step leads to what appears as tunneling through the object.

@@ -1,0 +1,5 @@
+# Case Study: Inversion-free Elasticity*
+
+At the end of this chapter, we implement the Neo-Hookean model introduced in the previous lectures to simulate inversion-free elastic solids.
+The excutable Python project for this section can be found in <p style="color:red;">TODO: get a git org to host the code</p>
+Instead of discretizing elasticity onto the springs as in the mass-spring model, we discretize the Neo-Hookean model onto triangle elements, apply chain rules to compute elastic forces according to the relation between deformation gradient $\mathbf{F}$ and world-space nodal position $\mathbf{x}$, and then develop a root-finding based approach to filter the initial step size of line search for guaranteed non-inversion.
