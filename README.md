@@ -1,10 +1,10 @@
 # mdBook Source of Physics-Based Simulation
 
-This online book is developed based on [mdBook](https://github.com/rust-lang/mdBook).
+This online book is developed based on [mdBook](https://github.com/rust-lang/mdBook). The book is fully open-sourced, and we welcome your contributions!
 
 md files of each chapter of the book is in `src/`.
 
-[Python implementations](https://github.com/liminchen/solid-sim-tutorial) of certain topics are included as submodules and discussed in the book. Thus, to clone the source with submodules:
+[Python implementations](https://github.com/phys-sim-book/solid-sim-tutorial) of certain topics are included as submodules and discussed in the book. Thus, to clone the source with submodules:
 ```
 git clone --recurse-submodules https://github.com/liminchen/phys_anim_book
 ```
