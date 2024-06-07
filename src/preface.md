@@ -4,11 +4,11 @@ This free online book marks our commitment to make the theory and algorithms of 
 
 ## Contributing
 
-If you are interested in contributing to editing and improving this book, please do it through a Github pull request or directly contact [Minchen Li](https://www.cs.cmu.edu/~minchenl/) and [Chenfanfu Jiang](https://www.math.ucla.edu/~cffjiang/).
+If you are interested in contributing to editing and improving this book, please do it through a Github pull request on the [mdbook-src](https://github.com/phys-sim-book/mdbook-src) repository *(not the HTML repository)*, or directly contact [Minchen Li](https://www.cs.cmu.edu/~minchenl/) and [Chenfanfu Jiang](https://www.math.ucla.edu/~cffjiang/).
 
 Depending on the nature of your contribution, you'll be listed as book co-authors or community contributors in future builds of the book.
 
-### Version 1.0 (Released 2024/4): 
+### Version 1.0.0 (Released 2024/5): 
 
 #### Chapter Contributors
 
@@ -23,7 +23,7 @@ liminchen, cffjiang
 
 ```
 @book{li2024physics,
-title={Physics-Based Simulation (V1.0)},
+title={Physics-Based Simulation (V1.0.0)},
 author={Li, Minchen and Jiang, Chenfanfu},
 year={2024}
 }

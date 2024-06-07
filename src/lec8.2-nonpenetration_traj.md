@@ -19,7 +19,7 @@ Instead, IPC takes the optimization path as an approximation to the motion traje
 $$
     \{ (1 - \beta) x^i + \beta x^{i+1} \ | \ \beta \in [0, 1], \ i = 0, 1, 2, ..., l \}.
 $$
-Now the time integration problem in time step \\(n\\) becomes finding such optimization path \\(x_0, x_1, ..., x_l\\) where \\(x^l\\) locally minimizes the Incremental Potential (Equation {{eqref: eq:lec7:barrier_IPC}}) subject to
+Now the time integration problem in time step \\(n\\) becomes finding such optimization path \\(x^0, x^1, ..., x^l\\) where \\(x^l\\) locally minimizes the Incremental Potential (Equation {{eqref: eq:lec7:barrier_IPC}}) subject to
 $$
     d_{jk}((1 - \beta) x^i + \beta x^{i+1}) > 0 \\ \forall \ \text{node} \ j, \ \text{obstacle} \ k, \ \beta \in [0, 1], \text{and} \ i = 0, 1, 2, ..., l.
 $$
