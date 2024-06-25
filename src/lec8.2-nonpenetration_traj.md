@@ -11,7 +11,7 @@ The most straightforward way of defining the motion trajectory between \\(x^n\\)
 
 A more rigorous definition of the motion trajectory between \\(x^n\\) and \\(x^{n+1}\\) could be
 $$
-    \{ \text{arg}\min_{x} \left( \frac{1}{2}\|x - (x^n+hv^n)\|_M^2 + h^2 \sum P(x) \right) \ | \ h \in [0, t^{n+1} - t^n] \}.
+    \left\{ \text{arg}\min_{x} \left. \left( \frac{1}{2}\|x - (x^n+hv^n)\|_M^2 + h^2 \sum P(x) \right) \right| \ h \in [0, t^{n+1} - t^n] \right\}.
 $$
 However, evaluating the configurations on this trajectory requires solving extra optimization problems, which could significantly complicate the time integration.
 

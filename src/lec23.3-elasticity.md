@@ -3,16 +3,16 @@
 For elasticity, similar to the 2D case, the deformation gradient $\mathbf{F}$ is also constant within each tetrahedron, and we can compute it as
 $$
 \begin{aligned}
-    \mathbf{F} = & \frac{\partial \mathbf{x}}{\partial (\beta, \gamma, \tau)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma, \tau)})^{-1} 
+    \mathbf{F} = & \frac{\partial \mathbf{x}}{\partial (\beta, \gamma, \tau)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma, \tau)}\right)^{-1} 
     \\
-    \approx & \frac{\partial \hat{\mathbf{x}}}{\partial (\beta, \gamma, \tau)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma, \tau)})^{-1} \\
+    \approx & \frac{\partial \hat{\mathbf{x}}}{\partial (\beta, \gamma, \tau)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma, \tau)}\right)^{-1} \\
     =& [\mathbf{x}_2 - \mathbf{x}_1, \mathbf{x}_3 - \mathbf{x}_1, \mathbf{x}_4 - \mathbf{x}_1] [\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1, \mathbf{X}_4 - \mathbf{X}_1]^{-1}.
 \end{aligned}
 $$
 For force and Hessian computation, the required $\partial \mathbf{F} / \partial \mathbf{x}$ can be computed using
 $$
 \begin{aligned}
-    \nabla^\mathbf{X} N_1(\mathbf{X}) & = \frac{\partial (1 - \beta - \gamma - \tau)}{\partial \mathbf{X}} = (\frac{\partial (1 - \beta - \gamma - \tau)}{\partial (\beta, \gamma, \tau)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma, \tau)})^{-1})^T \\
+    \nabla^\mathbf{X} N_1(\mathbf{X}) & = \frac{\partial (1 - \beta - \gamma - \tau)}{\partial \mathbf{X}} = \left(\frac{\partial (1 - \beta - \gamma - \tau)}{\partial (\beta, \gamma, \tau)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma, \tau)}\right)^{-1}\right)^T \\
     & = ([-1, -1, -1] [\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1, \mathbf{X}_4 - \mathbf{X}_1]^{-1})^T
 \end{aligned}
 $$

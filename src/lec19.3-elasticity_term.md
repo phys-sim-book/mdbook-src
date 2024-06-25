@@ -16,8 +16,8 @@ Recall from [Strain Energy](./lec13-strain_energy.md), to compute the first Piol
 
 $$
 \begin{aligned}
-&\mathbf{F} = \frac{\partial \mathbf{x}}{\partial (\beta, \gamma)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)})^{-1} 
-\approx \frac{\partial \hat{\mathbf{x}}}{\partial (\beta, \gamma)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)})^{-1} \\
+&\mathbf{F} = \frac{\partial \mathbf{x}}{\partial (\beta, \gamma)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)^{-1} 
+\approx \frac{\partial \hat{\mathbf{x}}}{\partial (\beta, \gamma)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)^{-1} \\
 & = [\mathbf{x}_2 - \mathbf{x}_1, \mathbf{x}_3 - \mathbf{x}_1] [\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1]^{-1},
 \end{aligned}
 {{numeq}}{eq:lec19:compute_F}
@@ -29,11 +29,11 @@ Then for $\nabla^{\mathbf{X}} N_{\hat{a}}(\mathbf{X})$, depending on the index o
 
 $$
 \begin{aligned}
-    \nabla^{\mathbf{X}} N_1(\mathbf{X}) & = \frac{\partial (1 - \beta - \gamma)}{\partial \mathbf{X}} = (\frac{\partial (1 - \beta - \gamma)}{\partial (\beta, \gamma)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)})^{-1})^T \\ 
+    \nabla^{\mathbf{X}} N_1(\mathbf{X}) & = \frac{\partial (1 - \beta - \gamma)}{\partial \mathbf{X}} = \left(\frac{\partial (1 - \beta - \gamma)}{\partial (\beta, \gamma)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)})^{-1}\right)^T \\ 
     &= ([-1, -1] [\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1]^{-1})^T \\
-    \nabla^{\mathbf{X}} N_2(\mathbf{X}) & = \frac{\partial \beta}{\partial \mathbf{X}} = (\frac{\partial \beta}{\partial (\beta, \gamma)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)})^{-1})^T \\
+    \nabla^{\mathbf{X}} N_2(\mathbf{X}) & = \frac{\partial \beta}{\partial \mathbf{X}} = \left(\frac{\partial \beta}{\partial (\beta, \gamma)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)^{-1}\right)^T \\
     = ([1, 0] [\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1]^{-1})^T \\
-    \nabla^{\mathbf{X}} N_3(\mathbf{X}) & = \frac{\partial \gamma}{\partial \mathbf{X}} = (\frac{\partial \gamma}{\partial (\beta, \gamma)} (\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)})^{-1})^T \\
+    \nabla^{\mathbf{X}} N_3(\mathbf{X}) & = \frac{\partial \gamma}{\partial \mathbf{X}} = \left(\frac{\partial \gamma}{\partial (\beta, \gamma)} \left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)^{-1}\right)^T \\
     = ([0, 1] [\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1]^{-1})^T.
 \end{aligned}
 $$
@@ -54,8 +54,8 @@ $$
 \begin{aligned}
 \int_{\Omega^0} N_{\hat{a},j}(\mathbf{X}) P_{\hat{i}j}(\mathbf{X}, t^n) d\mathbf{X} 
 & = \sum_{e \in \mathcal{T}} \int_{\Omega^0_e} (\mathbf{P}(\mathbf{X}, t^n) \nabla^{\mathbf{X}} N_{\hat{a}}(\mathbf{X}))_{\hat{i}} \ d\mathbf{X} \\
-& = \sum_{e \in \mathcal{T}} \int_{\Omega^0_e} (\frac{\partial \Psi_e}{\partial \mathbf{x}_{\hat{a}}})_{\hat{i}} \ d\mathbf{X} \\
-& = \sum_{e \in \mathcal{T}} A_e (\frac{\partial \Psi_e}{\partial \mathbf{x}_{\hat{a}}})_{\hat{i}},
+& = \sum_{e \in \mathcal{T}} \int_{\Omega^0_e} \left(\frac{\partial \Psi_e}{\partial \mathbf{x}_{\hat{a}}}\right)_{\hat{i}} \ d\mathbf{X} \\
+& = \sum_{e \in \mathcal{T}} A_e \left(\frac{\partial \Psi_e}{\partial \mathbf{x}_{\hat{a}}}\right)_{\hat{i}},
 \end{aligned}
 $$
 

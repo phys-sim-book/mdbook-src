@@ -16,11 +16,11 @@ This formulation leverages the property that $\mathbf{P}$ shares the same SVD sp
 > **{{exp}}{exp:lec13:neo_hook_model}**
 > For the Neo-Hookean model (Equation {{eqref: eq:lec13:strain_density_NH}}), we have:
 $$
-    \hat{\Psi}_{\text{NH}}(\bm{\Sigma}) = \frac{\mu}{2} (\sum_i^d \sigma_{i}^2 - d) - \mu \ln(J) + \frac{\lambda}{2} \ln^2(J).
+    \hat{\Psi}_{\text{NH}}(\bm{\Sigma}) = \frac{\mu}{2} \left(\sum_i^d \sigma_{i}^2 - d\right) - \mu \ln(J) + \frac{\lambda}{2} \ln^2(J).
 $$
 > Thus, we can first perform SVD on $\mathbf{F} = \mathbf{U} \bm{\Sigma} \mathbf{V}$ and derive:
 $$
-    \hat{P}_{ii} = \mu (\sigma_i - \frac{1}{\sigma_i}) + \lambda \ln(J) \frac{1}{\sigma_i}
+    \hat{P}_{ii} = \mu \left(\sigma_i - \frac{1}{\sigma_i}\right) + \lambda \ln(J) \frac{1}{\sigma_i}
 $$
 > to compute $\frac{\partial \Psi}{\partial \mathbf{F}} = \mathbf{P} = \mathbf{U} \hat{\mathbf{P}} \mathbf{V}^T$ without symbolically deriving the derivative of $\Psi$ w.r.t. $\mathbf{F}$.
 
@@ -58,14 +58,14 @@ where $I_k$ is the isotropic invariants. Following {{#cite sifakis2022finite}} (
 
 (2) Next, we claim that
 $$
-\text{diag}(\frac{\partial \Sigma}{\partial F_{ij}}) = \text{diag}(\mathbf{U}^T \frac{\partial \mathbf{F}}{\partial F_{ij}} \mathbf{F}).
+\text{diag}\left(\frac{\partial \Sigma}{\partial F_{ij}}\right) = \text{diag}\left(\mathbf{U}^T \frac{\partial \mathbf{F}}{\partial F_{ij}} \mathbf{F}\right).
 $$
 This is proven in {{#cite xu2015nonlinear}} (Equation 7).
 
 
 (3) Based on (2), we know that for any $ij$, after substituting $\mathbf{F}=\bm{\Sigma}$, we have
 $$
-\text{diag}(\frac{\partial \Sigma}{\partial F_{ij}}(\Sigma)) = \text{diag}(\mathbf{I}^T \frac{\partial \mathbf{F}}{\partial F_{ij}}(\Sigma) \mathbf{I}),
+\text{diag}\left(\frac{\partial \Sigma}{\partial F_{ij}}(\Sigma)\right) = \text{diag}\left(\mathbf{I}^T \frac{\partial \mathbf{F}}{\partial F_{ij}}(\Sigma) \mathbf{I}\right),
 $$
 using this we can write out the cases for $ij=11, ij=22,ij=33$. For example, for $ij=11$, we have
 $$

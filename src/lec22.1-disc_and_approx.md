@@ -35,7 +35,7 @@ where the $\frac{1}{2}$ scaling comes from double counting the friction between 
 After discretizing the boundary curves as polylines and approximating the max operator in the normal contact force component using summations ([Piecewise Linear Boundaries](./lec20-pw_linear_boundary.md)), we similarly obtain the spatially discretized friction potential:
 
 $$
-\int_{\Gamma_C} \sum_{e \in \mathcal{E} - I(\mathbf{X})} \frac{1}{2} \mu \big(-\frac{\partial b( d^\text{PE}(\mathbf{x}^{n}(\mathbf{X}), e), \hat{d})}{\partial d}\big) f_0(\| \bar{\mathbf{V}}^{n+1}_F(\mathbf{X}, e) \hat{h} \|) \, ds(\mathbf{X}).
+\int_{\Gamma_C} \sum_{e \in \mathcal{E} - I(\mathbf{X})} \frac{1}{2} \mu \left(-\frac{\partial b( d^\text{PE}(\mathbf{x}^{n}(\mathbf{X}), e), \hat{d})}{\partial d}\right) f_0(\| \bar{\mathbf{V}}^{n+1}_F(\mathbf{X}, e) \hat{h} \|) \, ds(\mathbf{X}).
 $$
 
 Here, $d^\text{PE}(\mathbf{x}^{n}(\mathbf{X}), e)$ is the point-edge distance between $\mathbf{x}^{n}(\mathbf{X})$ and edge $e$ in the last time step, and $\bar{\mathbf{V}}^{n+1}_F(\mathbf{X}, e)$ is the approximate relative sliding velocity of the point-edge pair with contact normal and the closest point discretized to the last time step (see next section for details).
@@ -45,7 +45,7 @@ If we choose boundary nodes as quadrature points to approximate the integral, we
 $$
 \begin{aligned}
     P_f(x) 
-    & = \sum_{\hat{a}} A_{\hat{a}} \sum_{e \in \mathcal{E} - I(\mathbf{X}_{\hat{a}})} \frac{1}{2}\mu \big(-\frac{\partial b( d^\text{PE}(\mathbf{x}^{n}_{\hat{a}}, e), \hat{d})}{\partial d}\big) f_0(\| \bar{\mathbf{V}}^{n+1}_F(\mathbf{X}_{\hat{a}}, e) \hat{h} \|) \\
+    & = \sum_{\hat{a}} A_{\hat{a}} \sum_{e \in \mathcal{E} - I(\mathbf{X}_{\hat{a}})} \frac{1}{2}\mu \left(-\frac{\partial b( d^\text{PE}(\mathbf{x}^{n}_{\hat{a}}, e), \hat{d})}{\partial d}\right) f_0(\| \bar{\mathbf{V}}^{n+1}_F(\mathbf{X}_{\hat{a}}, e) \hat{h} \|) \\
     & = \sum_{k \in \{ (\hat{a}, e) \} } \mu \lambda_k^{n} f_0(\|\bar{\mathbf{v}}_k \hat{h}\|)
 \end{aligned}
 $$
