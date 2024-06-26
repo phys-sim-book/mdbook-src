@@ -29,15 +29,15 @@ Similar to the derivation for Neumann boundaries, for any boundary node $\hat{a}
 $$
 \begin{aligned}
    & \int_{\partial \Omega_e^0 \cap \Gamma_S} b (d^{PO}(\mathbf{x}(\mathbf{X},t), O),\hat{d}) ds(\mathbf{X}) \\
-    = & \int_0^1 b (d^{PO}(\mathbf{x}(\beta\mathbf{X}_2 +(1-\beta) \mathbf{X}_3,t), O),\hat{d}) |\frac{\partial s}{\partial \beta}| d\beta.
+    = & \int_0^1 b (d^{PO}(\mathbf{x}(\beta\mathbf{X}_2 +(1-\beta) \mathbf{X}_3,t), O),\hat{d}) \left|\frac{\partial s}{\partial \beta}\right| d\beta.
     {{numeq}}{eq:lec20:point_obstacle_1}
 \end{aligned}
 $$
 Since $b()$ and $d^{PO}()$ are both highly nonlinear functions, we could not obtain a closed-form expression for Equation {{eqref: eq:lec20:point_obstacle_1}}. If we take the two end points $\mathbf{X}_2$ and $\mathbf{X}_3$ as quadrature points both with weights $\frac{1}{2}$, we can approximate the integral as
 $$
 \begin{aligned}
-    & \int_0^1 b (d^{PO}(\mathbf{x}(\beta\mathbf{X}_2 +(1-\beta) \mathbf{X}_3,t), O),\hat{d}) |\frac{\partial s}{\partial \beta}| d\beta \\
-    \approx & \frac{1}{2} b (d^{PO}(\mathbf{x}(\mathbf{X}_2,t), O),\hat{d}) |\frac{\partial s}{\partial \beta}| + \frac{1}{2} b (d^{PO}(\mathbf{x}( \mathbf{X}_3,t), O),\hat{d}) |\frac{\partial s}{\partial \beta}|.
+    & \int_0^1 b (d^{PO}(\mathbf{x}(\beta\mathbf{X}_2 +(1-\beta) \mathbf{X}_3,t), O),\hat{d}) \left|\frac{\partial s}{\partial \beta}\right| d\beta \\
+    \approx & \frac{1}{2} b (d^{PO}(\mathbf{x}(\mathbf{X}_2,t), O),\hat{d}) \left|\frac{\partial s}{\partial \beta}\right| + \frac{1}{2} b (d^{PO}(\mathbf{x}( \mathbf{X}_3,t), O),\hat{d}) \left|\frac{\partial s}{\partial \beta}\right|.
 \end{aligned}
 {{numeq}}{eq:lec20:ipc_end_point_quadrature}
 $$
