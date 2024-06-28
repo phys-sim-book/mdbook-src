@@ -11,7 +11,7 @@ Polar SVD is named for its relation to Polar decomposition, where $\mathbf{F}$ i
 <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec13:polar_SVD}[Polar SVD from Standard SVD]</figcaption></b>
-    <img src="img/lec13/polar_SVD_algorithm.jpg" width="610">
+    <img src="img/lec13/polar_svd_algorithm.jpg" width="610">
     </center>
 </figure>
 
