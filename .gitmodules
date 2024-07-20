@@ -1,3 +1,6 @@
 [submodule "src/solid-sim-tutorial"]
 	path = src/solid-sim-tutorial
 	url = https://github.com/liminchen/solid-sim-tutorial
+[submodule "src/solid-sim-tutorial-gpu"]
+	path = src/solid-sim-tutorial-gpu
+	url = https://github.com/phys-sim-book/solid-sim-tutorial-gpu.git
