@@ -2,4 +2,5 @@
 
 At the end of this chapter, we implement the Neo-Hookean model introduced in the previous lectures to simulate inversion-free elastic solids.
 The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `6_inv_free` folder.
+Cuda implementations can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) under the `simulators/6_inv_free` folder.
 Instead of discretizing elasticity onto the springs as in the mass-spring model, we discretize the Neo-Hookean model onto triangle elements, apply chain rules to compute elastic forces according to the relation between deformation gradient $\mathbf{F}$ and world-space nodal position $\mathbf{x}$, and then develop a root-finding based approach to filter the initial step size of line search for guaranteed non-inversion.

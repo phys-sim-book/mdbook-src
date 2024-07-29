@@ -3,6 +3,8 @@
 We simulate compressing an elastic square using a ceiling. 
 The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `5_mov_dirichlet` folder.
 
+Cuda implementations can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) under the `simulators/5_mov_dirichlet` folder.
+
 The ceiling in our simulation is modeled as a half-space with a downward normal vector $\mathbf{n}=(0,-1)$. The distance from the ceiling to other simulated Degrees of Freedom (DOFs) can be calculated using Equation {{eqref: eq:lec7:half_space_dist}}. To effectively apply the penalty method, it's necessary that the ceiling's height also serves as a DOF.
 
 Following the approach used in the [Square on Slope](lec10-square_on_slope.md) project, we choose the origin $\bm{o}$ on the ceiling as the DOF and incorporate it into the variable $x$:
