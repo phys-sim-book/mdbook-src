@@ -1,6 +1,6 @@
 ## GPU-Accelerated Simulation
 
-We now rewrite the 2D mass-spring simulator to leverage GPU acceleration. The source code can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) in the `simulators/1_mass_spring` folder.
+We now rewrite the 2D mass-spring simulator to leverage GPU acceleration.
 Instead of directly writing [CUDA](https://developer.nvidia.com/cuda-toolkit), we resort to [MUDA](https://github.com/MuGdxy/muda), a lightweight library that provides a simple interface for GPU-accelerated computations.
 
 The architecture of the GPU-accelerated simulator is similar to the Python version. All function and variable names are consistent with the Numpy version. However, the implementation details are different due to the GPU architecture and programming model. Before delving into the details, let's first get a feeling of the speedup that GPU could bring us from the following gif ({{ref: fig:lec4:cpu_vs_gpu}}).

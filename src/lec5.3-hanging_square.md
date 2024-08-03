@@ -1,8 +1,7 @@
 ## Case Study: Hanging Square*
 We use a simple case study to end this lecture. Based on the [mass-spring system](lec4-2d_mass_spring.md) developed in a previous section, we implement gravitational energy and sticky Dirichlet boundary conditions to simulate a hanging square.
 The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `2_dirichlet` folder. 
-
-Cuda implementations can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) under the `simulators/2_dirichlet` folder.
+[MUDA](https://github.com/MuGdxy/muda) GPU implementations can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) under the `simulators/2_dirichlet` folder.
 
 Gravitational energy has
 $$
