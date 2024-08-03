@@ -4,6 +4,8 @@ To conclude, let's consider a case study where we simulate a square dropped onto
 
 The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `3_contact` folder.
 
+Cuda implementations can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) under the `simulators/3_contact` folder.
+
 If we further limit the planar ground to be horizontal, e.g. at \\(y=y_0\\), its signed distance function can be made even simpler than Equation {{eqref: eq:lec7:half_space_dist}}:
 $$
     d(\mathbf{x}) = \mathbf{x}_y - y_0, \quad 

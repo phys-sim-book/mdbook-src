@@ -5,3 +5,5 @@ In this section, based on our learnings from [Frictional Contact](lec9-friction.
 Following this extension, we implement friction for the slope, tested by simulating an elastic square dropped onto it. Depending on the friction coefficient $\mu$, the square either stops at various points on the slope or continues to slide.
 
 The excutable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `4_friction` folder.
+
+Cuda implementations can be found at [https://github.com/phys-sim-book/solid-sim-tutorial-gpu](https://github.com/phys-sim-book/solid-sim-tutorial-gpu) under the `simulators/4_friction` folder.

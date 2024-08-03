@@ -27,6 +27,7 @@
     - [Mass-Spring Potential Energy](./lec4.3-mass_spring_energy.md)
     - [Optimization Time Integrator](./lec4.4-opt_time_integrator.md)
     - [Simulation with Visualization](./lec4.5-sim_with_vis.md)
+    - [GPU-Accelerated Simulation](./lec4.6-gpu_accel.md)
     - [Summary](./lec4.6-summary.md)
 
 # Boundary Treatments
