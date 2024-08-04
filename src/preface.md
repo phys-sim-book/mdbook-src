@@ -14,7 +14,7 @@ Depending on the nature of your contribution, you'll be listed as book co-author
 
 - [Minchen Li](https://www.cs.cmu.edu/~minchenl/), Carnegie Mellon University
 - [Chenfanfu Jiang](https://www.math.ucla.edu/~cffjiang/), University of California, Los Angeles
-- [Zhaofeng Luo](https://roushelfy.github.io/), Peking University
+- [Zhaofeng Luo](https://roushelfy.github.io/), Carnegie Mellon University & Peking University
 
 #### Community Contributors (Github)
 
