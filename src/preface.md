@@ -26,6 +26,7 @@ Minchen Li ([@liminchen](https://github.com/liminchen)), Chenfanfu Jiang ([@cffj
 @book{li2024physics,
   title={Physics-Based Simulation},
   author={Minchen Li and Chenfanfu Jiang and Zhaofeng Luo},
-  year={2024}
+  year={2024},
+  url={https://phys-sim-book.github.io/}
 }
 ```
