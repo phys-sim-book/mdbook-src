@@ -56,7 +56,7 @@ where $\mathcal{V}$ contains all the nodes of the mesh, and all off-diagonal ent
 
 $$
 \begin{aligned}
-    M_{aa}^\text{lump} & = \sum_{e \in \mathcal{T}(a)} 2 R A_e \left(\int_0^1 \int_0^{1-\beta} \beta (1- \beta - \gamma) d\gamma d\beta + \int_0^1 \int_0^{1-\beta} \beta^2 d\gamma d\beta \\ &+ \int_0^1 \int_0^{1-\beta} \beta \gamma d\gamma d\beta \right) \\
+    M_{aa}^\text{lump} & = \sum_{e \in \mathcal{T}(a)} 2 R A_e ( \int_0^1 \int_0^{1-\beta} \beta (1- \beta - \gamma) d\gamma d\beta + \int_0^1 \int_0^{1-\beta} \beta^2 d\gamma d\beta \\ &+ \int_0^1 \int_0^{1-\beta} \beta \gamma d\gamma d\beta ) \\
     & = \sum_{e \in \mathcal{T}(a)} 2 R A_e \int_0^1 \beta d\gamma d\beta = \sum_{e \in \mathcal{T}(a)} 2 R A_e \int_0^1 \beta \gamma |_{\gamma=0}^{\gamma =1-\beta} d\beta \\
     & = \sum_{e \in \mathcal{T}(a)} 2 R A_e \int_0^1 \beta (1-\beta) d\beta = \sum_{e \in \mathcal{T}(a)} 2 R A_e \left. \left(\frac{\beta^2}{2} - \frac{\beta^3}{3} \right) \right|_{\beta=0}^{\beta=1} \\ 
     &= \sum_{e \in \mathcal{T}(a)} \frac{1}{3} R A_e,
