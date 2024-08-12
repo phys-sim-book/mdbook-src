@@ -13,12 +13,12 @@ $$
 $$
 which gives us:
 $$
-\mathbf{A}^n(\mathbf{X}) = \frac{\mathbf{x}^n(\mathbf{X}) - (\mathbf{x}^{n-1}(\mathbf{X}) + h \mathbf{V}^{n-1}(\mathbf{X}))}{\Delta t^2},
+\mathbf{A}^n(\mathbf{X}) = \frac{\mathbf{x}^n(\mathbf{X}) - (\mathbf{x}^{n-1}(\mathbf{X}) + \Delta t \mathbf{V}^{n-1}(\mathbf{X}))}{\Delta t^2},
 $$
 where $\Delta t = t^n - t^{n-1}$. Applying this relation at the sample points into Equation {{eqref: eq:lec17:test_func_chosen}}, we obtain:
 $$
 \begin{aligned}
-& M_{\hat{a}b} \frac{x^n_{b|\hat{i}} - (x^{n-1}_{b|\hat{i}} + h V^{n-1}_{b|\hat{i}})}{\Delta t^2} \\
+& M_{\hat{a}b} \frac{x^n_{b|\hat{i}} - (x^{n-1}_{b|\hat{i}} + \Delta t V^{n-1}_{b|\hat{i}})}{\Delta t^2} \\
 &= \int_{\partial\Omega^0} N_{\hat{a}}(\mathbf{X}) T_{\hat{i}}(\mathbf{X}, t^n) ds(\mathbf{X}) - \int_{\Omega^0} N_{\hat{a},j}(\mathbf{X}) P_{\hat{i}j}(\mathbf{X}, t^n) d\mathbf{X}.
 \end{aligned}
 {{numeq}}{eq:lec17:BE}

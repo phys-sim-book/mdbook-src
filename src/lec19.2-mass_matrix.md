@@ -21,7 +21,7 @@ Let us change the integration variable from $\mathbf{X}$ to $(\beta, \gamma)$, w
 $$
 \begin{aligned}
 & \int_{\Omega^0_e} R(\mathbf{X},0) N_a(\mathbf{X}) N_b(\mathbf{X}) d\mathbf{X} \\
-=& \int_0^1 \int_0^{1-\beta} R(\beta, \gamma, 0) N_a(\beta, \gamma) N_b(\beta, \gamma) |\det\left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)| d\gamma d\beta.
+=& \int_0^1 \int_0^{1-\beta} R(\beta, \gamma, 0) N_a(\beta, \gamma) N_b(\beta, \gamma) \left|\det\left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)\right| d\gamma d\beta.
 \end{aligned}
 {{numeq}}{eq:lec19:mass_matrix_per_tri_param}
 $$
@@ -29,7 +29,7 @@ $$
 For simplicity, let us denote the vertices of this triangle $e$ as $\mathbf{X}_1$, $\mathbf{X}_2$, and $\mathbf{X}_3$, and then we have:
 
 $$
-|\det\left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)| = |\det([\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1])| = 2 A_e,
+\left|\det\left(\frac{\partial \mathbf{X}}{\partial (\beta, \gamma)}\right)\right| = |\det([\mathbf{X}_2 - \mathbf{X}_1, \mathbf{X}_3 - \mathbf{X}_1])| = 2 A_e,
 $$
 
 where $A_e$ is the area of triangle $e$. Here, $N_a$ and $N_b$ take $1-\beta-\gamma$, $\beta$, or $\gamma$ depending on the vertex indices $a$ and $b$. For example, if $a$ and $b$ correspond to the 2nd and 3rd vertices of triangle $e$, then $N_a = \beta$ and $N_b = \gamma$. Assuming uniform density, we have:
@@ -56,7 +56,7 @@ where $\mathcal{V}$ contains all the nodes of the mesh, and all off-diagonal ent
 
 $$
 \begin{aligned}
-    M_{aa}^\text{lump} & = \sum_{e \in \mathcal{T}(a)} 2 R A_e ( \int_0^1 \int_0^{1-\beta} \beta (1- \beta - \gamma) d\gamma d\beta + \int_0^1 \int_0^{1-\beta} \beta^2 d\gamma d\beta \\ &+ \int_0^1 \int_0^{1-\beta} \beta \gamma d\gamma d\beta ) \\
+    M_{aa}^\text{lump} & = \sum_{e \in \mathcal{T}(a)} 2 R A_e \left( \int_0^1 \int_0^{1-\beta} \beta (1- \beta - \gamma) d\gamma d\beta + \int_0^1 \int_0^{1-\beta} \beta^2 d\gamma d\beta\right. \\ &+ \left.\int_0^1 \int_0^{1-\beta} \beta \gamma d\gamma d\beta \right) \\
     & = \sum_{e \in \mathcal{T}(a)} 2 R A_e \int_0^1 \beta d\gamma d\beta = \sum_{e \in \mathcal{T}(a)} 2 R A_e \int_0^1 \beta \gamma |_{\gamma=0}^{\gamma =1-\beta} d\beta \\
     & = \sum_{e \in \mathcal{T}(a)} 2 R A_e \int_0^1 \beta (1-\beta) d\beta = \sum_{e \in \mathcal{T}(a)} 2 R A_e \left. \left(\frac{\beta^2}{2} - \frac{\beta^3}{3} \right) \right|_{\beta=0}^{\beta=1} \\ 
     &= \sum_{e \in \mathcal{T}(a)} \frac{1}{3} R A_e,

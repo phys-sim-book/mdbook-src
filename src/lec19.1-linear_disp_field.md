@@ -11,7 +11,7 @@ This equation represents a 2D interpolation, extending Experiment {{ref: exp:lec
 
 Linear finite elements use linear shape functions $N_i$ in Equation {{eqref: eq:lec19:2d_interpolation}}, resulting in a piecewise linear (per triangle) displacement field $\mathbf{u} = \hat{\mathbf{x}}(\mathbf{X}) - \mathbf{X}$ over the entire domain. Before providing the precise expression of $N$ in terms of $\mathbf{X}$, we'll introduce another parameter space to simplify the derivation.
 
-Let $\beta, \gamma \in [0,1]$ and $\beta + \gamma = 1$, we can use them to express the material space coordinates of an arbitrary point $\mathbf{X}$ in the element $\mathbf{X}_1 \mathbf{X}_2 \mathbf{X}_3$ as:
+Let $\beta, \gamma \in [0,1]$ and $\beta + \gamma \leq 1$, we can use them to express the material space coordinates of an arbitrary point $\mathbf{X}$ in the element $\mathbf{X}_1 \mathbf{X}_2 \mathbf{X}_3$ as:
 
 $$
 \begin{aligned}
