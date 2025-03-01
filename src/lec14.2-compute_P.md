@@ -58,7 +58,7 @@ where $I_k$ is the isotropic invariants. Following {{#cite sifakis2022finite}} (
 
 (2) Next, we claim that
 $$
-\text{diag}\left(\frac{\partial \Sigma}{\partial F_{ij}}\right) = \text{diag}\left(\mathbf{U}^T \frac{\partial \mathbf{F}}{\partial F_{ij}} \mathbf{F}\right).
+\text{diag}\left(\frac{\partial \Sigma}{\partial F_{ij}}\right) = \text{diag}\left(\mathbf{U}^T \frac{\partial \mathbf{F}}{\partial F_{ij}} \mathbf{V}\right).
 $$
 This is proven in {{#cite xu2015nonlinear}} (Equation 7).
 
