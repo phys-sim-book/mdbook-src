@@ -95,4 +95,4 @@ P_{11}(\Sigma) &= \begin{pmatrix}
 =\frac{\partial\hat{\Psi}}{\partial \sigma_1}
 \end{align*}
 $$
-Now are are done with the final proof.
+Now we are done with the final proof.
