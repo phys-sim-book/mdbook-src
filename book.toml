@@ -1,7 +1,6 @@
 [book]
 authors = ["Minchen Li", "Chenfanfu Jiang"]
 language = "en"
-multilingual = false
 src = "src"
 title = "Physics-Based Simulation"
 [output.html]
