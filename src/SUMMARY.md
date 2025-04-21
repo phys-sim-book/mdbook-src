@@ -150,9 +150,9 @@
   - [Summary](./lec25.5-summary.md)
 
 - [Beyond Elasticity: Plasticity and Viscosity](./lec26-mpm_plasticity.md)
-  - [Discretization of Plastic Flow]()
-  - [Yield Condition and Return Mapping]()
-  - [Summary]()
+  - [Discretization of Plastic Flow](./lec26.1-disc_plastic_flow.md)
+  - [Yield Condition and Return Mapping](./lec26.2-yield_criterion.md)
+  - [Summary](./lec26.3-summary.md)
 
 - [Boundary Treatments]()
   - [Boundary Conditions on Grid]()
