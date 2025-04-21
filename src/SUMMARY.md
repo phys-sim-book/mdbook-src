@@ -139,3 +139,28 @@
   - [Collision Detection](./lec24.2-collision_detection.md)
   - [Friction](./lec24.3-friction.md)
   - [Summary](./lec24.4-summary.md)
+
+# Material Point Method
+
+- [Spatial and Temporal Discretization](./lec25-mpm_disc.md)
+  - [Material Particles](./lec25.1-material_particles.md)
+  - [Interpolating Functions](./lec25.2-interpolating_functions.md)
+  - [Eulerian-Lagrangian Transfers](./lec25.3-euler_lag_transfers.md)
+  - [Deformation Gradient and Particle State Update](./lec25.4-particle_state_update.md)
+  - [Summary](./lec25.5-summary.md)
+
+- [Beyond Elasticity: Plasticity and Viscosity](./lec26-mpm_plasticity.md)
+  - [Discretization of Plastic Flow]()
+  - [Yield Condition and Return Mapping]()
+  - [Summary]()
+
+- [Boundary Treatments]()
+  - [Boundary Conditions on Grid]()
+  - [Frictional Contact on Material Particles]()
+  - [Summary]()
+
+- [Case Study: 2D Sand with a Sphere Collider]()
+  - [Drucker-Prager Elastoplasticity]()
+  - [SDF-based Sphere Collider]()
+  - [Putting It All Together]()
+  - [Summary]()
