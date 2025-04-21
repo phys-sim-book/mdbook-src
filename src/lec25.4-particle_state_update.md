@@ -15,7 +15,7 @@ $$
 
 **Deformation Gradient in MLS-MPM**:
 
-In **MLS-MPM** and **APIC**, the deformation gradient update can be rewritten more compactly using the affine velocity matrix $\mathbf{C}_p$ that is already computed during P2G and G2P transfers.
+In **MLS-MPM** @@hu2018moving and **APIC** @@jiang2015affine, the deformation gradient update can be rewritten more compactly using the affine velocity matrix $\mathbf{C}_p$ that is already computed during P2G and G2P transfers.
 
 Recall the local affine velocity field:
 
