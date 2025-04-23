@@ -1,6 +1,6 @@
 # Linear Finite Elements
 
-From the governing equations in the continuous setting, we derived the discretized weak form system (nd equations) using the backward Euler time integration rule:
+From the governing equations in the continuous setting, we derived the discretized weak form system ($nd$ equations) using the backward Euler time integration rule:
 
 $$
 \begin{aligned}

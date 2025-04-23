@@ -14,9 +14,9 @@ For normal contact between simulated solids and collision obstacles (ignoring se
 $$
 \begin{aligned}
     P_C 
-    & = \int_{\Gamma_S} \frac{1}{2} b(\min_{\mathbf{X}_2 \in \Gamma_O} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\ &+ \int_{\Gamma_O} \frac{1}{2} b(\min_{\mathbf{X}_2 \in \Gamma_S} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    & = \int_{\Gamma_S} b(\min_{\mathbf{X}_2 \in \Gamma_O} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    & = \int_{\Gamma_S} b(d^{PO}(\mathbf{x}(\mathbf{X}, t), O), \hat{d}) ds(\mathbf{X}).
+    & = \int_{\Gamma_S} \frac{1}{2} b\left(\min_{\mathbf{X}_2 \in \Gamma_O} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\ &+ \int_{\Gamma_O} \frac{1}{2} b\left(\min_{\mathbf{X}_2 \in \Gamma_S} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    & = \int_{\Gamma_S} b\left(\min_{\mathbf{X}_2 \in \Gamma_O} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    & = \int_{\Gamma_S} b\left(d^{PO}(\mathbf{x}(\mathbf{X}, t), O), \hat{d}\right) ds(\mathbf{X}).
 \end{aligned}
 $$
 Here $\Gamma_S$ and $\Gamma_O$ are the boundaries of the simulated solids and obstacles respectively, $d^{PO}(\mathbf{x}(\mathbf{X},t), O) = \min_{\mathbf{X}_2 \in \Gamma_O} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|$ is the point-obstacle distance, and the simplification from two terms to one single term is due to symmetry in the continuous setting.

@@ -41,7 +41,7 @@ Interestingly, with the expression of $\mathbf{X}(\beta, \gamma)$, $\mathbf{x}(\
 
 > **{{rem}}{rem:lec19:fem_partition}[Partition of Unity]** The shape functions of FEM satisfy the **partition of unity** everywhere within each element:
 $$
-N_1(\beta, \gamma) + N_2(\beta, \gamma) + N_3(\beta, \gamma) = 1 \quad \forall \ \beta, \gamma \in [0, 1] \ \text{and} \ \beta + \gamma = 1.
+N_1(\beta, \gamma) + N_2(\beta, \gamma) + N_3(\beta, \gamma) = 1 \quad \forall \ \beta, \gamma \in [0, 1] \ \text{and} \ \beta + \gamma \leq 1.
 $$
 > One advantage of FEM is that it provides accurate boundary resolution compared to grid or particle-based representations. The boundary nodes of the FEM mesh can be exactly located on the boundary of the continuous domain. The elements are generated inside the domain, connecting the boundary nodes to form the discrete boundary, which converges to the boundary of the continuous domain as resolution increases.  
 > Although particle-based methods can also sample particles on the domain boundary, their spherical shape functions extend beyond the domain, breaking the partition of unity. This creates a "soft" outbound layer of material that makes boundary force computations inaccurate. In contrast, FEM shape functions are nonzero only within each element, where the partition of unity is satisfied everywhere.

@@ -6,7 +6,7 @@ Since squared distances are used, here we rescale the barrier function to
 $$
 b(d^2, \hat{d}^2) = 
 \begin{cases}
-    \frac{\kappa}{8} \hat{d} (\frac{d^2}{\hat{d}^2} - 1) \ln \frac{d^2}{\hat{d}^2} & d < \hat{d} \\
+    \frac{\kappa}{8} \hat{d} \left(\frac{d^2}{\hat{d}^2} - 1\right) \ln \frac{d^2}{\hat{d}^2} & d < \hat{d} \\
     0 & d \geq \hat{d},
 \end{cases}
 {{numeq}}{eq:lec21:scaled_barrier_func}

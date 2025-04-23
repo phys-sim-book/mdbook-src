@@ -31,13 +31,13 @@ serving as the contact potential energy density. Here, the barrier function appr
 The case of two colliding regions results in a boundary integral:
 
 $$
-\int_{\Gamma_1}\mathbf{Q}_i(\mathbf{X}_1,t)\mathbf{T}_{C1|i}(\mathbf{X}_1,t)\,ds(\mathbf{X}) + \int_{\Gamma_2}\mathbf{Q}_i(\mathbf{X}_2,t)\mathbf{T}_{C2|i}(\mathbf{X}_2,t)\,ds(\mathbf{X}),
+\int_{\Gamma_1}\mathbf{Q}_i(\mathbf{X}_1,t)\mathbf{T}_{C_1|i}(\mathbf{X}_1,t)\,ds(\mathbf{X}) + \int_{\Gamma_2}\mathbf{Q}_i(\mathbf{X}_2,t)\mathbf{T}_{C_2|i}(\mathbf{X}_2,t)\,ds(\mathbf{X}),
 $$
 
-where $\mathbf{T}_{C1}$ is defined in Equation {{eqref: eq:lec18:solid_solid_contact_force}}, and:
+where $\mathbf{T}_{C_1}$ is defined in Equation {{eqref: eq:lec18:solid_solid_contact_force}}, and:
 
 $$
-\mathbf{T}_{C2}(\mathbf{X}_2, t) = -\frac{\partial b(\min_{\mathbf{X}_1 \in \Gamma_1} \|\mathbf{x}(\mathbf{X}_2, t) - \mathbf{x}(\mathbf{X}_1, t)\|, \hat{d})}{\partial \mathbf{x}(\mathbf{X}_2, t)},
+\mathbf{T}_{C_2}(\mathbf{X}_2, t) = -\frac{\partial b(\min_{\mathbf{X}_1 \in \Gamma_1} \|\mathbf{x}(\mathbf{X}_2, t) - \mathbf{x}(\mathbf{X}_1, t)\|, \hat{d})}{\partial \mathbf{x}(\mathbf{X}_2, t)},
 {{numeq}}{eq:lec18:solid_solid_contact_force2}
 $$
 
@@ -56,7 +56,7 @@ where $\mathcal{N}(\mathbf{X}) = \{ \mathbf{X}_N \in \mathbb{R}^d \mid \|\mathbf
 Finally, we can define the contact potential over the whole boundary $\Gamma_C$ as:
 
 $$
-\int_{\Gamma_C} \frac{1}{2} b(\min_{\mathbf{X}_2 \in \Gamma_C - \mathcal{N}(\mathbf{X})} \|\mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) \, ds(\mathbf{X}).
+\int_{\Gamma_C} \frac{1}{2} b\left(\min_{\mathbf{X}_2 \in \Gamma_C - \mathcal{N}(\mathbf{X})} \|\mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) \, ds(\mathbf{X}).
 {{numeq}}{eq:lec18:barrier_potential}
 $$
 
