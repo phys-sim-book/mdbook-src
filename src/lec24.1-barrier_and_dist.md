@@ -3,10 +3,10 @@
 With triangle mesh discretization, the barrier potential in the continuous settings (Equation {{eqref: eq:lec18:barrier_potential}}) can be approximated as
 $$
 \begin{aligned}
-    & \int_{\Gamma_C} \frac{1}{2} b(\min_{\mathbf{X}_2 \in \Gamma_C - \mathcal{N}(\mathbf{X})} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    \approx & \int_{\Gamma_C} \frac{1}{2} b(\min_{e \in \mathcal{T} - I(\mathbf{X})} \min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    = & \int_{\Gamma_C} \frac{1}{2} b(\min_{e \in \mathcal{T} - I(\mathbf{X})} d^\text{PT}(\mathbf{x}(\mathbf{X},t), e), \hat{d}) ds(\mathbf{X}) \\
-    = & \int_{\Gamma_C} \frac{1}{2} \max_{e \in \mathcal{T} - I(\mathbf{X})} b(d^\text{PT}(\mathbf{x}(\mathbf{X},t), e), \hat{d}) ds(\mathbf{X}),
+    & \int_{\Gamma_C} \frac{1}{2} b\left(\min_{\mathbf{X}_2 \in \Gamma_C - \mathcal{N}(\mathbf{X})} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    \approx & \int_{\Gamma_C} \frac{1}{2} b\left(\min_{e \in \mathcal{T} - I(\mathbf{X})} \min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    = & \int_{\Gamma_C} \frac{1}{2} b\left(\min_{e \in \mathcal{T} - I(\mathbf{X})} d^\text{PT}(\mathbf{x}(\mathbf{X},t), e), \hat{d}\right) ds(\mathbf{X}) \\
+    = & \int_{\Gamma_C} \frac{1}{2} \max_{e \in \mathcal{T} - I(\mathbf{X})} b\left(d^\text{PT}(\mathbf{x}(\mathbf{X},t), e), \hat{d}\right) ds(\mathbf{X}),
 \end{aligned}
 {{numeq}}{eq:lec24:tri_disc_barrier_pot}
 $$
@@ -26,25 +26,25 @@ where $w_{\hat{a}} = \hat{d} \frac{1}{3} \sum_{j\in I(\mathbf{X}_{\hat{a}})} A_j
 Now, getting back to the second line of Equation {{eqref: eq:lec24:tri_disc_barrier_pot}}, if we only use points on the edges to approximate the minimum distance, we obtain
 $$
 \begin{aligned}
-    & \int_{\Gamma_C} \frac{1}{2} b(\min_{\mathbf{X}_2 \in \Gamma_C - \mathcal{N}(\mathbf{X})} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    \approx & \int_{\Gamma_C} \frac{1}{2} b(\min_{e \in \mathcal{E} - I(\mathbf{X})} \min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    = & \int_{\Gamma_C} \frac{1}{2} \max_{e \in \mathcal{E} - I(\mathbf{X})} b(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}).
+    & \int_{\Gamma_C} \frac{1}{2} b\left(\min_{\mathbf{X}_2 \in \Gamma_C - \mathcal{N}(\mathbf{X})} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    \approx & \int_{\Gamma_C} \frac{1}{2} b\left(\min_{e \in \mathcal{E} - I(\mathbf{X})} \min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    = & \int_{\Gamma_C} \frac{1}{2} \max_{e \in \mathcal{E} - I(\mathbf{X})} b\left(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}).
 \end{aligned}
 $$
 Then if we choose a special quadrature point $\mathbf{X}_{e_1}$ per surface edge $e_1$ and approximate the max operators with summations, we get
 $$
 \begin{aligned}
-    & \int_{\Gamma_C} \frac{1}{2} \max_{e \in \mathcal{E} - I(\mathbf{X})} b(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) ds(\mathbf{X}) \\
-    \approx & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1} \sum_{e \in \mathcal{E} - I(\mathbf{X}_{e_1})} b(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}_{e_1}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}),
+    & \int_{\Gamma_C} \frac{1}{2} \max_{e \in \mathcal{E} - I(\mathbf{X})} b\left(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) ds(\mathbf{X}) \\
+    \approx & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1} \sum_{e \in \mathcal{E} - I(\mathbf{X}_{e_1})} b\left(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}_{e_1}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right),
 \end{aligned}
 $$
 where $w_{e_1} = \hat{d} \frac{1}{3} \sum_{j\in I(e_1)} A_j$ is the integration weight and $A_j$ is the area of $e_1$'s incident surface triangle $j$.
 Next, if we always select $\mathbf{X}_{e_1}$ to be the closest point to $\mathbf{X}_2$ on $e_1$, we will get
 $$
 \begin{aligned}
-    & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1} \sum_{e \in \mathcal{E} - I(\mathbf{X}_{e_1})} b(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}_{e_1}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) \\
-    \approx & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1} \sum_{e \in \mathcal{E} - \mathcal{N}(e_1)} b(\min_{\mathbf{X}_2 \in e, \mathbf{X} \in e_1} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}) \\
-    = & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1}  \sum_{e \in \mathcal{E} - \mathcal{N}(e_1)} b(d^{\text{EE}}(e, e_1), \hat{d}),
+    & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1} \sum_{e \in \mathcal{E} - I(\mathbf{X}_{e_1})} b\left(\min_{\mathbf{X}_2 \in e} \| \mathbf{x}(\mathbf{X}_{e_1}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) \\
+    \approx & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1} \sum_{e \in \mathcal{E} - \mathcal{N}(e_1)} b\left(\min_{\mathbf{X}_2 \in e, \mathbf{X} \in e_1} \| \mathbf{x}(\mathbf{X}, t) - \mathbf{x}(\mathbf{X}_2, t)\|, \hat{d}\right) \\
+    = & \sum_{e_1 \in \mathcal{E}} \frac{1}{2} w_{e_1}  \sum_{e \in \mathcal{E} - \mathcal{N}(e_1)} b\left(d^{\text{EE}}(e, e_1), \hat{d}\right),
 \end{aligned}
 {{numeq}}{eq:lec24:edge_barrier}
 $$

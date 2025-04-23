@@ -43,8 +43,8 @@ This also allows us to see that $\mathbf{P}(\mathbf{X}, t^n) \nabla^{\mathbf{X}}
 $$
 \begin{aligned}
 \frac{\partial \Psi_e}{\partial \mathbf{x}_{\hat{a}}} 
-= \frac{\partial \Psi_e}{\partial \mathbf{F}} \frac{\partial \mathbf{F}}{\partial \hat{\mathbf{x}}} \frac{\partial \hat{\mathbf{x}}}{\partial \mathbf{x}_{\hat{a}}} 
-= \mathbf{P} \frac{\partial \hat{\mathbf{x}}/\partial \mathbf{X}}{\partial \hat{\mathbf{x}}} N_{\hat{a}} = \mathbf{P} \nabla^{\mathbf{X}} N_{\hat{a}}.
+= \frac{\partial \Psi_e}{\partial \mathbf{F}} \frac{\partial \mathbf{F}}{\partial \mathbf{x}_{\hat{a}}}
+= \mathbf{P} \nabla^{\mathbf{X}} N_{\hat{a}}.
 \end{aligned}
 $$
 

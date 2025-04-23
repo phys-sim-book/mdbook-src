@@ -54,7 +54,7 @@ Here we show why this is true.
 $$
 \mathbf{P}(\mathbf{F}) = \sum_k \frac{\partial \Psi}{\partial I_k}(\mathbf{F}) \frac{\partial I_k}{\partial \mathbf{F}}(\mathbf{F}),
 $$
-where $I_k$ is the isotropic invariants. Following {{#cite sifakis2022finite}} (page 23), we can observe that $\frac{\partial I_k}{\partial \mathbf{F}}(\mathbf{F})$ when the argument $\mathbf{F}$ is diagonal, must be diagonal. Therefore, $\mathbf{P}(\mathbf{F})$ is diagonal when $\mathbf{F}$ is diagonal. 
+where $I_k$ is the isotropic invariants. Following {{#cite sifakis2012finite}} (page 23), we can observe that $\frac{\partial I_k}{\partial \mathbf{F}}(\mathbf{F})$ when the argument $\mathbf{F}$ is diagonal, must be diagonal. Therefore, $\mathbf{P}(\mathbf{F})$ is diagonal when $\mathbf{F}$ is diagonal. 
 
 (2) Next, we claim that
 $$
