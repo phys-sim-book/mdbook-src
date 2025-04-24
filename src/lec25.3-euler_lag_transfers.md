@@ -56,7 +56,7 @@ $$
 \mathbf{v}_\mathbf{i}^{n+1} = \mathbf{v}_\mathbf{i}^n + \frac{\Delta t}{m_\mathbf{i}} (\mathbf{f}_\mathbf{i} + \mathbf{f}_\mathbf{i}^{\text{ext}})
 $$
 
-Boundary treatments are also enforced during this stage and will be discussed in detail in later sections.
+Boundary treatments are also enforced during this stage and will be discussed in detail in [Section 27](./lec27-mpm_bc.md).
 
 ### Grid-to-Particle (G2P) Transfers
 

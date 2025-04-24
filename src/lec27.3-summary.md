@@ -1,0 +1,7 @@
+## Summary
+
+In this section, we discussed various boundary treatment strategies essential for accurate and stable MPM simulations. Initially, we highlighted that boundary conditions (BCs) must be applied directly to the grid nodes due to their role as the true degrees of freedom satisfying Newton's second law. We presented several common grid-level boundary conditions, including sticky (Dirichlet), slip (Neumann), and separate (one-way) conditions, along with practical methods for incorporating frictional contact through Coulomb friction constraints using signed distance functions (SDFs).
+
+We then addressed inherent limitations of purely grid-based collision handling—such as inaccurate normals and discretization gaps—motivating the use of particle-level frictional contact formulations. By formulating frictional contact explicitly as an optimization problem at the grid level, with particle-based contact energies and Jacobians, we provided a physically consistent and robust approach. Specifically, we introduced a two-stage scheme where free-motion grid velocities are computed first, followed by an optimization-based frictional correction, effectively enforcing static friction and maintaining physical fidelity in frictional contact scenarios.
+
+In the next section, we will apply all these theoretical components to implement a practical, full-featured MPM simulation example: **2D sand interacting with a static sphere collider**.

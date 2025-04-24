@@ -1,0 +1,5 @@
+We have successfully implemented a 2D sand simulation using the Material Point Method, incorporating Drucker-Prager elastoplasticity and SDF-based frictional contact.
+
+By discretizing sand as material points and transferring their mass, momentum, and internal forces to a background grid using quadratic B-spline interpolation, we achieve stable and efficient simulation of large deformations. The Drucker-Prager yield condition, enforced via log-strain-based return mapping, enables realistic modeling of irreversible flow and pressure-dependent plasticity. To further improve physical plausibility, we apply volume correction during projection to prevent artificial expansion under stress-free conditions.
+
+Finally, by embedding an analytical sphere collider via a signed distance function (SDF), we implement contact constraints directly at the grid level. This enables smooth and robust enforcement of frictional boundary conditions, completing a practical and extensible MPM simulation pipeline.
