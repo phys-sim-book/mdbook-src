@@ -8,8 +8,6 @@ $$
 
 where $b()$ is the barrier energy density function, and $\mathcal{N}(\mathbf{X})$ is an infinitesimal region around $\mathbf{X}$ where contact is ignored for theoretical soundness.
 
->
-
 For normal contact between simulated solids and collision obstacles (ignoring self-contact for now), $P_C$ can be written in a much simpler form
 $$
 \begin{aligned}
