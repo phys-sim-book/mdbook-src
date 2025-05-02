@@ -18,9 +18,9 @@ $$
 
 This definition allows us to apply **contact boundary conditions** uniformly across the simulation domain by evaluating the SDF at each grid node.
 
-{{imp}}{imp:lec28:sphere_sdf}[SDF-Based Sphere Collider as Grid Boundary Condition]
+{{imp}}{imp:lec29:sphere_sdf}[SDF-Based Sphere Collider as Grid Boundary Condition]
 ```python
-# Grid Update (Section 25.3)
+# Grid Update (Section 26.3)
 def update_grid():
     for i, j in grid_m:
         if grid_m[i, j] > 0:

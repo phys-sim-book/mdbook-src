@@ -13,7 +13,7 @@ Instead, a more robust strategy is to formulate the frictional contact problem a
 
 **Stage 1: Free-motion velocity**
 
-In the first stage, we ignore contact constraints entirely and compute the intermediate "free-motion" nodal velocity $\mathbf{v}_i^*$ on grid nodes, which would occur in the absence of any contact forces. These velocities can be conveniently obtained via a [standard symplectic Euler time integration step](./lec25.3-euler_lag_transfers.md).
+In the first stage, we ignore contact constraints entirely and compute the intermediate "free-motion" nodal velocity $\mathbf{v}_i^*$ on grid nodes, which would occur in the absence of any contact forces. These velocities can be conveniently obtained via a [standard symplectic Euler time integration step](./lec26.3-euler_lag_transfers.md).
 
 **Stage 2: Frictional Contact via Optimization**
 

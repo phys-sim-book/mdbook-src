@@ -32,7 +32,7 @@ $$
 
 This bypasses the need to explicitly evaluate $\nabla w_{ip}$, and instead uses the already-aggregated affine behavior stored in $\mathbf{C}_p$.
 
-**Plasticity flow is also applied at this stage** to project the updated deformation gradient back onto the admissible space defined by the material's yield criterion. This process, known as return mapping, ensures that the material obeys plastic limits, and will be discussed in detail in [Section 26](./lec26-mpm_plasticity.md).
+**Plasticity flow is also applied at this stage** to project the updated deformation gradient back onto the admissible space defined by the material's yield criterion. This process, known as return mapping, ensures that the material obeys plastic limits, and will be discussed in detail in [Section 27](./lec27-mpm_plasticity.md).
 
 ### Position Update
 

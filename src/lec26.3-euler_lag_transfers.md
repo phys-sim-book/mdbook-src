@@ -8,7 +8,7 @@ This section discusses how **mass**, **momentum**, and **internal forces (stress
 
 ### Particle-to-Grid (P2G) Transfers
 
-**Mass Transfer**: Let $m_p$ be the mass of particle $p$, and $w_{\mathbf{i}p} = N_\mathbf{i}(\mathbf{x}_p)$ be the interpolation weight ([Section 25.2](./lec25.2-interpolating_functions.md)) between grid node $\mathbf{i}$ and particle $p$. We transfer mass to grid node $\mathbf{i}$ by summing:
+**Mass Transfer**: Let $m_p$ be the mass of particle $p$, and $w_{\mathbf{i}p} = N_\mathbf{i}(\mathbf{x}_p)$ be the interpolation weight ([Section 26.2](./lec26.2-interpolating_functions.md)) between grid node $\mathbf{i}$ and particle $p$. We transfer mass to grid node $\mathbf{i}$ by summing:
 
 $$
 m_\mathbf{i} = \sum_p w_{\mathbf{i}p} \, m_p
@@ -56,11 +56,11 @@ $$
 \mathbf{v}_\mathbf{i}^{n+1} = \mathbf{v}_\mathbf{i}^n + \frac{\Delta t}{m_\mathbf{i}} (\mathbf{f}_\mathbf{i} + \mathbf{f}_\mathbf{i}^{\text{ext}})
 $$
 
-Boundary treatments are also enforced during this stage and will be discussed in detail in [Section 27](./lec27-mpm_bc.md).
+Boundary treatments are also enforced during this stage and will be discussed in detail in [Section 28](./lec28-mpm_bc.md).
 
 ### Grid-to-Particle (G2P) Transfers
 
-Once the grid velocity $\mathbf{v}_\mathbf{i}^{n+1}$ is updated, we need to transfer information back to the particles. The main quantity to update with the G2P transfer is the particle velocity $\mathbf{v}_p^{n+1}$, which will be used in the advection step ([Section 25.4](src/lec25.4-particle_state_update.md)).
+Once the grid velocity $\mathbf{v}_\mathbf{i}^{n+1}$ is updated, we need to transfer information back to the particles. The main quantity to update with the G2P transfer is the particle velocity $\mathbf{v}_p^{n+1}$, which will be used in the advection step ([Section 26.4](src/lec26.4-particle_state_update.md)).
 
 The simplest approach is to interpolate velocity directly from the grid:
 
@@ -74,7 +74,7 @@ This naive scheme is part of the **PIC method**, but it is highly diffusive. In 
 
 Transfer schemes define how **P2G and G2P** work together. Different methods balance numerical stability, energy conservation, and physical realism.
 
-> {{exp}}{exp:lec25:pic}[PIC, Particle-in-Cell] $$ $$
+> {{exp}}{exp:lec26:pic}[PIC, Particle-in-Cell] $$ $$
 **P2G**: Only particle velocity $\mathbf{v}_p$ is transferred to the grid using:
 $$
 (m\mathbf{v})_\mathbf{i} = \sum_p w_{\mathbf{i}p} \, m_p \mathbf{v}_p
@@ -85,7 +85,7 @@ $$
 $$
 PIC is very stable and conserves linear momentum, but suffers from high numerical dissipation, loss of fine-scale motion, and does not conserve angular momentum.
 
-> {{exp}}{exp:lec25:flip}[FLIP ,Fluid-Implicit-Particle] $$ $$
+> {{exp}}{exp:lec26:flip}[FLIP ,Fluid-Implicit-Particle] $$ $$
 **P2G**: Same as PIC. $$ $$
 **G2P**: In FLIP, the particle velocity is updated by blending the newly interpolated velocity and the change in velocity between time steps:
 $$
@@ -100,7 +100,7 @@ $$
 $$
 FLIP preserves kinetic energy and detailed motion over long time scales, making it ideal for simulating fluids with minimal numerical dissipation. However, due to its lack of inherent smoothing, it can introduce noise, penetration, or even instability in solid simulations.
 
-> {{exp}}{exp:lec25:apic}[APIC, Affine Particle-in-Cell)] $$ $$
+> {{exp}}{exp:lec26:apic}[APIC, Affine Particle-in-Cell)] $$ $$
 APIC @@jiang2015affine introduces **affine velocity fields** to more accurately model local particle motion and preserve angular momentum. Each particle stores an affine velocity matrix $\mathbf{C}_p$ in addition to its velocity $\mathbf{v}_p$. The particle velocity field is written as:
 $$
 \mathbf{v}_p(\mathbf{x}) = \mathbf{v}_p + \mathbf{C}_p (\mathbf{x} - \mathbf{x}_p)

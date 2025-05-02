@@ -10,7 +10,7 @@ In stress space, the Drucker-Prager yield surface takes the shape of a **cone**,
 This model is best implemented in the **log-strain (Hencky strain)** space using the SVD of the deformation gradient:
 Let $\mathbf{F}_\mathrm{tr} = \mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^T$ be the trial deformation gradient, which can be obtained from Hencky strain-based Saint Venant–Kirchhoff model (StVK) constitutive model:
 
-{{imp}}{imp:lec28:stvk_hencky_elasticity}[Stvk Hencky Elasticity]
+{{imp}}{imp:lec29:stvk_hencky_elasticity}[Stvk Hencky Elasticity]
 ```python
 @ti.func
 def StVK_Hencky_PK1_2D(F):
@@ -20,7 +20,7 @@ def StVK_Hencky_PK1_2D(F):
     return U @ (2 * mu * inv_sig @ e + lam * e.trace() * inv_sig) @ V.transpose()
 ```
 
-> {{exp}}{exp:lec26:drucker_prager_yield_criterion}[Drucker-Prager Yield Criterion, Log-Strain Formulation]
+> {{exp}}{exp:lec27:drucker_prager_yield_criterion}[Drucker-Prager Yield Criterion, Log-Strain Formulation]
 > We define the **logarithmic strain** as:
 >
 > $$
@@ -63,7 +63,7 @@ $$
 \mathbf{F}_\mathrm{E}^{n+1} = \mathbf{U} \, \text{diag}(\boldsymbol{\Sigma}_\mathrm{E}^{n+1}) \, \mathbf{V}^T
 $$
 
-> {{exp}}{exp:lec28:drucker_prager_projection}[Drucker-Prager Plasticity with Volume Correction]
+> {{exp}}{exp:lec29:drucker_prager_projection}[Drucker-Prager Plasticity with Volume Correction]
 >
 > In granular materials like sand, volumetric expansion can result in **non-physical volume gain** if not properly handled. The standard Drucker-Prager projection maps stress to the tip of the cone under expansion (positive trace), which corresponds to a **stress-free state**. However, this may unrealistically "lock in" expanded configurations as new rest shapes.
 >
@@ -83,7 +83,7 @@ $$
 >
 > where $d$ is the spatial dimension. This allows future compression to **neutralize previous volume gain** rather than being resisted elastically. In the code below, `diff_log_J` provides this volume correction term, computed as the accumulation of log-difference of determinants.
 
-{{imp}}{imp:lec28:drucker_prager}[Drucker-Prager Plasticity with Volume Correction]
+{{imp}}{imp:lec29:drucker_prager}[Drucker-Prager Plasticity with Volume Correction]
 ```python
 @ti.func
 def Drucker_Prager_return_mapping(F, diff_log_J):

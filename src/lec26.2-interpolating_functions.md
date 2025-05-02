@@ -10,7 +10,7 @@ $$
 
 This weight determines how strongly particle $p$ influences grid node $\mathbf{i}$: the closer the particle is to the node, the larger $w_{\mathbf{i}p}$ becomes.
 
-> {{exp}}{exp:lec25:linear}[Linear Interpolation]
+> {{exp}}{exp:lec26:linear}[Linear Interpolation]
 The simplest choice is the **linear (tent) function**:
 $$
 N(x) =
@@ -35,7 +35,7 @@ Linear interpolation is computationally efficient and easy to implement, and is 
 
 Because of these issues, linear interpolation is typically avoided in MPM, especially in solid simulation.
 
-> {{exp}}{exp:lec25:quad}[Quadratic B-Spline Interpolation]
+> {{exp}}{exp:lec26:quad}[Quadratic B-Spline Interpolation]
 A better choice is the **quadratic B-spline**, which is $C^1$ continuous (smooth gradients) and has wider support:
 $$
 N(x) =
@@ -48,7 +48,7 @@ $$
 
 Quadratic splines have a stencil of width $3h$ and provide smooth, stable interactions between particles and the grid. They are computationally efficient and require less memory than higher-order splines.
 
-> {{exp}}{exp:lec25:cubic}[Cubic B-Spline Interpolation]
+> {{exp}}{exp:lec26:cubic}[Cubic B-Spline Interpolation]
 For even better smoothness and broader support, we can use the **cubic B-spline**:
 $$
 N(x) =

@@ -26,9 +26,9 @@ In contrast, MPM does not rely on a mesh to store state or define deformation. I
 
 <figure>
     <center>
-    <img src="img/lec25/random_vs_poisson_disk.png">
+    <img src="img/lec26/random_vs_poisson_disk.png">
     </center>
-    <figcaption><b>{{fig}}{fig:lec25:random_vs_poisson_disk}</b> Comparison of random sampling and Poisson-disk sampling in a unit square with the same number of samples: Poisson-disk sampling produces more uniform spacing between points. </figcaption>
+    <figcaption><b>{{fig}}{fig:lec26:random_vs_poisson_disk}</b> Comparison of random sampling and Poisson-disk sampling in a unit square with the same number of samples: Poisson-disk sampling produces more uniform spacing between points. </figcaption>
 </figure>
 
 **Estimating Particle Volume**:
