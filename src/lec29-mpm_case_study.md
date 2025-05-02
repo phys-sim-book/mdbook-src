@@ -8,4 +8,4 @@ We place a **static sphere collider** inside the domain ([Section 29.2](./lec29.
 
 For implementation ([Section 29.3](./lec29.3-mpm_impl.md)), we use NumPy and [Taichi](https://docs.taichi-lang.org/) as our programming framework. Taichi provides efficient parallelism on both CPU and GPU, and more importantly, it supports [sparse data structures]((https://docs.taichi-lang.org/docs/sparse)), which are critical for high-performance MPM grid computations.
 
-The executable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `10_mpm_sand` folder.
+The executable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `11_mpm_sand` folder.

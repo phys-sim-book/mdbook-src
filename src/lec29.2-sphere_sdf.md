@@ -19,5 +19,5 @@ $$
 This definition allows us to apply **contact boundary conditions** uniformly across the simulation domain by evaluating the SDF at each grid node.
 
 ```python
-{{#include solid-sim-tutorial/10_mpm_sand/simulator.py:sphere_sdf}}
+{{#include solid-sim-tutorial/11_mpm_sand/simulator.py:sphere_sdf}}
 ```

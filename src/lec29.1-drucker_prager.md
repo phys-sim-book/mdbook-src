@@ -11,7 +11,7 @@ This model is best implemented in the **log-strain (Hencky strain)** space using
 Let $\mathbf{F}_\mathrm{tr} = \mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^T$ be the trial deformation gradient, which can be obtained from Hencky strain-based Saint Venant–Kirchhoff model (StVK) constitutive model:
 
 ```python
-{{#include solid-sim-tutorial/10_mpm_sand/simulator.py:stvk}}
+{{#include solid-sim-tutorial/11_mpm_sand/simulator.py:stvk}}
 ```
 
 > {{exp}}{exp:lec27:drucker_prager_yield_criterion}[Drucker-Prager Yield Criterion, Log-Strain Formulation]
@@ -78,5 +78,5 @@ $$
 > where $d$ is the spatial dimension. This allows future compression to **neutralize previous volume gain** rather than being resisted elastically. In the code below, `diff_log_J` provides this volume correction term, computed as the accumulation of log-difference of determinants.
 
 ```python
-{{#include solid-sim-tutorial/10_mpm_sand/simulator.py:drucker_prager}}
+{{#include solid-sim-tutorial/11_mpm_sand/simulator.py:drucker_prager}}
 ```
