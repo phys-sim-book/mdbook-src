@@ -159,8 +159,8 @@
   - [Frictional Contact on Material Particles](./lec28.2-contact_on_particles.md)
   - [Summary](./lec28.3-summary.md)
 
-- [Case Study: 2D Sand with a Sphere Collider*](./lec29-mpm_case_study.md)
-  - [Drucker-Prager Elastoplasticity](./lec29.1-drucker_prager.md)
-  - [SDF-based Sphere Collider](./lec29.2-sphere_sdf.md)
-  - [Putting It All Together](./lec29.3-mpm_impl.md)
-  - [Summary](./lec29.4-summary.md)
+- [Case Study: 2D Sand with a Sphere Collider*](./lec30-mpm_sand_case_study.md)
+  - [Drucker-Prager Elastoplasticity](./lec30.1-drucker_prager.md)
+  - [SDF-based Sphere Collider](./lec30.2-sphere_sdf.md)
+  - [Putting It All Together](./lec30.3-mpm_impl.md)
+  - [Summary](./lec30.4-summary.md)

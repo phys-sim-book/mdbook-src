@@ -57,7 +57,7 @@ $$
 \mathbf{F}_\mathrm{E}^{n+1} = \mathbf{U} \, \text{diag}(\boldsymbol{\Sigma}_\mathrm{E}^{n+1}) \, \mathbf{V}^T
 $$
 
-> {{exp}}{exp:lec29:drucker_prager_projection}[Drucker-Prager Plasticity with Volume Correction]
+> {{exp}}{exp:lec30:drucker_prager_projection}[Drucker-Prager Plasticity with Volume Correction]
 >
 > In granular materials like sand, volumetric expansion can result in **non-physical volume gain** if not properly handled. The standard Drucker-Prager projection maps stress to the tip of the cone under expansion (positive trace), which corresponds to a **stress-free state**. However, this may unrealistically "lock in" expanded configurations as new rest shapes.
 >
