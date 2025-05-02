@@ -10,7 +10,7 @@ In stress space, the Drucker-Prager yield surface takes the shape of a **cone**,
 This model is best implemented in the **log-strain (Hencky strain)** space using the SVD of the deformation gradient:
 Let $\mathbf{F}_\mathrm{tr} = \mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^T$ be the trial deformation gradient, which can be obtained from Hencky strain-based Saint Venant–Kirchhoff model (StVK) constitutive model:
 
-{{imp}}{imp:lec28:drucker_prager}[Stvk Hencky Elasticity]
+{{imp}}{imp:lec28:stvk_hencky_elasticity}[Stvk Hencky Elasticity]
 ```python
 @ti.func
 def StVK_Hencky_PK1_2D(F):
@@ -20,7 +20,7 @@ def StVK_Hencky_PK1_2D(F):
     return U @ (2 * mu * inv_sig @ e + lam * e.trace() * inv_sig) @ V.transpose()
 ```
 
-> {{exp}}{exp:lec26:von_mises_log_strain}[Drucker-Prager Yield Criterion, Log-Strain Formulation]
+> {{exp}}{exp:lec26:drucker_prager_yield_criterion}[Drucker-Prager Yield Criterion, Log-Strain Formulation]
 > We define the **logarithmic strain** as:
 >
 > $$

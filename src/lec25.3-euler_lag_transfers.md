@@ -85,7 +85,7 @@ $$
 $$
 PIC is very stable and conserves linear momentum, but suffers from high numerical dissipation, loss of fine-scale motion, and does not conserve angular momentum.
 
-> {{exp}}{exp:lec25:pic}[FLIP ,Fluid-Implicit-Particle] $$ $$
+> {{exp}}{exp:lec25:flip}[FLIP ,Fluid-Implicit-Particle] $$ $$
 **P2G**: Same as PIC. $$ $$
 **G2P**: In FLIP, the particle velocity is updated by blending the newly interpolated velocity and the change in velocity between time steps:
 $$
@@ -100,7 +100,7 @@ $$
 $$
 FLIP preserves kinetic energy and detailed motion over long time scales, making it ideal for simulating fluids with minimal numerical dissipation. However, due to its lack of inherent smoothing, it can introduce noise, penetration, or even instability in solid simulations.
 
-> {{exp}}{exp:lec25:pic}[APIC, Affine Particle-in-Cell)] $$ $$
+> {{exp}}{exp:lec25:apic}[APIC, Affine Particle-in-Cell)] $$ $$
 APIC @@jiang2015affine introduces **affine velocity fields** to more accurately model local particle motion and preserve angular momentum. Each particle stores an affine velocity matrix $\mathbf{C}_p$ in addition to its velocity $\mathbf{v}_p$. The particle velocity field is written as:
 $$
 \mathbf{v}_p(\mathbf{x}) = \mathbf{v}_p + \mathbf{C}_p (\mathbf{x} - \mathbf{x}_p)

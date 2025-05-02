@@ -21,7 +21,7 @@ This decomposition separates material behavior into two parts:
 
 Stress is computed solely from $\mathbf{F}_\mathrm{E}$ using the hyperelastic constitutive model. Plastic flow is triggered when stress exceeds a material-specific limit and updates $\mathbf{F}_\mathrm{P}$ to ensure the stress stays within the yield surface.
 
-> **{{def}}{def:lec17:orthogonal_functions}[Yield Surface]**
+> **{{def}}{def:lec17:yield_surface}[Yield Surface]**
 > We define a **Yield Condition** $y(\boldsymbol{\tau}) \leq 0$ on the **Kirchhoff stress** $\boldsymbol{\tau}$ derived from $\mathbf{F}_\mathrm{E}$. The boundary $y(\boldsymbol{\tau}) = 0$ is known as the **Yield Surface**. When elastic stress exceeds this surface, plastic flow is triggered to restore admissibility.
 
 This framework cleanly separates recoverable and permanent deformation by computing stress from $\mathbf{F}_\mathrm{E}$ and evolving $\mathbf{F}_\mathrm{P}$ under plastic flow.
