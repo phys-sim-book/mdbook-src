@@ -30,7 +30,7 @@ Each block consists of uniformly distributed material points representing a homo
 
 ### Material Particles and Grid Data
 
-We define data fields to represent the state of each material point (particle) and background grid node. For particles, this includes position, velocity, volume, mass, and deformation gradient, following [Section 26.1](./lec26.1-material_particles.md). For the grid, we define nodal mass and velocity fields using dense arrays, which are sufficient for small-scale simulations. These can be further optimized using sparse grid structures—a direction we leave as future work for interested readers.
+We define data fields to represent the state of each material point (particle) and background grid node. For particles, this includes position, velocity, volume, mass, and deformation gradient, following [Material Particles](./lec26.1-material_particles.md). For the grid, we define nodal mass and velocity fields using dense arrays, which are sufficient for small-scale simulations. These can be further optimized using sparse grid structures—a direction we leave as future work for interested readers.
 
 {{imp}}{imp:lec29:data_def}[Material Particles and Grid Data, simulator.py]
 ```python

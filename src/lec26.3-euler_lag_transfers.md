@@ -8,7 +8,7 @@ This section discusses how **mass**, **momentum**, and **internal forces (stress
 
 ### Particle-to-Grid (P2G) Transfers
 
-**Mass Transfer**: Let $m_p$ be the mass of particle $p$, and $w_{\mathbf{i}p} = N_\mathbf{i}(\mathbf{x}_p)$ be the interpolation weight ([Section 26.2](./lec26.2-interpolating_functions.md)) between grid node $\mathbf{i}$ and particle $p$. We transfer mass to grid node $\mathbf{i}$ by summing:
+**Mass Transfer**: Let $m_p$ be the mass of particle $p$, and $w_{\mathbf{i}p} = N_\mathbf{i}(\mathbf{x}_p)$ be the [interpolation weight](./lec26.2-interpolating_functions.md) between grid node $\mathbf{i}$ and particle $p$. We transfer mass to grid node $\mathbf{i}$ by summing:
 
 $$
 m_\mathbf{i} = \sum_p w_{\mathbf{i}p} \, m_p
