@@ -159,8 +159,13 @@
   - [Frictional Contact on Material Particles](./lec28.2-contact_on_particles.md)
   - [Summary](./lec28.3-summary.md)
 
+- [Case Study: Two Colliding Elastic Blocks in 2D*](./lec29-mpm_elastic_case_study.md)
+  - [Simulation Setup](./lec29.1-simulation_setup.md)
+  - [Particle-In-Cell Transfer](./lec29.2-pic_transfer.md)
+  - [Summary](./lec29.3-summary.md)
+
 - [Case Study: 2D Sand with a Sphere Collider*](./lec30-mpm_sand_case_study.md)
   - [Drucker-Prager Elastoplasticity](./lec30.1-drucker_prager.md)
   - [SDF-based Sphere Collider](./lec30.2-sphere_sdf.md)
-  - [Putting It All Together](./lec30.3-mpm_impl.md)
+  - [Affine Particle-In-Cell Transfer](./lec30.3-apic_transfer.md)
   - [Summary](./lec30.4-summary.md)

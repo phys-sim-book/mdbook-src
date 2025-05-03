@@ -1,4 +1,4 @@
-## Putting It All Together
+## Affine Particle-In-Cell Transfer
 
 In an MPM simulation, simulation data include material point data and grid data, we defined material point data following [Section 26.1](./lec26.1-material_particles.md), with one additional $\mathbf{C}_p$ used for APIC transfer scheme and `log_J_diff` as the volume correction term used in [Section 30.1](./lec30.1-drucker_prager.md). The sample points are sampled using the Poisson-disk sampling. We define the 2D background as a dense grid, which can be further optimized as a sparse grid, we leave this as the  future work for readers:
 
@@ -40,5 +40,5 @@ A full MPM simulation step consists of the following stages:
     <center>
     <img src="img/lec30/mpm_sand_simulation_result.png">
     </center>
-    <figcaption><b>{{fig}}{fig:lec27:mpm_sand_simulation_result}</b> Time sequence of a 2D sand block falling onto a static red sphere collider. The sand undergoes irreversible deformation and splashing upon impact, demonstrating granular flow and frictional boundary response. </figcaption>
+    <figcaption><b>{{fig}}{fig:lec30:mpm_sand_simulation_result}</b> Time sequence of a 2D sand block falling onto a static red sphere collider. The sand undergoes irreversible deformation and splashing upon impact, demonstrating granular flow and frictional boundary response. </figcaption>
 </figure>
