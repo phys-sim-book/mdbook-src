@@ -18,6 +18,7 @@ $$
 
 This definition allows us to apply **contact boundary conditions** uniformly across the simulation domain by evaluating the SDF at each grid node.
 
+{{imp}}{imp:lec30:sphere_sdf}[Sphere SDF Collider with Frictional Contact, simulator.py]
 ```python
 {{#include solid-sim-tutorial/11_mpm_sand/simulator.py:sphere_sdf}}
 ```

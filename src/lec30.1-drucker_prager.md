@@ -7,12 +7,7 @@ In stress space, the Drucker-Prager yield surface takes the shape of a **cone**,
 - **Case II (Expansion)**: The stress corresponds to a configuration where the material expands volumetrically (positive trace), and no resistance is applied—this maps to the cone tip.
 - **Case III (Shearing)**: The stress lies outside the cone but with compressive pressure and must be projected back to the cone surface.
 
-This model is best implemented in the **log-strain (Hencky strain)** space using the SVD of the deformation gradient:
-Let $\mathbf{F}_\mathrm{tr} = \mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^T$ be the trial deformation gradient, which can be obtained from Hencky strain-based Saint Venant–Kirchhoff model (StVK) constitutive model:
-
-```python
-{{#include solid-sim-tutorial/11_mpm_sand/simulator.py:stvk}}
-```
+This model is best implemented in the **log-strain (Hencky strain)** space using the SVD of the deformation gradient, which we have already introduced in the previous section.
 
 > {{exp}}{exp:lec27:drucker_prager_yield_criterion}[Drucker-Prager Yield Criterion, Log-Strain Formulation]
 > We define the **logarithmic strain** as:
@@ -77,6 +72,14 @@ $$
 >
 > where $d$ is the spatial dimension. This allows future compression to **neutralize previous volume gain** rather than being resisted elastically. In the code below, `diff_log_J` provides this volume correction term, computed as the accumulation of log-difference of determinants.
 
+{{imp}}{imp:lec30:drucker_prager}[Drucker-Prager Elastoplasticity Return Mapping, simulator.py]
 ```python
 {{#include solid-sim-tutorial/11_mpm_sand/simulator.py:drucker_prager}}
+```
+
+The return mapping is enforced during particle state update:
+
+{{imp}}{imp:lec30:particle_update}[Particle State Update, simulator.py]
+```python
+{{#include solid-sim-tutorial/11_mpm_sand/simulator.py:particle_update}}
 ```
