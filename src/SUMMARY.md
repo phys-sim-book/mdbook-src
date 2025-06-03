@@ -145,7 +145,7 @@
 - [Spatial and Temporal Discretization](./lec26-mpm_disc.md)
   - [Material Particles](./lec26.1-material_particles.md)
   - [Interpolating Functions](./lec26.2-interpolating_functions.md)
-  - [Eulerian-Lagrangian Transfers](./lec26.3-euler_lag_transfers.md)
+  - [Particle-Grid Transfers](./lec26.3-euler_lag_transfers.md)
   - [Deformation Gradient and Particle State Update](./lec26.4-particle_state_update.md)
   - [Summary](./lec26.5-summary.md)
 
