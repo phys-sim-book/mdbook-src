@@ -1,4 +1,4 @@
-# Lecture 1: Discrete Space and Time
+# Discrete Space and Time
 
 In this lecture, we explore the simulation of deformable solids with the aim of developing a discrete, computationally solvable problem. The primary goal is to introduce the abstract algebraic concepts inherent in this problem. We approach elasticity simulation using a top-down architectural view, placing mathematical modeling at the forefront.
 
