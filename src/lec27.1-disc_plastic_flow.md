@@ -1,16 +1,16 @@
-# Discretization of Plastic Flow
+## Discretization of Plastic Flow
 
 Plasticity is introduced into MPM by **multiplicatively decomposing** the deformation gradient $\mathbf{F}$ into elastic and plastic parts:
 
 $$
-\mathbf{F} = \mathbf{F}_\mathrm{E} \, \mathbf{F}_\mathrm{P}
+\mathbf{F} = \mathbf{F}_\mathrm{E} \, \mathbf{F}_\mathrm{P}.
 $$
 
-Here, $\mathbf{F}_\mathrm{P}$ represents the accumulated irreversible deformation, while $\mathbf{F}_\mathrm{E}$ captures the recoverable elastic deviation from the plastically deformed configuration.
+Here, $\mathbf{F}_\mathrm{P}$ represents the accumulated irreversible deformation, while $\mathbf{F}_\mathrm{E}$ captures the recoverable elastic deformation from the plastically deformed configuration.
 
 This decomposition separates material behavior into two parts:  
 - The **plastic part** $\mathbf{F}_\mathrm{P}$ stores permanent changes (e.g., bending a metal rod into a spring),  
-- The **elastic part** $\mathbf{F}_\mathrm{E}$ responds to current deformation relative to that shape (e.g., compressing the spring slightly). 
+- The **elastic part** $\mathbf{F}_\mathrm{E}$ stores current deformation relative to that shape (e.g., compressing the spring slightly). 
 
 <figure>
     <center>
