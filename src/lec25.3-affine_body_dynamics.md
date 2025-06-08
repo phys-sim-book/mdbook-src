@@ -1,3 +1,5 @@
+## Affine Body Dynamics
+
 Previously, we reviewed rigid body dynamics and implemented a simple solver using explicit integration.
 
 When dealing with many rigid bodies — especially with complex geometry and dense contact — it’s natural to attempt IPC for contact resolution. However, representing a rigid body by its position $\bm{x}$ and rotation $\bm{q}$ creates a challenge: step size filtering in Newton’s method becomes nonlinear in $\alpha$, due to the nonlinearity of quaternion update.
@@ -59,18 +61,3 @@ $$
 With these, we can implement ABD using implicit Euler integration for a simple 2D case.
 
 Before implementation, consider this geometric view: in 2D, an affine transformation is determined by 3 points. Choosing a triangle per rigid body, we can interpolate all vertices via barycentric coordinates. The triangle drives the simulation; the original mesh is used for collisions. This yields a reduced DOF system where the triangle controls motion—essentially what ABD does.
-
-Now, let’s implement the simple 2D case:
-
-```python
-{{#include solid-sim-tutorial/9_reduced_DOF/simulator.py}}
-```
-
-Here we use a small stiffness parameter making the body softer to amplify the deformation of the affine body to better demonstrate the difference between ABD and IPC. The blue is the collision mesh, and the red one is the embedding mesh. 
-
-<figure>
-    <center>
-        <img src="img/lec25/abd_sim.gif">
-        <figcaption><b>{{fig}}{fig:lec25:abd_sim}</b> An illustration of ABD simulation.</figcaption>
-    </center>
-</figure>
