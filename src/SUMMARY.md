@@ -139,6 +139,12 @@
   - [Collision Detection](./lec24.2-collision_detection.md)
   - [Friction](./lec24.3-friction.md)
   - [Summary](./lec24.4-summary.md)
+- [Spatial Reduction](./lec25-spatial_reduction.md)
+  - [Rigid Body Dynamics](./lec25.1-rigid_body_dynamics.md)
+  - [Subspace Simulation](./lec25.2-subspace_sim.md)
+  - [Affine Body Dynamics](./lec25.3-affine_body_dynamics.md)
+  - [Case Study: Dropping Block](./lec25.4-dropping_block.md) 
+  - [Summary](./lec25.5-summary.md) 
 
 # Material Point Method
 
