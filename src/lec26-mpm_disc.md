@@ -1,0 +1,9 @@
+# Spatial and Temporal Discretization
+
+**Author of this lecture: [Chang Yu](https://changyu.io/), University of California, Los Angeles*
+
+In the first lecture, [Discrete Space and Time](./lec1-discrete_space_time.md), we introduced various representations for solid objects. Rather than starting from classical continuum equations, we directly formulated elasticity simulations as discrete algebraic problems, with previous discussions primarily focusing on mesh-based purely Lagrangian schemes.
+
+In this lecture, we introduce the Material Point Method (MPM) - a hybrid Lagrangian-Eulerian scheme particularly suited for simulating large deformation and topology changes. Unlike purely Lagrangian methods such as [FEM](./lec19-linear_FEM.md), which track material deformation through the **elements** of a carefully constructed mesh structure, MPM discretizes the material simply into a set of [**material particles**](./lec26.1-material_particles.md). Each particle stores essential physical information such as mass, momentum, deformation gradient, and stress. MPM then utilizes a temporary, regular Cartesian background grid to solve the momentum equation, with information [transfered](./lec26.3-euler_lag_transfers.md) between particles and grid nodes.
+
+Specifically, in each time step, information from material particles is first transferred onto the Eulerian grid, where governing equations are solved efficiently. Updated grid solutions are then transferred back onto the particles, [updating particle states](./lec26.4-particle_state_update.md) such as position and deformation gradient. After this transfer, the grid is reset, leaving particles as the sole carriers of material history. This hybrid strategy naturally accommodates significant deformation and complex contact scenarios, effectively overcoming typical mesh-distortion challenges inherent to traditional mesh-based purely Lagrangian methods.

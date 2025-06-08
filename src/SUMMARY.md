@@ -139,3 +139,33 @@
   - [Collision Detection](./lec24.2-collision_detection.md)
   - [Friction](./lec24.3-friction.md)
   - [Summary](./lec24.4-summary.md)
+
+# Material Point Method
+
+- [Spatial and Temporal Discretization](./lec26-mpm_disc.md)
+  - [Material Particles](./lec26.1-material_particles.md)
+  - [Interpolating Functions](./lec26.2-interpolating_functions.md)
+  - [Particle-Grid Transfers](./lec26.3-euler_lag_transfers.md)
+  - [Deformation Gradient and Particle State Update](./lec26.4-particle_state_update.md)
+  - [Summary](./lec26.5-summary.md)
+
+- [Beyond Elasticity: Plasticity and Viscosity](./lec27-mpm_plasticity.md)
+  - [Discretization of Plastic Flow](./lec27.1-disc_plastic_flow.md)
+  - [Yield Condition and Return Mapping](./lec27.2-yield_criterion.md)
+  - [Summary](./lec27.3-summary.md)
+
+- [Boundary Treatments](./lec28-mpm_bc.md)
+  - [Boundary Conditions](./lec28.1-grid_bc.md)
+  - [Frictional Contact on Material Particles](./lec28.2-contact_on_particles.md)
+  - [Summary](./lec28.3-summary.md)
+
+- [Case Study: Two Colliding Elastic Blocks in 2D*](./lec29-mpm_elastic_case_study.md)
+  - [Simulation Setup](./lec29.1-simulation_setup.md)
+  - [Particle-In-Cell Transfer](./lec29.2-pic_transfer.md)
+  - [Summary](./lec29.3-summary.md)
+
+- [Case Study: 2D Sand with a Sphere Collider*](./lec30-mpm_sand_case_study.md)
+  - [Drucker-Prager Elastoplasticity](./lec30.1-drucker_prager.md)
+  - [SDF-based Sphere Collider](./lec30.2-sphere_sdf.md)
+  - [Affine Particle-In-Cell Transfer](./lec30.3-apic_transfer.md)
+  - [Summary](./lec30.4-summary.md)

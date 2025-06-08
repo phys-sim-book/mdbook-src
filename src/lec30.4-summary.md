@@ -1,0 +1,3 @@
+## Summary
+
+We have extended our [Elastic MPM Framework](./lec29-mpm_elastic_case_study.md) to simulate granular materials by incorporating **Poisson-disk sampling**, **APIC transfers**, **Drucker-Prager elastoplasticity**, and **SDF-based frictional contact**. The APIC scheme improves accuracy while maintaining stability by capturing local affine motion, and the Drucker-Prager model enables realistic plastic flow and pressure-dependent yielding. A static sphere collider is introduced using a signed distance function (SDF), allowing smooth and robust enforcement of contact and friction constraints. Together, these enhancements enable stable and physically plausible simulation of sand undergoing large deformation and splashing.
