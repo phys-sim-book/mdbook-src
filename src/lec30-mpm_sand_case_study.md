@@ -1,5 +1,7 @@
 # Case Study: 2D Sand with a Sphere Collider*
 
+**Author of this lecture: [Chang Yu](https://changyu.io/), University of California, Los Angeles*
+
 Building on the previous chapter—Two Colliding Elastic Blocks in 2D, where we implemented a minimal Material Point Method (MPM) simulation using the PIC transfer scheme—this case study demonstrates how, with minimal additional effort, we can extend the system to create a more advanced sand simulation.
 
 Unlike the previous chapter, where particles are sampled on a regular grid, here we use [Poisson-disk Sampling](./lec26-mpm_disc.md) to initialize the material points. This helps reduce aliasing artifacts and structured noise, producing more physically realistic behavior in granular simulations.

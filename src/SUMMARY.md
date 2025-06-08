@@ -155,7 +155,7 @@
   - [Summary](./lec27.3-summary.md)
 
 - [Boundary Treatments](./lec28-mpm_bc.md)
-  - [Boundary Conditions on Grid](./lec28.1-grid_bc.md)
+  - [Boundary Conditions](./lec28.1-grid_bc.md)
   - [Frictional Contact on Material Particles](./lec28.2-contact_on_particles.md)
   - [Summary](./lec28.3-summary.md)
 

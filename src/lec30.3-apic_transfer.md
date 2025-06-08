@@ -11,7 +11,7 @@ During the particle-to-grid (P2G) transfer, we adopt the **APIC formulation** fo
 
 Here, `dpos` is the offset from the particle to the grid node.
 
-During the grid-to-particle (G2P) transfer, we gather both the updated velocity and the **affine velocity matrix $\mathbf{C}_p$** from the background grid. The affine matrix is computed from the weighted outer product of grid velocities and position offsets. This allows each particle to retain local velocity variation, significantly improving simulation stability and reducing numerical dissipation compared to PIC.
+During the grid-to-particle (G2P) transfer, we gather both the updated velocity and the **affine velocity matrix $\mathbf{C}_p$** from the background grid. The affine matrix is computed from the weighted outer product of grid velocities and position offsets. This allows each particle to retain local velocity variation, significantly reducing numerical dissipation compared to PIC.
 
 {{imp}}{imp:lec30:apic_g2p}[Affine Transfer in APIC Grid-to-Particle (G2P), simulator.py]
 ```python
