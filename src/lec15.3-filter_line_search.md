@@ -44,7 +44,7 @@ The quadratic equation can be solved as
 ```python
 {{#include solid-sim-tutorial/6_inv_free/utils.py:find_positive_real_root}}
 ```
-With scaled coefficients, we simply use a unitless threshold, e.g. \code{1e-6}, to check for degeneracies. If no positive real roots are found, the function simply returns $-1$.
+With scaled coefficients, we simply use a unitless threshold, e.g. `1e-6`, to check for degeneracies. If no positive real roots are found, the function simply returns `-1`.
 
 Now as we filter the initial step size in addition to non-interpenetration:
 
