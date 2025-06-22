@@ -6,7 +6,7 @@ We implemented the linear modal analysis procedure for a 2D cantilever beam in `
 
 Following the precomputation steps outlined in the methodology, we used the Finite Element Method to assemble the global mass ($\mathbf{M}$) and stiffness ($\mathbf{K}$) matrices. After applying fixed boundary conditions to one end of the beam, we solved the generalized eigenvalue problem ($\mathbf{K}\mathbf{x} = \lambda\mathbf{M}\mathbf{x}$) to find the lowest-frequency mode shapes ($\mathbf{\psi}_i$) and their corresponding frequencies ($\omega_i = \sqrt{\lambda_i}$).
 
-The resulting modes were visualized by animating the beam's deformation according to $\mathbf{\psi}_i\sin(\omega_i t)$. The animation, shown in Figure X, displays the first six modes for the following parameter values:
+The resulting modes were visualized by animating the beam's deformation according to $\mathbf{\psi}_i\sin(\omega_i t)$. The animation below displays the first six modes for the following parameter values:
 
 ```py 
 E = 5e7   # Young's modulus

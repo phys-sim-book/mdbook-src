@@ -150,6 +150,7 @@
   - [Linear Demo](./lec25.7.2-linear_demo.md)
   - [Non-linear Reductions](./lec25.8-nonlinear_reductions.md)
   - [Reduction Basis](./lec25.9-basis_choice.md)
+  - [Summary](./lec25.10-summary.md)
 
 # Material Point Method
 

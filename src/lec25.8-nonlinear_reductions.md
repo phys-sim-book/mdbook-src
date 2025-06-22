@@ -6,7 +6,7 @@ Linear modal analysis is remarkably efficient, but its underlying assumption of 
 
 The equation of motion for a general hyperelastic object, including damping, is:
 
-$$ \mathbf{M}\ddot{\mathbf{u}} + \mathbf{D}\dot{\mathbf{u}} + \mathbf{f}_{int}(\mathbf{u}) = \mathbf{f}_{ext} \quad (3.1) $$
+$$ \mathbf{M}\ddot{\mathbf{u}} + \mathbf{D}\dot{\mathbf{u}} + \mathbf{f}_{int}(\mathbf{u}) = \mathbf{f}_{ext} {{numeq}}{eq:lec26:nonlinear_system} $$
 
 Here, the linear elastic force $-\mathbf{K}\mathbf{u}$ is replaced by a general **internal force function** $\mathbf{f}_{int}(\mathbf{u})$, which can be a complex nonlinear function of the displacements $\mathbf{u}$. This nonlinearity can arise from the material model (stress-strain relationship) or from the strain measure itself (geometric nonlinearity).
 
@@ -14,16 +14,15 @@ We follow the same projection-based procedure as in the linear case. We assume t
 
 $$ \mathbf{u}(t) \approx \mathbf{U}\mathbf{q}(t) $$
 
-Substituting this into Equation 3.1 and pre-multiplying by $\mathbf{U}^T$ to project the dynamics onto the subspace yields the **reduced nonlinear equation of motion**:
+Substituting this into {{eqref:eq:lec26:nonlinear_system}} and pre-multiplying by $\mathbf{U}^T$ to project the dynamics onto the subspace yields the **reduced nonlinear equation of motion**:
 
 $$ \mathbf{U}^T\mathbf{M}\mathbf{U}\ddot{\mathbf{q}} + \mathbf{U}^T\mathbf{D}\mathbf{U}\dot{\mathbf{q}} + \mathbf{U}^T\mathbf{f}_{int}(\mathbf{Uq}) = \mathbf{U}^T\mathbf{f}_{ext}
-{{numeq}}{eq:lec26:nonlinear_system}
 $$
 
 Assuming we have constructed a mass-orthonormal basis such that $\mathbf{U}^T\mathbf{M}\mathbf{U} = \mathbf{I}$, this simplifies to:
 
 $$ \ddot{\mathbf{q}} + \hat{\mathbf{D}} \dot{\mathbf{q}} + \hat{\mathbf{f}}_{int}(\mathbf{q}) = \hat{\mathbf{f}}_{ext}
-{{numeq}}{eq:lec26:simplified_nonlienar}
+{{numeq}}{eq:lec26:simplified_nonlinear}
 $$
 
 where:
@@ -32,19 +31,21 @@ where:
 *   $\hat{\mathbf{f}}_{ext} = \mathbf{U}^T\mathbf{f}_{ext}$ is the $r \times 1$ reduced external force vector.
 
 
-Unlike the linear case, the reduced system in {{eqref:eq:lec26:nonlinear_system}} is no longer a set of independent 1D oscillators. The reduced internal force $\hat{\mathbf{f}}_{int}(\mathbf{q})$ is a nonlinear function that couples all the components of $\mathbf{q}$. This introduces two critical questions:
+Unlike the linear case, the reduced system in {{eqref:eq:lec26:simplified_nonlinear}} is no longer a set of independent 1D oscillators. The reduced internal force $\hat{\mathbf{f}}_{int}(\mathbf{q})$ is a nonlinear function that couples all the components of $\mathbf{q}$. This introduces two critical questions:
 1.  How do we efficiently time-step this coupled, nonlinear system?
 2.  How do we choose an effective basis $\mathbf{U}$ that can represent nonlinear deformations? (next chapter)
 
 ### Timestepping and the Evaluation Bottleneck
 
-To solve Equation 3.3, we typically use an implicit time integration scheme, which is necessary to handle the high-frequency stiffness common in elastic systems. An implicit step requires solving a linear system involving the derivative of the forces. For our reduced system, this means we need the **reduced tangent stiffness matrix**, $\hat{\mathbf{K}}(\mathbf{q})$:
+To solve {{eqref:eq:lec26:simplified_nonlinear}} we typically use an implicit time integration scheme, which is necessary to handle the high-frequency stiffness common in elastic systems. An implicit step requires solving a linear system involving the derivative of the forces. For our reduced system, this means we need the **reduced tangent stiffness matrix**, $\hat{\mathbf{K}}(\mathbf{q})$:
 
-$$ \hat{\mathbf{K}}(\mathbf{q}) = \frac{\partial \hat{\mathbf{f}}_{int}(\mathbf{q})}{\partial \mathbf{q}} $$
+<!-- $$ \hat{\mathbf{K}}(\mathbf{q}) = \frac{\partial \hat{\mathbf{f}}_{int}(\mathbf{q})}{\partial \mathbf{q}} $$ -->
+$$ \hat{\mathbf{K}}(\mathbf{q}) = D_\mathbf{q} \hat{\mathbf{f}}_{int}(\mathbf{q}) $$
 
-Using the chain rule, we can relate this to the full-space tangent stiffness matrix $\mathbf{K}(\mathbf{u}) = \frac{\partial \mathbf{f}_{int}(\mathbf{u})}{\partial \mathbf{u}}$:
+Using the chain rule, we can relate this to the full-space tangent stiffness matrix $\mathbf{K}(\mathbf{u}) = D_{\mathbf{u}}\mathbf{f}_{int}(\mathbf{u})$:
 
-$$ \hat{\mathbf{K}}(\mathbf{q}) = \frac{\partial}{\partial \mathbf{q}} \left( \mathbf{U}^T\mathbf{f}_{int}(\mathbf{Uq}) \right) = \mathbf{U}^T \frac{\partial \mathbf{f}_{int}(\mathbf{Uq})}{\partial \mathbf{q}} = \mathbf{U}^T \left( \frac{\partial \mathbf{f}_{int}(\mathbf{u})}{\partial \mathbf{u}} \bigg|_{\mathbf{u}=\mathbf{Uq}} \frac{\partial (\mathbf{Uq})}{\partial \mathbf{q}} \right) $$
+<!-- $$ \hat{\mathbf{K}}(\mathbf{q}) = \frac{\partial}{\partial \mathbf{q}} \left( \mathbf{U}^T\mathbf{f}_{int}(\mathbf{Uq}) \right) = \mathbf{U}^T \frac{\partial \mathbf{f}_{int}(\mathbf{Uq})}{\partial \mathbf{q}} = \mathbf{U}^T \left( \frac{\partial \mathbf{f}_{int}(\mathbf{u})}{\partial \mathbf{u}} \bigg|_{\mathbf{u}=\mathbf{Uq}} \frac{\partial (\mathbf{Uq})}{\partial \mathbf{q}} \right) $$ -->
+$$ \hat{\mathbf{K}}(\mathbf{q}) = D_{\mathbf{q}} \left( \mathbf{U}^T\mathbf{f}_{int}(\mathbf{Uq}) \right) = \mathbf{U}^T D_{\mathbf{q}} (\mathbf{f}_{int}(\mathbf{Uq}))= \mathbf{U}^T \left( D_{\mathbf{u}} (\mathbf{f}_{int}(\mathbf{u}))\bigg|_{\mathbf{u}=\mathbf{Uq}} D_{\mathbf{q}}(\mathbf{Uq} ) \right) $$
 
 $$ \hat{\mathbf{K}}(\mathbf{q}) = \mathbf{U}^T \mathbf{K}(\mathbf{Uq}) \mathbf{U}$$
 
@@ -73,15 +74,16 @@ Since $\mathbf{u} = \mathbf{Uq}$, it follows that the reduced force $\hat{\mathb
 A more general and powerful solution is **cubature**. The core insight is to re-examine how the reduced force is calculated.
 
 The reduced energy $\hat{E}$ is the full energy evaluated within the subspace:
-$$ \hat{E}(\mathbf{q}) = E(\mathbf{Uq}) = \int_{\Omega_0} \Psi(\mathbf{F}(\mathbf{Uq})) \, dV $$
+$$ \hat{E}(\mathbf{q}) = E(\mathbf{Uq}) = \int_{\Omega_0} \Psi(\mathbf{F}(\mathbf{Uq}, X)) \, dV $$
 
 The reduced internal force $\hat{\mathbf{f}}_{int}$ is the gradient of this reduced energy with respect to the reduced coordinates $\mathbf{q}$. By moving the derivative inside the integral, we find:
-$$ \hat{\mathbf{f}}_{int}(\mathbf{q}) = \frac{\partial \hat{E}}{\partial \mathbf{q}} = \int_{\Omega_0} \frac{\partial \Psi(\mathbf{F}(\mathbf{Uq}))}{\partial \mathbf{q}} \, dV  $$
-This shows that the reduced force is the integral of the *reduced energy density gradient* over the object's volume. The projection $\mathbf{U}^T$ is implicitly included within the derivative $\partial / \partial \mathbf{q}$ via the chain rule.
+<!-- $$ \hat{\mathbf{f}}_{int}(\mathbf{q}) = \frac{\partial \hat{E}}{\partial \mathbf{q}} = \int_{\Omega_0} \frac{\partial \Psi(\mathbf{F}(\mathbf{Uq}))}{\partial \mathbf{q}} \, dV  $$ -->
+$$ \hat{\mathbf{f}}_{int}(\mathbf{q}) =  \nabla_{\mathbf{q}}E  = \int_{\Omega_0} \nabla_\mathbf{q}\Psi(\mathbf{F(\mathbf{Uq}, X)}) \, dV  $$
+This shows that the reduced force is the integral of the *reduced energy density gradient* over the object's volume. The projection $\mathbf{U}^T$ is implicitly included within the derivative $\nabla_\mathbf{q}$ via the chain rule.
 
 Instead of computing this integral exactly by summing contributions from all finite elements, cubature approximates it with a weighted sum over a very small number, $T$, of pre-selected sample points (or "quadrature points") $\mathbf{X}_j \in \Omega_0$:
 
-$$ \hat{\mathbf{f}}_{int}(\mathbf{q}) \approx \sum_{j=1}^{T} w_j \frac{\partial \Psi(\mathbf{F}(\mathbf{Uq}))}{\partial \mathbf{q}} \bigg|_{\mathbf{X}=\mathbf{X}_j}
+$$ \hat{\mathbf{f}}_{int}(\mathbf{q}) \approx \sum_{j=1}^{T} w_j \nabla_{\mathbf{q}}\Psi(\mathbf{F}(\mathbf{Uq}, X))  \bigg|_{\mathbf{X}=\mathbf{X}_j}
  {{numeq}}{eq:lec25:cuabture_force}$$
 
 The number of cubature points $T$ can be surprisingly small (often on the order of $r$) while still yielding a highly accurate approximation. The points $\mathbf{X}_j$ and their non-negative weights $w_j$ are optimized in a precomputation step to best match the true reduced forces over a set of representative "training" poses.
