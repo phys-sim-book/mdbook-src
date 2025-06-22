@@ -1,6 +1,6 @@
 ## Linear Modal Analysis
 
-We begin our exploration of modal reduction with the simplest case: linear elasticity. While limited to small deformations, this context provides a clear and intuitive introduction to the core concepts of subspace simulation.
+We begin our exploration of model reduction with the simplest case: linear elasticity. While limited to small deformations, this context provides a clear and intuitive introduction to the core concepts of subspace simulation.
 
 ### The Physics of Vibration Modes
 
