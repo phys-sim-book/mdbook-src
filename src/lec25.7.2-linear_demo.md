@@ -2,7 +2,7 @@
 
 We implemented the linear modal analysis procedure for a 2D cantilever beam in `src/solid-sim-tutorial/25_linear_modal_analysis/linear.py`
 
-####  Visualizing the Mode Shapes
+###  Visualizing the Mode Shapes
 
 Following the precomputation steps outlined in the methodology, we used the Finite Element Method to assemble the global mass ($\mathbf{M}$) and stiffness ($\mathbf{K}$) matrices. After applying fixed boundary conditions to one end of the beam, we solved the generalized eigenvalue problem ($\mathbf{K}\mathbf{x} = \lambda\mathbf{M}\mathbf{x}$) to find the lowest-frequency mode shapes ($\mathbf{\psi}_i$) and their corresponding frequencies ($\omega_i = \sqrt{\lambda_i}$).
 
@@ -26,7 +26,7 @@ rho = 500 # Density
 
 <br>
 
-#### Artifacts of Large Deformations
+### Artifacts of Large Deformations
 
 The primary limitation of linear modal analysis is that it produces visible artifacts when undergoing large deformations. To demonstrate this, we designed a second experiment focused exclusively on the first bending mode.
 
@@ -41,10 +41,10 @@ As the tip displacement increases, the linear model incorrectly predicts that **
 <figure>
     <center>
         <img src="img/lec25/linear_model_artifacts.gif">
-        <figcaption><b>{{fig}}{fig:lec25:linear_model_artifacts}</b> Animation Demonstrating Artifacts of the Linear Model. (Left) The beam deforms according to the first linear mode. (Middle) A plot traces the erroneous increase in centerline length as a function of tip displacement. (Right) A plot traces the erroneous decrease in total area.</figcaption>
     </center>
+    <figcaption><b>{{fig}}{fig:lec25:linear_model_artifacts}</b> Animation Demonstrating Artifacts of the Linear Model. (Left) The beam deforms according to the first linear mode. (Middle) A plot traces the erroneous increase in centerline length as a function of tip displacement. (Right) A plot traces the erroneous decrease in total area.</figcaption>
 </figure>
 
 <br>
 
-These artifacts occur because the linear model cannot account for the geometric nonlinearities that arise from large rotations. This failure is the primary motivation for the methods described in the following chapter, which are designed specifically to overcome these limitations and accurately simulate large, physically plausible motions.
+These artifacts occur because the linear model cannot account for the geometric nonlinearities that arise from large rotations. This failure is the primary motivation for the methods described in the following section, which are designed specifically to overcome these limitations and accurately simulate large, physically plausible motions.
