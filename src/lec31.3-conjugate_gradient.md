@@ -34,7 +34,7 @@ r_{i+1} &= r_i - \alpha_i A p_i
 \end{aligned}
 {{numeq}}{eq: lec31:step_size}
 $$
-where $p_0, p_1, p_2, \ldots$ are the search directions and $r_i = b - Ax_i$ is the residual at step $i$. Note that the residual can be updated without recomputing $Ax_{i+1}$ from scratch: $r_{i+1} = b - A x_{i+1} = b - A (x_i + \alpha_i p_i) = r_i - \alpha_i A p_i$.
+where $p_0, p_1, p_2, \ldots$ are the search directions and $r_i = b - Ax_i$ is the residual at step $i$. Note that the residual can be updated without recomputing $Ax_{i+1}$ from scratch: $r_{i+1} = b - A x_{i+1} = b - A (x_i + \alpha_i p_i) = r_i - \alpha_i A p_i$. In practice, when $\|r_{i+1}\|$ becomes sufficiently small (typically below a prescribed tolerance), the iteration process can be terminated early to achieve better computational efficiency.
 
 ### Conjugate Directions
 

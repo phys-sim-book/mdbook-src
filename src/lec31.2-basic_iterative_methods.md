@@ -57,3 +57,13 @@ $$
 for the Jacobi, forward Gauss-Seidel, and backward Gauss-Seidel iterations, respectively. The convergence of these methods depends on the spectral radius $\rho(G)$ (the largest absolute value of the eigenvalues of $G$). The method converges if and only if $\rho(G) < 1$.
 
 A sufficient condition for convergence of both methods is that $A$ is **strictly diagonally dominant** (i.e., $|A_{ii}| > \sum_{j \neq i} |A_{ij}|$ for all $i$). For the Gauss-Seidel method, convergence is also guaranteed if $A$ is symmetric positive definite (SPD).
+
+### Termination Criteria
+
+In practice, iterative methods are terminated when the solution is deemed sufficiently accurate rather than running indefinitely. Common termination criteria include:
+
+1. Residual-based: Stop when $\|r_k\| = \|b - Ax_k\| < \epsilon$ for a prescribed tolerance $\epsilon$.
+2. Solution change: Stop when $\|x_{k+1} - x_k\| < \epsilon$ indicating convergence.
+3. Maximum iterations: Stop after a predetermined number of iterations to prevent infinite loops.
+
+The residual-based criterion is most commonly used as it directly measures how well the current solution satisfies the original linear system.
