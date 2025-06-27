@@ -7,6 +7,7 @@ For large or highly sparse linear systems, direct solvers may become impractical
 The Jacobi method is a simple, parallelizable approach for solving $A x = b$. At each iteration, every component of $x$ is updated independently using only the values from the previous iteration. Let $A = D + (L + U)$, where $D$ is the diagonal part of $A$, $L$ is the strictly lower triangular part, and $U$ is the strictly upper triangular part. The update rule is:
 $$
 x_{k+1} = D^{-1} (b - (L + U)x_k),
+{{numeq}}{eq: lec31:jacobi}
 $$
 or, component-wise:
 $$
@@ -20,6 +21,7 @@ $$
 The Gauss-Seidel method improves upon Jacobi by using the most recently updated values as soon as they are available. This means each new $x_i^{(k+1)}$ is immediately used in subsequent updates within the same iteration. The update rule is:
 $$
 x_{k+1} = (D + L)^{-1} (b - U x_k),
+{{numeq}}{eq: lec31:forward_gs}
 $$
 or, component-wise:
 $$
@@ -28,6 +30,7 @@ $$
 A **backward Gauss-Seidel** iteration can also be defined, where the updates sweep from $i = n$ down to $1$ in each iteration:
 $$
 x_{k+1} = (D + U)^{-1} (b - L x_k),
+{{numeq}}{eq: lec31:backward_gs}
 $$
 or, component-wise:
 $$
@@ -41,6 +44,7 @@ $$
 All three methods—Jacobi, forward Gauss-Seidel, and backward Gauss-Seidel can be written in the form:
 $$
 x_{k+1} = G x_k + c,
+{{numeq}}{eq: lec31:convergence_form}
 $$
 where $G$ is the iteration matrix. Specifically,
 $$

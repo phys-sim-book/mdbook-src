@@ -1,6 +1,6 @@
 # Linear System
 
-**Author of this section: [Tianyi Xie](https://xpandora.github.io/), University of California, Los Angeles**
+**Author of this section: [Tianyi Xie](https://xpandora.github.io/), University of California, Los Angeles*
 
 In the context of simulation with optimization, solving linear systems is a fundamental step for methods in the Newton family. At each iteration (see {{ref: alg:lec3:PN_method_IE}}), we need to compute a search direction $p$ as:
 

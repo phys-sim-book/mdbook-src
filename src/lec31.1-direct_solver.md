@@ -13,16 +13,19 @@ $$
   a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}
+{{numeq}}{eq: lec31:tri_system}
 $$
 The $i$-th variable is solved as:
 $$
 x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}^{i-1} a_{ij} x_j \right), \quad i = 1, \ldots, n.
+{{numeq}}{eq: lec31:forward_substitution}
 $$
 This process proceeds from $i=1$ to $n$, using previously computed $x_j$ for $j<i$.
 
 If $A$ is upper triangular, the system is solved by backward substitution:
 $$
 x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{j=i+1}^{n} a_{ij} x_j \right), \quad i = n, n-1, \ldots, 1.
+{{numeq}}{eq: lec31:backward_substitution}
 $$
 This process proceeds from $i=n$ down to $1$, using already computed $x_j$ for $j>i$.
 
