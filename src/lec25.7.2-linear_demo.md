@@ -1,6 +1,6 @@
-## Linear Modal Analysis Demo
+## Linear Modal Analysis Demo*
 
-We implemented the linear modal analysis procedure for a 2D cantilever beam in `src/solid-sim-tutorial/25_linear_modal_analysis/linear.py`
+We implemented the linear modal analysis procedure for a 2D cantilever beam in [solid-sim-tutorial/9_reduced_DOF/linear.py](https://github.com/phys-sim-book/solid-sim-tutorial/blob/main/9_reduced_DOF/linear.py).
 
 ###  Visualizing the Mode Shapes
 
