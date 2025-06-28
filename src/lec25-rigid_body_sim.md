@@ -1,4 +1,4 @@
-# Spatial Reduction*
+# Rigid Body Simulation*
 
 **Author of this lecture: [Wenxin Du](https://dwxrycb123.github.io/), University of California, Los Angeles & Shanghai Jiaotong University*
 

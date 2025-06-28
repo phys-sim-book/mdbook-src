@@ -1,4 +1,4 @@
-# Model reductions
+# Model Reductions*
 
 *Author of this lecture: [Žiga Kovačič](https://zzigak.github.io/), Cornell University*. The techniques presented in this lecture are mostly based on {{#cite sifakis2012finite}}.
 
