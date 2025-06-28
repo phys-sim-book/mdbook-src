@@ -4,9 +4,9 @@ For large or highly sparse linear systems, direct solvers may become impractical
 
 ### Jacobi Method
 
-The Jacobi method is a simple, parallelizable approach for solving $A x = b$. At each iteration, every component of $x$ is updated independently using only the values from the previous iteration. Let $A = D + (L + U)$, where $D$ is the diagonal part of $A$, $L$ is the strictly lower triangular part, and $U$ is the strictly upper triangular part. The update rule is:
+The Jacobi method is a simple, perfectly parallelizable approach for solving $A x = b$. At each iteration, every component of $x$ is updated independently using only the values from the previous iteration. Let $A = D + (L + U)$, where $D$ is the diagonal part of $A$, $L$ is the strictly lower triangular part, and $U$ is the strictly upper triangular part. The update rule is:
 $$
-x_{k+1} = D^{-1} (b - (L + U)x_k),
+x^{(k+1)} = D^{-1} (b - (L + U)x^{(k)}),
 {{numeq}}{eq: lec31:jacobi}
 $$
 or, component-wise:
@@ -20,7 +20,7 @@ $$
 
 The Gauss-Seidel method improves upon Jacobi by using the most recently updated values as soon as they are available. This means each new $x_i^{(k+1)}$ is immediately used in subsequent updates within the same iteration. The update rule is:
 $$
-x_{k+1} = (D + L)^{-1} (b - U x_k),
+x^{(k+1)} = (D + L)^{-1} (b - U x^{(k)}),
 {{numeq}}{eq: lec31:forward_gs}
 $$
 or, component-wise:
@@ -29,7 +29,7 @@ x_i^{(k+1)} = \frac{1}{A_{ii}} \left( b_i - \sum_{j=1}^{i-1} A_{ij} x_j^{(k+1)} 
 $$
 A **backward Gauss-Seidel** iteration can also be defined, where the updates sweep from $i = n$ down to $1$ in each iteration:
 $$
-x_{k+1} = (D + U)^{-1} (b - L x_k),
+x^{(k+1)} = (D + U)^{-1} (b - L x^{(k)}),
 {{numeq}}{eq: lec31:backward_gs}
 $$
 or, component-wise:
@@ -43,7 +43,7 @@ $$
 
 All three methods—Jacobi, forward Gauss-Seidel, and backward Gauss-Seidel can be written in the form:
 $$
-x_{k+1} = G x_k + c,
+x^{(k+1)} = G x^{(k)} + c,
 {{numeq}}{eq: lec31:convergence_form}
 $$
 where $G$ is the iteration matrix. Specifically,
@@ -62,8 +62,8 @@ A sufficient condition for convergence of both methods is that $A$ is **strictly
 
 In practice, iterative methods are terminated when the solution is deemed sufficiently accurate rather than running indefinitely. Common termination criteria include:
 
-1. Residual-based: Stop when $\|r_k\| = \|b - Ax_k\| < \epsilon$ for a prescribed tolerance $\epsilon$.
-2. Solution change: Stop when $\|x_{k+1} - x_k\| < \epsilon$ indicating convergence.
-3. Maximum iterations: Stop after a predetermined number of iterations to prevent infinite loops.
+1. **Residual-based:** Stop when $\|r^{(k)}\| = \|b - Ax^{(k)}\| < \epsilon$ or $\|r^{(k)}\| / \|b\| < \epsilon$ for a prescribed tolerance $\epsilon$.
+2. **Solution change:** Stop when $\|x^{(k+1)} - x^{(k)}\| < \epsilon$ or $\|x^{(k+1)} - x^{(k)}\| / \|x^{(k)}\| < \epsilon$ indicating convergence.
+3. **Maximum iterations:** Stop after a predetermined number of iterations to prevent infinite loops.
 
-The residual-based criterion is most commonly used as it directly measures how well the current solution satisfies the original linear system.
+The relative residual-based criterion $\|r^{(k)}\| / \|b\| < \epsilon$ is most commonly used as it directly measures how well the current solution satisfies the original linear system, considering the scale of the problem.

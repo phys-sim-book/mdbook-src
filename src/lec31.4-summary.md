@@ -2,7 +2,7 @@
 
 In this section, we explored fundamental approaches for solving large, sparse linear systems of the form $Ax = b$ that arise in optimization-based simulation, particularly when computing search directions in Newton-type methods.
 
-We established the context: at each iteration of projected Newton methods, we solve $Pp = -\nabla E(x)$ where $P$ is typically a symmetric positive definite (SPD) Hessian matrix. This reduces to solving linear systems crucial for optimization time integrators.
+We established the context: at each iteration of projected Newton methods, we solve $Pp = -\nabla E(x)$ where $P$ is typically a symmetric positive definite (SPD) proxy matrix. This reduces to solving linear systems crucial for optimization time integrators.
 
 Direct solvers provide exact solutions through matrix factorization. For SPD systems, Cholesky decomposition $A = LL^T$ reduces the problem to two triangular solves. While robust and accurate, direct methods become impractical for very large systems due to computational constraints.
 

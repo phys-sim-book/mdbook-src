@@ -4,7 +4,7 @@ Direct solvers are a class of algorithms designed to compute the exact solution 
 
 ### Forward and Backward Substitution for Triangular Matrices
 
-Solving $A x = b$ is particularly straightforward when $A$ is triangular. If $A$ is lower triangular, the system can be solved by forward substitution:
+Solving $A x = b$ is particularly straightforward when $A$ is triangular. If $A$ is lower triangular, i.e.
 $$
 \begin{bmatrix}
   a_{11} & 0      & \cdots & 0 \\
@@ -12,10 +12,10 @@ $$
   \vdots & \vdots & \ddots & 0 \\
   a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{bmatrix}
-\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}.
 {{numeq}}{eq: lec31:tri_system}
 $$
-The $i$-th variable is solved as:
+the system can be solved by forward substitution. The $i$-th variable is solved as:
 $$
 x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}^{i-1} a_{ij} x_j \right), \quad i = 1, \ldots, n.
 {{numeq}}{eq: lec31:forward_substitution}
@@ -42,16 +42,7 @@ For general SPD matrices, we can reduce the problem to triangular systems using 
 
 Once the decomposition is computed, solving $A x = b$ reduces to two triangular systems:
 
-1. Forward substitution: Solve $L y = b$ for $y$.
-2. Backward substitution: Solve $L^T x = y$ for $x$.
+1. **Forward substitution:** Solve $L y = b$ for $y$.
+2. **Backward substitution:** Solve $L^T x = y$ for $x$.
 
-For a lower triangular matrix $L \in \mathbb{R}^{n \times n}$, the forward substitution proceeds as:
-$$
-y_i = \frac{1}{L_{ii}} \left( b_i - \sum_{j=1}^{i-1} L_{ij} y_j \right), \quad i = 1, \ldots, n.
-$$
-For the upper triangular system $L^T x = y$, the process is similar but proceeds from $i = n$ down to $1$ (backward substitution):
-$$
-x_i = \frac{1}{L_{ii}} \left( y_i - \sum_{j=i+1}^{n} L_{ji} x_j \right), \quad i = n, \ldots, 1.
-$$
-
-Cholesky decomposition takes advantage of the symmetry and positive definiteness of $A$, reducing both computational cost and memory usage compared to general-purpose methods. Direct solvers are widely used when the system size is not too large, or when high accuracy is required. For very large or highly sparse systems, iterative solvers may be preferred, as discussed in the next section.
+Cholesky decomposition takes advantage of the symmetry and positive definiteness of $A$, reducing both computational cost and memory usage compared to general-purpose methods like LU decomposition. Direct solvers are widely used when the system size is not too large, or when high accuracy is required for ill-conditioned systems. For very large or highly sparse systems, iterative solvers may be preferred, as discussed in the next section.
