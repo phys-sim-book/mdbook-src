@@ -145,6 +145,12 @@
   - [Affine Body Dynamics](./lec25.3-affine_body_dynamics.md)
   - [Case Study: Dropping Block*](./lec25.4-dropping_block.md) 
   - [Summary](./lec25.5-summary.md) 
+- [Modal Reductions*](./lec25.6-modal_reductions.md)
+  - [Linear Modal Analysis](./lec25.7-linear_modal_analysis.md)
+  - [Linear Demo*](./lec25.7.2-linear_demo.md)
+  - [Non-linear Reductions](./lec25.8-nonlinear_reductions.md)
+  - [Reduction Basis](./lec25.9-basis_choice.md)
+  - [Summary](./lec25.10-summary.md)
 
 # Material Point Method
 
