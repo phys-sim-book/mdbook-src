@@ -175,3 +175,10 @@
   - [SDF-based Sphere Collider](./lec30.2-sphere_sdf.md)
   - [Affine Particle-In-Cell Transfer](./lec30.3-apic_transfer.md)
   - [Summary](./lec30.4-summary.md)
+
+# Special Topics
+- [Linear System](./lec31-linear_sys.md)
+    - [Direct Solver](./lec31.1-direct_solver.md)
+    - [Basic Iterative Methods](./lec31.2-basic_iterative_methods.md)
+    - [Conjugate Gradient](./lec31.3-conjugate_gradient.md)
+    - [Summary](./lec31.4-summary.md)
