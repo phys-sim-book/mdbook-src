@@ -36,7 +36,7 @@ For general SPD matrices, we can reduce the problem to triangular systems using 
 > **{{met}}[Cholesky Decomposition]** Given a symmetric positive definite matrix $A$, the Cholesky decomposition computes a lower triangular matrix $L$ such that $A = LL^T$. The algorithm is as follows: <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec31:choleskly}[The Cholesky Decomposition Algorithm]</figcaption></b>
-    <img src="img/lec31/alg_cholesky.png" width="650">
+    <img src="img/lec33/alg_cholesky.png" width="650">
     </center>
 </figure>
 
