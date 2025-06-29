@@ -75,3 +75,14 @@ $$
  \end{align*}
  $$
 >  The term $(|\bm{p}_1 - \bm{p}_2| - d)$ represents the total correction magnitude needed along the vector connecting the particles. This total correction is then distributed between the two particles based on their inverse mass ratio, $w_i / (w_1 + w_2)$. The correction is applied along the unit vector $(\bm{p}_1 - \bm{p}_2)/|\bm{p}_1 - \bm{p}_2|$, moving the particles towards each other if they are too far apart ($C > 0$) and away from each other if they are too close ($C < 0$). This formulation directly satisfies the conservation of linear momentum!
+
+
+
+
+
+
+
+### Hierarchical Solver 
+
+The standard Gauss-Seidel solver in PBD exhibits slow convergence for low-frequency, large-scale deformations because corrections propagate only locally. To accelerate this, Hierarchical Position Based Dynamics (HPBD) introduces a multi-resolution approach. The system is represented as a hierarchy of meshes, from coarse to fine.
+The solver operates first on the coarsest levels, allowing corrections for large-scale errors to propagate rapidly across the entire object. These corrections are then transferred and refined on successively finer levels in a single coarse-to-fine pass via interpolation (prolongation). This multigrid-inspired technique significantly improves convergence speed. For this to work correctly, constraints on the coarse levels must be unilateral (inequality constraints), resisting only stretching, to avoid artificially restricting large-scale bending and folding of the object.
