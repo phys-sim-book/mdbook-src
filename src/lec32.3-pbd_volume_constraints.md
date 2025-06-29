@@ -38,30 +38,3 @@ $$
 C(\bm{p}_1, ..., \bm{p}_N) = \left( \sum_{i} \frac{1}{6} (\bm{p}_{t_1^i} \times \bm{p}_{t_2^i}) \cdot \bm{p}_{t_3^i} \right) - k_{\text{pressure}} V_0
 $$
 The gradient of this constraint with respect to a vertex position $\bm{p}_j$ is the sum of the gradients from all triangles adjacent to that vertex. This results in a correction that redistributes the volume error across the entire surface.
-<!-- 
-### Density Constraints for Fluids
-
-The concept of volume conservation can be extended to the particle level to simulate incompressible fluids. In the Position-Based Fluids (PBF) method of Macklin and Müller [MM13], the fluid is represented by a set of particles, and incompressibility is enforced by constraining the local density around each particle.
-
-The density $\rho_i$ at a particle $i$ is estimated using a kernel-based summation over its neighbors, a technique borrowed from Smoothed Particle Hydrodynamics (SPH):
-{{numeq}}{eq:volume:sph_density}
-$$
-\rho_i = \sum_{j} m_j W(\bm{p}_i - \bm{p}_j, h)
-$$
-where $m_j$ is the mass of a neighboring particle $j$, $W$ is a smoothing kernel (e.g., the poly6 kernel), and $h$ is the smoothing radius.
-
-The per-particle density constraint aims to keep this estimated density equal to a specified rest density $\rho_0$:
-{{numeq}}{eq:volume:density_constraint}
-$$
-C_i(\bm{p}_1, ..., \bm{p}_N) = \frac{\rho_i}{\rho_0} - 1 = 0
-$$
-The gradient of this constraint with respect to a particle's position $\bm{p}_k$ is:
-{{numeq}}{eq:volume:density_gradient}
-$$
-\nabla_{\bm{p}_k} C_i = \frac{1}{\rho_0} \sum_j m_j \nabla_{\bm{p}_k} W(\bm{p}_i - \bm{p}_j, h) =
-\begin{cases}
-\frac{1}{\rho_0} \sum_j m_j \nabla W(\bm{p}_i - \bm{p}_j, h) & \text{if } k=i \\
--\frac{m_k}{\rho_0} \nabla W(\bm{p}_i - \bm{p}_k, h) & \text{if } k \ne i
-\end{cases}
-$$
-During the PBD solver step, each particle calculates a position correction $\Delta \bm{p}_i$ to resolve its own density error. This is done by iteratively solving for the Lagrange multiplier $\lambda_i$ associated with $C_i$ and applying corrections. The symmetry of the kernel gradient allows for an efficient computation where the total position correction for a particle is a sum of pairwise interactions with its neighbors. This elegant method allows PBD to simulate fluid phenomena, such as splashing and wave propagation, with unconditional stability. -->
