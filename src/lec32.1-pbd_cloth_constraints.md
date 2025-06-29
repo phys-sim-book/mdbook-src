@@ -39,6 +39,9 @@ While stretching constraints maintain the structural integrity of the cloth mesh
 
 The constraint is defined for a pair of triangles $(\bm{p}_1, \bm{p}_3, \bm{p}_2)$ and $(\bm{p}_1, \bm{p}_2, \bm{p}_4)$ sharing a common edge $(\bm{p}_1, \bm{p}_2)$. The bending resistance is a function of the **dihedral angle** $\phi$ between the two triangles, which is the initial angle between their respective normal vectors $\bm{n}_1$ and $\bm{n}_2$. The constraint aims to restore this angle to its rest value, $\phi_0$.
 
+<figure><img src="img/lec32/bending.png"><figcaption><b>[Bending Constraints]</b> The provided illustration shows the dihedral angle for a pair of triangles in $\mathbb{R}^3$.</figcaption></figure>
+
+
 The constraint function is formulated as:
 $$
 {{numeq}}{eq:cloth:bend_constraint}
