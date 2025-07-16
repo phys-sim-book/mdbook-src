@@ -113,7 +113,7 @@ Here, $\bm{q}$ is the unit quaternion representing the body’s rotation. Its up
 $$
 \begin{equation}
 \begin{aligned}
-    \bm{\tilde{q}} - \bm{q} &= e^{\frac{\Delta t}{2}\bm{\omega}}  - \bm{q}  \nonumber\\ 
+    \bm{\tilde{q}} - \bm{q} &= e^{\frac{\Delta t}{2}\bm{\omega}}\bm{q}  - \bm{q}  \nonumber\\ 
     &= (\cos\frac{\Vert\bm{\omega}\Vert\Delta t}{2} - 1 + \frac{\bm{\omega}}{\Vert\bm{\omega}\Vert}\sin\frac{\Vert\bm{\omega}\Vert\Delta t}{2})\bm{q} \\ 
     &= (\Theta(\Delta t^2) + \frac{\Delta t}{2}\bm{\omega})\bm{q},
 \end{aligned}
