@@ -42,7 +42,7 @@ $$
 Here, a different kernel, the Spiky kernel, is typically used for its non-vanishing gradient, which prevents particle clustering.
 
 > **{{rem}}{rem:pbf:regularization}[Robustness and Constraint Softening]**
-> A practical issue arises when a particle has few neighbors, as the denominator $\sum_k \|\nabla_{\bm{p}_k} C_i\|^2$ can approach zero, leading to large, unstable position corrections. To prevent this, a small relaxation parameter $\varepsilon$ is added to the denominator, softening the constraint. This is known as Constraint Force Mixing (CFM). Then:
+> A practical issue arises when a particle has few neighbors, as the denominator $\sum_k \|\nabla_{\bm{p}_k} C_i\|^2$ can approach zero, leading to large, unstable position corrections. To prevent this, a small relaxation parameter $\varepsilon$ is added to the denominator, softening the constraint. This is known as Constraint Force Mixing (CFM) {{#cite smith2005open}}. Then:
 $$
 {{numeq}}{eq:pbf:lambda_cfm}
 \lambda_i = - \frac{C_i(\bm{p}_1, ..., \bm{p}_N)}{\sum_k \|\nabla_{\bm{p}_k} C_i\|^2 + \varepsilon}
