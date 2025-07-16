@@ -1,4 +1,4 @@
-# Volume Conservation Constraints
+## Volume Conservation Constraints
 
 The simulation of incompressible or nearly incompressible materials is critical for many applications in computer graphics. In a force-based framework, incompressibility typically requires solving a complex Poisson equation for pressure. PBD offers a more direct and often simpler approach by enforcing volume or density conservation through geometric constraints. This section will explore several such constraints, beginning with those defined on discrete mesh elements like tetrahedra and extending to global volume constraints for closed surfaces.
 
@@ -25,7 +25,7 @@ $$
 
 ### Global Volume for Closed Meshes
 
-For hollow objects represented by a closed, watertight triangle mesh (such as an inflatable character), it is often desirable to control the total enclosed volume. This can be achieved with a single global constraint that acts on all vertices of the mesh. The total volume $V$ of a closed mesh can be calculated using the Divergence Theorem, which discretizes to a sum over all triangles. The volume contributed by each triangle $i$ with vertices $(\bm{p}_{t_1}^i, \bm{p}_{t_2}^i, \bm{p}_{t_3}^i)$ is the signed volume of the tetrahedron formed by the triangle and the origin:
+For objects represented by a closed, watertight triangle mesh (such as an inflatable character), it is often desirable to control the total enclosed volume. This can be achieved with a single global constraint that acts on all vertices of the mesh. The total volume $V$ of a closed mesh can be calculated using the Divergence Theorem, which discretizes to a sum over all triangles. The volume contributed by each triangle $i$ with vertices $(\bm{p}_{t_1}^i, \bm{p}_{t_2}^i, \bm{p}_{t_3}^i)$ is the signed volume of the tetrahedron formed by the triangle and the origin:
 
 $$
 V = \sum_{i}^{\text{N\_triangles}} \frac{1}{6} \left( \bm{p}_{t_1}^i \times \bm{p}_{t_2}^i \right) \cdot \bm{p}_{t_3}^i

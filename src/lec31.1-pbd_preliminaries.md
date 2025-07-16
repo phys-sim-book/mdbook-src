@@ -1,6 +1,6 @@
-# Preliminaries
+## Preliminaries
 
-To fully appreciate the PBD approach, it is essential to first understand the classical formulation of Lagrangian dynamics it seeks to replace. The state of a dynamic system composed of $N$ particles is described by their individual mass $m_i$, position $\bm{p}_i \in \mathbb{R}^3$, and velocity $\bm{v}_i \in \mathbb{R}^3$. The evolution of this system is governed by a pair of first-order ordinary differential equations derived from Newton's second law:
+To fully appreciate the PBD approach, it is essential to first understand the classical formulation of Lagrangian dynamics it gets inspired. The state of a dynamic system composed of $N$ particles is described by their individual mass $m_i$, position $\bm{p}_i \in \mathbb{R}^3$, and velocity $\bm{v}_i \in \mathbb{R}^3$. The evolution of this system is governed by a pair of first-order ordinary differential equations derived from Newton's second law:
 $$
 \dot{\bm{v}}_i = \frac{1}{m_i} \bm{f}_i
 {{numeq}}{eq:lagrangian:particle_motion}

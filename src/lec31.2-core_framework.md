@@ -1,4 +1,4 @@
-# Core Framework
+## Core Framework
 
 The PBD framework simulates a physical object by discretizing it into a set of $N$ particles and defining its behavior through $M$  geometric constraints (relationships).  The central idea is to treat the system as a set of particles and constraints. At each time step, particle positions are first predicted using an explicit integration scheme, after which an iterative solver adjusts these predicted positions to satisfy all geometric constraints. We can formally define such a system as follows:
 
@@ -13,8 +13,8 @@ The PBD framework simulates a physical object by discretizing it into a set of $
 The simulation proceeds in discrete time steps of size $\Delta t$. The central loop of the PBD algorithm can be described as follows. 
 
 
-<figure><img src="img/lec31/pbd_alg.png"><figcaption><b>{{fig}}{fig:lec11:pbd_algo}[PBD Main Algorithm]</b>The core of the loop is a multi-phase process: velocity and position prediction, constraint construction, constraint solving, and state update. </figcaption></figure>
+<figure><img src="img/lec31/pbd_alg.png"><figcaption><b>{{fig}}{fig:lec11:pbd_algo}[PBD Main Algorithm]</b> The core of the loop is a multi-phase process: velocity and position prediction, constraint construction, constraint solving, and state update. </figcaption></figure>
 
 
-Note that since the algorithm simulates a system which is 2nd order in $t$, we need to specify both positions and velocities before the simulation loop starts. This loop structure ensures that velocities are implicitly updated based on the geometric corrections performed by the solver, producing the correct behavior for a second-order dynamical system. 
+Note that since the algorithm simulates a system which is 2nd order in $t$, we need to specify both positions and velocities before the simulation loop starts. This loop structure ensures that velocities are implicitly updated based on the geometric corrections performed by the solver, producing the correct behavior for a 2nd-order dynamical system. 
 

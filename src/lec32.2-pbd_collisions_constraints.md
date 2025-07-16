@@ -1,6 +1,6 @@
-# Collision Constraints
+## Collision Constraints
 
-in any physical simulation, preventing the interpenetration of objects is paramount for achieving plausible results. Position-Based Dynamics provides a particularly elegant and unified approach to this challenge. Collisions are not treated as a separate post-processing step involving impulses or penalty forces; instead, they are formulated as unilateral inequality constraints that are integrated directly into the core PBD solver loop. 
+In any physical simulation, preventing the interpenetration of objects is paramount for achieving plausible results. Position-Based Dynamics provides a unified approach to this challenge. Collisions are not treated as a separate post-processing step involving impulses or penalty forces; instead, they are formulated as unilateral inequality constraints, just like [IPC](./lec7-dist_barrier.md) {{#cite li2020incremental}} and integrated directly into the core PBD solver loop. 
 
 ### Triangle Self-Collisions
 
@@ -12,7 +12,7 @@ $$
 
 C(\bm{q}, \bm{p}_1, \bm{p}_2, \bm{p}_3) = (\bm{q} - \bm{p}_1) \cdot \bm{n} - h \ge 0
 $$
-where $\bm{n} = (\bm{p}_{2,1} \times \bm{p}_{3,1}) / |\bm{p}_{2,1} \times \bm{p}_{3,1}|$ is the unit normal of the triangle. In case of $C<0$, all four particles ($\bm{q}, \bm{p}_1, \bm{p}_2, \bm{p}_3$) are involved, and their positions are corrected according to their respective inverse masses to resolve the penetration while conserving momentum. It is also essential to check the barycentric coordinates of the vertex's projection onto the triangle plane to ensure the contact point lies within the triangle's boundaries before applying the correction.
+where $\bm{n} = (\bm{p}_{2,1} \times \bm{p}_{3,1}) / \|\bm{p}_{2,1} \times \bm{p}_{3,1}\|$ is the unit normal of the triangle. In case of $C<0$, all four particles ($\bm{q}, \bm{p}_1, \bm{p}_2, \bm{p}_3$) are involved, and their positions are corrected according to their respective inverse masses to resolve the penetration while conserving momentum. It is also essential to check the barycentric coordinates of the vertex's projection onto the triangle plane to ensure the contact point lies within the triangle's boundaries before applying the correction.
 
 ### Particle-Environment Collisions
 
@@ -24,7 +24,7 @@ $$
 
 C(\bm{p}) = \bm{n}^T \bm{p} - d_{\text{rest}} \geq 0
 $$
-When a particle violates this constraint (i.e., $C(\bm{p}) < 0$), the PBD solver projects its position back to the surface. Since only one particle is dynamic, its inverse mass is effectively infinite compared to the static geometry, so it receives the full position correction required to satisfy $C(\bm{p})=0$. The correction simply moves the particle along the plane normal $\bm{n}$ to resolve the penetration. You can imagine how this can be simply extend to more complex shapes.
+When a particle violates this constraint (i.e., $C(\bm{p}) < 0$), the PBD solver projects its position back to the surface. Since only one particle is dynamic, its inverse mass is effectively infinite compared to the static geometry, so it receives the full position correction required to satisfy $C(\bm{p})=0$. The correction simply moves the particle along the plane normal $\bm{n}$ to resolve the penetration. You can imagine how this can be simply extended to more complex shapes.
 
 ### Particle-Particle Collisions
 
@@ -34,9 +34,9 @@ For two particles at positions $\bm{p}_i$ and $\bm{p}_j$ with corresponding radi
 $$
 {{numeq}}{eq:collision:particle_particle_constraint}
 
-C(\bm{p}_i, \bm{p}_j) = |\bm{p}_i - \bm{p}_j| - (r_i + r_j) \ge 0
+C(\bm{p}_i, \bm{p}_j) = \|\bm{p}_i - \bm{p}_j\| - (r_i + r_j) \ge 0
 $$
-Unlike the linear plane constraint, this function is non-linear. This can be solved similar to the stretching constraints considered in the previous section. The solver calculates a correction that pushes the two particles apart along the vector connecting their centers, distributing the correction based on their inverse masses to conserve linear momentum.
+Unlike the linear plane constraint, this function is non-linear. This can be solved similarly to the stretching constraints considered in the previous section. The solver calculates a correction that pushes the two particles apart along the vector connecting their centers, distributing the correction based on their inverse masses to conserve linear momentum.
 
 ### Frictional Effects at the Position Level
 
@@ -53,7 +53,7 @@ $$
 {{numeq}}{eq:collision:tangential_displacement_corrected}
 \Delta\bm{p}_t = \Delta\bm{p}_{\text{rel}} - (\Delta\bm{p}_{\text{rel}} \cdot \bm{n})\bm{n}
 $$
-The friction model determines the magnitude of the correction based on a comparison between the tangential displacement $|\Delta\bm{p}_t|$ and the static friction threshold, which is proportional to the penetration depth $d$ and the coefficient of static friction $\mu_s$.
+The friction model determines the magnitude of the correction based on a comparison between the tangential displacement $\|\Delta\bm{p}_t\|$ and the static friction threshold, which is proportional to the penetration depth $d$ and the coefficient of static friction $\mu_s$.
 
 A position correction vector, $\Delta\bm{p}_{\text{friction}}$, is calculated to oppose $\Delta\bm{p}_t$. This correction is then distributed between the two particles. The correction for particle $i$ is given by:
 $$
@@ -61,8 +61,8 @@ $$
 
 \Delta \bm{p}_i = -\frac{w_i}{w_i+w_j} \times
 \begin{cases}
-\Delta\bm{p}_t & \text{if } |\Delta\bm{p}_t| \le \mu_s d & \text{(Static Friction)} \\
-\Delta\bm{p}_t \min\left(\frac{\mu_k d}{|\Delta\bm{p}_t|}, 1\right) & \text{otherwise} & \text{(Kinetic Friction)}
+\Delta\bm{p}_t & \text{if } \|\Delta\bm{p}_t\| \le \mu_s d & \text{(Static Friction)} \\
+\Delta\bm{p}_t \min\left(\frac{\mu_k d}{\|\Delta\bm{p}_t\|}, 1\right) & \text{otherwise} & \text{(Kinetic Friction)}
 \end{cases}
 $$
 where $w_i = 1/m_i$ is the inverse mass and $\mu_k$ is the coefficient of kinetic friction. The negative sign is crucial, as friction must oppose the tangential displacement. In the static case, the correction fully cancels out the relative tangential movement. In the kinetic case, the correction is limited by the kinetic friction force (Coulomb's law). 

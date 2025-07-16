@@ -1,7 +1,7 @@
-# Position-Based Fluids: Density and Surface Constraints
+## Position-Based Fluids: Density and Surface Constraints
 
 
-The Position-Based Dynamics framework can be elegantly extended from solids to simulate incompressible fluids. The resulting method, known as Position-Based Fluids (PBF) [MM13], replaces the complex pressure solves of traditional Smoothed Particle Hydrodynamics (SPH) with a set of geometric constraints. This approach inherits the unconditional stability of PBD, allowing for large time steps suitable for real-time applications, while effectively enforcing the constant-density condition that characterizes incompressible flow. 
+The Position-Based Dynamics framework can be elegantly extended from solids to simulate incompressible fluids. The resulting method, known as Position-Based Fluids (PBF) {{#cite macklin2013position}}, replaces the complex pressure solves of traditional Smoothed Particle Hydrodynamics (SPH) {{#cite koschier2020smoothed}} with a set of geometric constraints. This approach inherits the stability and efficiency of PBD, allowing for large time steps suitable for real-time applications, while effectively enforcing the constant-density condition that characterizes incompressible flow. 
 
 ### The Per-Particle Density Constraint
 
@@ -25,7 +25,7 @@ C_i(\bm{p}_1, ..., \bm{p}_N) = \frac{\rho_i}{\rho_0} - 1
 $$
 The constraint is satisfied when $C_i = 0$.
 
-To solve this system of constraints, PBF computes a position correction $\Delta \bm{p}_i$ for each particle. Following the PBD methodology, we first require the gradient of the constraint function. The gradient of $C_i$ with respect to the position of a particle $k$ is:
+To solve this system of constraints, PBF computes a position correction $\Delta \bm{p}_i$ for each particle. Following the PBD methodology, we first compute the gradient of $C_i$ with respect to the position of a particle $k$:
 $$
 {{numeq}}{eq:pbf:constraint_gradient}
 \nabla_{\bm{p}_k} C_i = \frac{1}{\rho_0} \sum_{j} m_j \nabla_{\bm{p}_k} W(\bm{p}_i - \bm{p}_j, h) =
@@ -34,7 +34,7 @@ $$
 -\frac{m_k}{\rho_0} \nabla W(\bm{p}_i - \bm{p}_k, h) & \text{if } k \ne i
 \end{cases}
 $$
-The standard PBD solver computes a single Lagrange multiplier $\lambda_i$ for each constraint $C_i$ using the formula $\lambda_i = -C_i / (\sum_k |\nabla_{\bm{p}_k} C_i|^2)$. The position correction for a particle $\Delta\bm{p}_i$ is then derived from the influence of its own constraint and the constraints of its neighbors. Due to the symmetry of the kernel gradient ($\nabla_{\bm{p}_i} W(\bm{p}_i - \bm{p}_j, h) = -\nabla_{\bm{p}_j} W(\bm{p}_i - \bm{p}_j, h)$), this results in a simple and efficient final update rule for the position correction of particle $i$:
+The standard PBD solver computes a single Lagrange multiplier $\lambda_i$ for each constraint $C_i$ using the formula $\lambda_i = -C_i / (\sum_k \|\nabla_{\bm{p}_k} C_i\|^2)$. The position correction for a particle $\Delta\bm{p}_i$ is then derived from the influence of its own constraint and the constraints of its neighbors. Due to the symmetry of the kernel gradient ($\nabla_{\bm{p}_i} W(\bm{p}_i - \bm{p}_j, h) = -\nabla_{\bm{p}_j} W(\bm{p}_i - \bm{p}_j, h)$), this results in a simple and efficient final update rule for the position correction of particle $i$:
 $$
 {{numeq}}{eq:pbf:position_correction}
 \Delta \bm{p}_i = \frac{1}{\rho_0} \sum_j (\lambda_i + \lambda_j) \nabla W(\bm{p}_i - \bm{p}_j, h)
@@ -42,10 +42,10 @@ $$
 Here, a different kernel, the Spiky kernel, is typically used for its non-vanishing gradient, which prevents particle clustering.
 
 > **{{rem}}{rem:pbf:regularization}[Robustness and Constraint Softening]**
-> A practical issue arises when a particle has few neighbors, as the denominator $\sum_k |\nabla_{\bm{p}_k} C_i|^2$ can approach zero, leading to large, unstable position corrections. To prevent this, a small relaxation parameter $\varepsilon$ is added to the denominator, softening the constraint. This is known as Constraint Force Mixing (CFM). Then:
+> A practical issue arises when a particle has few neighbors, as the denominator $\sum_k \|\nabla_{\bm{p}_k} C_i\|^2$ can approach zero, leading to large, unstable position corrections. To prevent this, a small relaxation parameter $\varepsilon$ is added to the denominator, softening the constraint. This is known as Constraint Force Mixing (CFM). Then:
 $$
 {{numeq}}{eq:pbf:lambda_cfm}
-\lambda_i = - \frac{C_i(\bm{p}_1, ..., \bm{p}_N)}{\sum_k |\nabla_{\bm{p}_k} C_i|^2 + \varepsilon}
+\lambda_i = - \frac{C_i(\bm{p}_1, ..., \bm{p}_N)}{\sum_k \|\nabla_{\bm{p}_k} C_i\|^2 + \varepsilon}
 $$
 
 ### Correcting for Tensile Instability
@@ -57,7 +57,7 @@ $$
 {{numeq}}{eq:pbf:scorr}
 s_{\text{corr}} = -k \left( \frac{W(\bm{p}_i - \bm{p}_j, h)}{W(\Delta\bm{q}, h)} \right)^n
 $$
-where $k$ and $n$ are small positive constants (e.g., $k=0.1, n=4$), and $\Delta\bm{q}$ is a vector representing a small distance within the kernel radius (e.g., $|\Delta\bm{q}| = 0.3h$). This term is only applied to push particles apart and is incorporated directly into the position correction calculation from Equation {{eqref:eq:pbf:position_correction}}:
+where $k$ and $n$ are small positive constants (e.g., $k=0.1, n=4$), and $\Delta\bm{q}$ is a vector representing a small distance within the kernel radius (e.g., $\|\Delta\bm{q}\| = 0.3h$). This term is only applied to push particles apart and is incorporated directly into the position correction calculation from Equation {{eqref:eq:pbf:position_correction}}:
 $$
 {{numeq}}{eq:pbf:scorr_correction}
 \Delta \bm{p}_i = \frac{1}{\rho_0} \sum_j (\lambda_i + \lambda_j + s_{\text{corr}}) \nabla W(\bm{p}_i - \bm{p}_j, h)

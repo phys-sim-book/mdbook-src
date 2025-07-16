@@ -1,30 +1,30 @@
-# Cloth: Stretching and Bending
+## Cloth: Stretching and Bending
 
 In the context of Position-Based Dynamics (PBD), the complex mechanical behaviors of cloth, such as its resistance to stretching and bending, are modeled through a system of geometric constraints. Instead of accumulating forces, the PBD framework directly manipulates the positions of the mesh vertices to satisfy these constraints in an iterative manner. This section will detail the formulation of fundamental constraints for cloth simulation. 
 
-## Stretching Resistance via Distance Constraints
+### Stretching Resistance via Distance Constraints
 
-The primary characteristic of most textiles is their high resistance to stretching. In PBD, this property is enforced by constraining the distance between connected particles to remain close to its initial, or rest, distance. This is one of the simplest yet most crucial constraints in the PBD ecosystem (we have already seen this constraint in Example 32.4.1)
+The primary characteristic of most textiles is their high resistance to stretching. In PBD, this property is enforced by constraining the distance between connected particles to remain close to its initial, or rest, distance. This is one of the simplest yet most crucial constraints in the PBD ecosystem (we have already seen this constraint in {{ref: exp:solver:distance_constraint}})
 
 
 > **{{exp}}{exp:cloth:stretching}[Stretching Constraint]**
 > Consider two particles, $i=1, 2$, with positions $\bm{p}_1$ and $\bm{p}_2$, masses $m_1$ and $m_2$, and a rest distance $d$ between them. The stretching constraint function $C$ is defined as the difference between the current distance and the rest distance:
  $$
  {{numeq}}{eq:cloth:stretch_constraint}
- C(\bm{p}_1, \bm{p}_2) = |\bm{p}_1 - \bm{p}_2| - d
+ C(\bm{p}_1, \bm{p}_2) = \|\bm{p}_1 - \bm{p}_2\| - d
  $$
 > The goal is to find corrections $\Delta\bm{p}_1$ and $\Delta\bm{p}_2$ such that $C(\bm{p}_1+\Delta\bm{p}_1, \bm{p}_2+\Delta\bm{p}_2) = 0$. The gradients of the constraint function with respect to the particle positions are:
  $$
- \nabla_{\bm{p}_1} C = \frac{\bm{p}_1 - \bm{p}_2}{|\bm{p}_1 - \bm{p}_2|} = \bm{n} \quad \text{and} \quad \nabla_{\bm{p}_2} C = -\frac{\bm{p}_1 - \bm{p}_2}{|\bm{p}_1 - \bm{p}_2|} = -\bm{n}
+ \nabla_{\bm{p}_1} C = \frac{\bm{p}_1 - \bm{p}_2}{\|\bm{p}_1 - \bm{p}_2\|} = \bm{n} \quad \text{and} \quad \nabla_{\bm{p}_2} C = -\frac{\bm{p}_1 - \bm{p}_2}{\|\bm{p}_1 - \bm{p}_2\|} = -\bm{n}
  $$
 > where $\bm{n}$ is the unit vector along the axis connecting the two particles. Following the general PBD projection formula {{eqref:eq:pbd:final_correction}}, the scalar Lagrange multiplier $\lambda$ is computed as:
  $$
- \lambda = \frac{C(\bm{p}_1, \bm{p}_2)}{w_1|\nabla_{\bm{p}_1} C|^2 + w_2|\nabla_{\bm{p}_2} C|^2} = \frac{|\bm{p}_1 - \bm{p}_2| - d}{w_1 + w_2}
+ \lambda = \frac{C(\bm{p}_1, \bm{p}_2)}{w_1\|\nabla_{\bm{p}_1} C\|^2 + w_2\|\nabla_{\bm{p}_2} C\|^2} = \frac{\|\bm{p}_1 - \bm{p}_2\| - d}{w_1 + w_2}
  $$
 > where $w_i = 1/m_i$ is the inverse mass of particle $i$. The position corrections are then found by moving the particles along their respective gradient directions, scaled by their inverse mass and $\lambda$:
  $$
- \Delta\bm{p}_1 = - \frac{w_1}{w_1+w_2}(|\bm{p}_1 - \bm{p}_2| - d)\bm{n} \\
- \Delta\bm{p}_2 = + \frac{w_2}{w_1+w_2}(|\bm{p}_1 - \bm{p}_2| - d)\bm{n}
+ \Delta\bm{p}_1 = - \frac{w_1}{w_1+w_2}(\|\bm{p}_1 - \bm{p}_2\| - d)\bm{n} \\
+ \Delta\bm{p}_2 = + \frac{w_2}{w_1+w_2}(\|\bm{p}_1 - \bm{p}_2\| - d)\bm{n}
  $$
 > These corrections, when applied, will move the particles to exactly satisfy the rest length. Note that the total correction is distributed between the particles based on their inverse mass, ensuring that lighter particles move more than heavier ones and that linear momentum is conserved ($\sum m_i \Delta \bm{p}_i = \bm{0}$).
 
@@ -51,8 +51,8 @@ $$
 where the normals are computed as:
 $$
 \begin{align*}
-\bm{n}_1 &= (\bm{p}_{2,1} \times \bm{p}_{3,1}) / |\bm{p}_{2,1} \times \bm{p}_{3,1}|\\
-\bm{n}_2 &= (\bm{p}_{2,1} \times \bm{p}_{4,1}) / |\bm{p}_{2,1} \times \bm{p}_{4,1}|.
+\bm{n}_1 &= (\bm{p}_{2,1} \times \bm{p}_{3,1}) / \|\bm{p}_{2,1} \times \bm{p}_{3,1}\|\\
+\bm{n}_2 &= (\bm{p}_{2,1} \times \bm{p}_{4,1}) / \|\bm{p}_{2,1} \times \bm{p}_{4,1}\|.
 \end{align*}
 $$ 
 The gradients of this function with respect to the four vertex positions $(\bm{p}_1, \bm{p}_2, \bm{p}_3, \bm{p}_4)$ are then computed, and the standard PBD projection mechanism is used to derive the position corrections. The stiffness of bending is determined using $k_{bend}$ parameter.
@@ -62,7 +62,7 @@ A significant advantage of this formulation is its independence from stretching.
 
 ### Isometric Bending
 
-For surfaces that are nearly inextensible, the isometric bending model can be used. This model provides a robust formulation based on the local Hessian of the bending energy.
+For surfaces that are nearly inextensible, the isometric bending model {{#cite bergou2006quadratic}} can be used. This model provides a robust formulation based on the local Hessian of the bending energy.
 
 This model considers a stencil for each interior edge $\bm{e}_0$ of the mesh, consisting of the four vertices of the two triangles adjacent to that edge, labeled $\bm{p}_0, \bm{p}_1, \bm{p}_2, \bm{p}_3$. The local bending energy for this stencil is defined as a quadratic form:
 $$

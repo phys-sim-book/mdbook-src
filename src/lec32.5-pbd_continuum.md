@@ -1,12 +1,12 @@
-# Continuum Mechanics-Based Constraints
+## Continuum Mechanics-Based Constraints
 
 While simple geometric constraints such as distance and volume are effective for many materials, a more physically rigorous and expressive simulation can be achieved by deriving constraints directly from the principles of continuum mechanics. This approach connects Position-Based Dynamics to the rich theoretical foundation of established methods like the Finite Element Method (FEM), allowing for the simulation of complex material behaviors including anisotropy, elastoplasticity, and nonlinear elasticity. 
 The core idea is to define constraints based on the deformation gradient, a tensor that measures the local stretching and shearing of the material. 
 
-This section will first establish the necessary concepts of discretized deformation and strain. It will then detail two primary methods for formulating continuum-based constraints: a holistic approach based on strain energy and a more granular method that constrains individual components of the strain tensor directly.
+This section will first review the necessary concepts of discretized [deformation and strain](./lec12-kinematics.md). It will then detail two primary methods for formulating continuum-based constraints: a holistic approach based on [strain energy](./lec13-strain_energy.md) and a more granular method that constrains individual components of the strain tensor directly.
 
 
-## The Strain Energy Constraint
+### The Strain Energy Constraint
 
 The most direct way to incorporate a standard hyperelastic material model into PBD is to use its strain energy potential as a constraint function. 
 
@@ -26,7 +26,7 @@ $$
 $$
 The related **right Cauchy-Green deformation tensor**, $\bm{S} = \bm{F}^T\bm{F} = 2\bm{\varepsilon} + \bm{I}$, will be particularly useful for formulating direct strain constraints. If there is no deformation, $\bm{F}=\bm{I}$, $\bm{S}=\bm{I}$, and $\bm{\varepsilon}=\bm{0}$.
 
-By Hooke’s generalized law gives we can relate stress to strain:
+By Hooke’s generalized law, we can relate stress to strain:
 
 $$\bm{S} = \bm{C}\bm{\varepsilon}$$
 where $\bm{C}$ is the elasticity tensor of the material. Recall that the energy of a deformed solid is defined by integrating the scalar strain energy density field over the whole body $\Omega$:
@@ -39,7 +39,7 @@ $$
 \Psi_s = \frac{1}{2}\varepsilon : \bm{S} = \frac{1}{2}tr(\varepsilon ^\top \bm{S})
 $$
 
->So the total strain energy for a single tetrahedral element is its rest volume $V_0$ multiplied by the energy density. For an undeformed state, this energy is zero. This naturally leads to the following constraint formulation:
+So the total strain energy for a single tetrahedral element is its rest volume $V_0$ multiplied by the energy density. For an undeformed state, this energy is zero. This naturally leads to the following constraint formulation:
 $$
 {{numeq}}{eq:continuum:energy_constraint}
 C(\bm{p}_1, ..., \bm{p}_4) = E_s = V_0 \Psi_s(\bm{F}(\bm{p}_1, ..., \bm{p}_4)) = 0
@@ -69,7 +69,7 @@ The elegance of this strain energy constraint lies in its generality. It is not 
 
 
 
-## Direct Strain-Based Constraints
+### Direct Strain-Based Constraints
 
 For applications requiring more granular or intuitive control over material properties, particularly for simulating anisotropy, it is advantageous to define separate constraints for each mode of deformation. This approach operates on the components of the right Cauchy-Green deformation tensor, $\bm{S} = \bm{F}^T\bm{F}$.
 
