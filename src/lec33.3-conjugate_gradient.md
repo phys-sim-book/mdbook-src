@@ -123,7 +123,7 @@ This remarkable simplification shows that we only need to retain the most recent
 <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec31:cg}[The Conjugate Gradient Method]</figcaption></b>
-    <img src="img/lec31/alg_cg.png" width="650">
+    <img src="img/lec33/alg_cg.png" width="650">
     </center>
 </figure>
 

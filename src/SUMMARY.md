@@ -185,9 +185,26 @@
   - [Affine Particle-In-Cell Transfer](./lec30.3-apic_transfer.md)
   - [Summary](./lec30.4-summary.md)
 
+
+# Position Based Simulations
+- [Position Based Dynamics (PBD)](./lec31-position_based_dynamics.md)
+  - [Particle Simulation Preliminaries](./lec31.1-pbd_preliminaries.md)
+  - [Core Algorithm / Position Based Framework](./lec31.2-core_framework.md)
+  - [Constraint Formulation](./lec31.3-formulation.md)
+  - [Constraint Solver](./lec31.4-solver.md)
+  - [Stiffness and Damping](./lec31.5-stiffness_damping.md)
+  - [Summary](./lec31.6-summary.md)
+- [PBD Constraint Types](./lec32-pbd_constraint_types.md)
+  - [Cloth: Stretching and Bending](./lec32.1-pbd_cloth_constraints.md) 
+  - [Collision Constraints](./lec32.2-pbd_collisions_constraints.md)
+  - [Volume Conservation Constraints](./lec32.3-pbd_volume_constraints.md)
+  - [Position Based Fluids: Density and Surface Constraints](./lec32.4-position_based_fluids.md)
+  - [Continuum-based Constraints](./lec32.5-pbd_continuum.md)
+  - [Summary](./lec32-summary.md)
+  
 # Special Topics
-- [Linear System](./lec31-linear_sys.md)
-    - [Direct Solver](./lec31.1-direct_solver.md)
-    - [Basic Iterative Methods](./lec31.2-basic_iterative_methods.md)
-    - [Conjugate Gradient](./lec31.3-conjugate_gradient.md)
-    - [Summary](./lec31.4-summary.md)
+- [Linear System](./lec33-linear_sys.md)
+    - [Direct Solver](./lec33.1-direct_solver.md)
+    - [Basic Iterative Methods](./lec33.2-basic_iterative_methods.md)
+    - [Conjugate Gradient](./lec33.3-conjugate_gradient.md)
+    - [Summary](./lec33.4-summary.md)
