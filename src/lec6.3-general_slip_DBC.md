@@ -23,7 +23,12 @@ To compute $\textbf{m}_i$ and $\mathbf{l}_i$ from $\mathbf{n}_i$, we first note 
 Therefore, we can simply first construct $\textbf{m}_i = \mathbf{n}_i \times \begin{bmatrix}1 & 0 & 0\end{bmatrix}^T$, or $\textbf{m}_i = \mathbf{n}_i \times \begin{bmatrix}0 & 1 & 0\end{bmatrix}^T$ if $\mathbf{n}_i$ is almost colinear with $\begin{bmatrix}1 & 0 & 0\end{bmatrix}^T$, and then construct $\mathbf{l}_i = \mathbf{n}_i \times \textbf{m}_i$.
 To obtain $V^T (-g)$, one only needs to left-multiply each $\mathbf{V}_i^T = \begin{bmatrix} \mathbf{n}_i^T \\ \textbf{m}_i^T \\ \mathbf{l}_i^T \end{bmatrix}$ to $-\mathbf{g}_i$. 
 As for $V^T H V$, first left-multiply each $\mathbf{V}_i^T$ to every block on the $i$-th block row of $H$ to obtain $V^T H$. Then for the $i$-th block column of $V^T H$, right-multiply $\mathbf{V}_i = \begin{bmatrix} \mathbf{n}_i & \textbf{m}_i & \mathbf{l}_i \end{bmatrix}$ to every block. 
-Finally, after solving for $y$ by applying the DOF elimination method on the modified system (Equation {{eqref: eq:lec6:BC_KKT_SVD}}), $\Delta x$ can be obtained by $\Delta x = V y$ with similar block(node)-wise operations.
+Finally, after solving for $y$ by applying the DOF elimination method on the modified system (Equation {{eqref: eq:lec6:BC_KKT_SVD}}), that is, solving
+$$
+    (I - S^T S) V^T H V y = (I - S^T S)(- V^T g),
+    {{numeq}}{eq:lec6:BC_normal_SVD_lambda_solved}
+$$
+$\Delta x$ can be obtained by $\Delta x = V y$ with similar block(node)-wise operations.
 
 > {{exp}}{exp:lec6:general_slip_DBC_example}[General Slip DBC]
 For the same two-node system in 2D as mentioned in the slip DBC example ({{ref: exp:lec5:slip}}), to constrain the first node $(x_{11}, x_{12})$ inside the $3x + 4y = 2$ line, the slip DBC can be expressed as
