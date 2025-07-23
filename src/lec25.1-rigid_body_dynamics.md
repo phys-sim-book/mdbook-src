@@ -111,18 +111,21 @@ $$
 Here, $\bm{q}$ is the unit quaternion representing the body’s rotation. Its update is based on a first-order approximation:
 
 $$
-\begin{equation}
 \begin{aligned}
-    \bm{\tilde{q}} - \bm{q} &= e^{\frac{\Delta t}{2}\bm{\omega}}\bm{q}  - \bm{q}  \nonumber\\ 
+    \bm{\widetilde{q}} - \bm{q} &= e^{\frac{\Delta t}{2}\bm{\omega}} \bm{q}  - \bm{q}  \nonumber\\ 
     &= (\cos\frac{\Vert\bm{\omega}\Vert\Delta t}{2} - 1 + \frac{\bm{\omega}}{\Vert\bm{\omega}\Vert}\sin\frac{\Vert\bm{\omega}\Vert\Delta t}{2})\bm{q} \\ 
     &= (\Theta(\Delta t^2) + \frac{\Delta t}{2}\bm{\omega})\bm{q},
 \end{aligned}
-\end{equation}
 $$
 which leads to: 
 $$
-\lim_{\Delta t \to 0} \frac{\bm{\tilde{q}} - \bm{q}}{\Delta t} = \frac{1}{2} \bm{w} \bm{q},
+\lim_{\Delta t \to 0} \frac{\bm{\widetilde{q}} - \bm{q}}{\Delta t} = \frac{1}{2} \bm{w} \bm{q},
 $$
 
-where $\bm{w} = (\bm{\omega}_x, \bm{\omega}_y, \bm{\omega}_z, 0)$; $\bm{\tilde{q}}$ is the composition of the rotation represented by the rotation vector $\Delta t\bm{\omega}$ and the rotation represented by $\bm{q}$.
+where $\bm{w} = (\bm{\omega}_x, \bm{\omega}_y, \bm{\omega}_z, 0)$; $\bm{\widetilde{q}}$ is the composition of the rotation represented by the rotation vector $\Delta t\bm{\omega}$ and the rotation represented by $\bm{q}$.
 
+> **{{rem}}{rem:lec25:quaternion}[Rotation Vector to Quaternion]**
+A rotation of angle $\theta$ around the axis defined by the unit vector $\bm{u} = (\bm{u}_x, \bm{u}_y, \bm{u}_z) = \bm{u}_x \bm{i} + \bm{u}_y \bm{j} + \bm{u}_z \bm{k}$ can be represented by the quaternion
+$$
+\bm{q} = e^{\frac{\theta}{2}(\bm{u}_x \bm{i} + \bm{u}_y \bm{j} + \bm{u}_z \bm{k})} = \cos{\frac{\theta}{2}} + (\bm{u}_x \bm{i} + \bm{u}_y \bm{j} + \bm{u}_z \bm{k}) \sin{\frac{\theta}{2}} = \cos{\frac{\theta}{2}} + \bm{u}\sin{\frac{\theta}{2}}
+$$
