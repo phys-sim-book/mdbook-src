@@ -146,7 +146,7 @@
   - [Rigid Body Dynamics](./lec25.1-rigid_body_dynamics.md)
   - [Subspace Simulation](./lec25.2-subspace_sim.md)
   - [Affine Body Dynamics](./lec25.3-affine_body_dynamics.md)
-  - [Case Study: Dropping Block*](./lec25.4-dropping_block.md) 
+  - [Case Study: ABD Square Drop*](./lec25.4-dropping_block.md) 
   - [Summary](./lec25.5-summary.md) 
 - [Modal Reductions*](./lec25.6-modal_reductions.md)
   - [Linear Modal Analysis](./lec25.7-linear_modal_analysis.md)
