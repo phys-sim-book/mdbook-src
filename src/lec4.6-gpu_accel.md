@@ -1,6 +1,6 @@
 ## GPU-Accelerated Simulation
 
-**Author of this section: [Zhaofeng Luo](https://roushelfy.github.io/), Carnegie Mellon University & Peking University*
+**Author of this section: [Zhaofeng Luo](https://roushelfy.github.io/), Carnegie Mellon University*
 
 We now rewrite the 2D mass-spring simulator to leverage GPU acceleration.
 Instead of directly writing [CUDA](https://developer.nvidia.com/cuda-toolkit), we resort to [MUDA](https://github.com/MuGdxy/muda), a lightweight library that provides a simple interface for GPU-accelerated computations.
