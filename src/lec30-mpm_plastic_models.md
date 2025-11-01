@@ -22,4 +22,4 @@ We extend the original PIC scheme by incorporating the [APIC Transfer Scheme](./
 
 Additionally, we demonstrate a **viscoplastic** material model in [2D Viscoplastic Bars](./lec30.4-2d_viscoplastic_bars.md), which extends traditional plasticity with rate-dependent behavior. This model captures materials like toothpaste or highly viscous fluids, where resistance to deformation depends on the rate of loading.
 
-The executable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `12_mpm_plastic` folder.
+The executable Python project for this section can be found at [https://github.com/phys-sim-book/solid-sim-tutorial](https://github.com/phys-sim-book/solid-sim-tutorial) under the `11_mpm_plastic` folder.
