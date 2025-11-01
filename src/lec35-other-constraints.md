@@ -1,0 +1,2 @@
+# Other Common Constraints
+As you saw in the case studies chapters above, one can come up with many diverse types of constraints that allow us to simulate vastly different types of dynamics in the same baseline solver. In this subchapter we will present a few other common constraints that you might see in PBD simulators.
