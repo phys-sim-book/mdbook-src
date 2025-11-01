@@ -1,10 +1,14 @@
 [book]
-authors = ["Minchen Li", "Chenfanfu Jiang"]
+authors = ["Žiga"]
 language = "en"
 src = "src"
 title = "Physics-Based Simulation"
+
 [output.html]
 mathjax-support = true
+additional-css = ["./theme/catppuccin.css"]
+default-theme = "light"
+preferred-dark-theme = "macchiato"
 
 [preprocessor.katex]
 after = ["links"]
