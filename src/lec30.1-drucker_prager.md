@@ -74,12 +74,12 @@ $$
 
 {{imp}}{imp:lec30:drucker_prager}[Drucker-Prager Elastoplasticity Return Mapping, simulator.py]
 ```python
-{{#include solid-sim-tutorial/12_mpm_plastic/simulator.py:drucker_prager}}
+{{#include solid-sim-tutorial/11_mpm_plastic/simulator.py:drucker_prager}}
 ```
 
 The return mapping is enforced during particle state update:
 
 {{imp}}{imp:lec30:particle_update}[Particle State Update, simulator.py]
 ```python
-{{#include solid-sim-tutorial/12_mpm_plastic/simulator.py:particle_update}}
+{{#include solid-sim-tutorial/11_mpm_plastic/simulator.py:particle_update}}
 ```
