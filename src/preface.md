@@ -8,7 +8,7 @@ If you are interested in contributing to editing and improving this book, please
 
 Depending on the nature of your contribution, you'll be listed as book co-authors or community contributors in future builds of the book.
 
-### Version 1.0.2 (Released 2025/7): 
+### Version 1.0.3 (Released 2026/3): 
 
 #### Co-authors
 
@@ -27,12 +27,12 @@ Minchen Li ([@liminchen](https://github.com/liminchen)), Chenfanfu Jiang ([@cffj
 ### BibTeX 
 
 ```
-@book{li2025physics,
+@book{li2026physics,
   title   = {Physics-Based Simulation},
   author  = {Minchen Li and Chenfanfu Jiang and Zhaofeng Luo and Wenxin Du and Chang Yu and {\v{Z}}iga Kova{\v{c}}i{\v{c}} and Tianyi Xie},
-  year    = {2025},
-  month   = jul,
-  version = {1.0.2},
+  year    = {2026},
+  month   = Mar,
+  version = {1.0.3},
   url     = {https://phys-sim-book.github.io/}
 }
 ```
