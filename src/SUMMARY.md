@@ -154,6 +154,12 @@
   - [Non-linear Reductions](./lec25.8-nonlinear_reductions.md)
   - [Reduction Basis](./lec25.9-basis_choice.md)
   - [Summary](./lec25.10-summary.md)
+<!-- - [Thin Elastic Rods](./lec36-thin_elastic_rods.md)
+  - [The Continuous Cosserat Rod Model](./lec36.1-continuous_cosserat_rod.md)
+  - [Discretization](./lec36.2-discretization.md)
+  - [Time Integration (with XPBD)](./lec36.3-time_integration.md)
+  - [Stable Cosserat Rods](./lec36.4-stable-cosserat-rod.md)
+  - [Summary](./lec36.4-summary.md) -->
 
 # Material Point Method
 
@@ -212,14 +218,6 @@
   - [Collision Constraints](./lec35.1-pbd_collisions_constraints.md)
   - [Continuum-based Constraints](./lec35.2-pbd_continuum.md)
   - [Summary](./lec35.3-summary.md)
-
-# Reduced Dimension (Rods & Shells)
-- [Thin Elastic Rods](./lec36-thin_elastic_rods.md)
-  - [The Continuous Cosserat Rod Model](./lec36.1-continuous_cosserat_rod.md)
-  - [Discretization](./lec36.2-discretization.md)
-  - [Time Integration (with XPBD)](./lec36.3-time_integration.md)
-  - [Stable Cosserat Rods](./lec36.4-stable-cosserat-rod.md)
-  - [Summary](./lec36.4-summary.md)
   
 # Special Topics
 - [Linear System](./lec37-linear_sys.md)

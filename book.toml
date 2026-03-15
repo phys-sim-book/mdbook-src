@@ -1,5 +1,5 @@
 [book]
-authors = ["Žiga"]
+authors = ["Minchen Li", "Chenfanfu Jiang", "Zhaofeng Luo", "Wenxin Du", "Chang Yu", "Žiga Kovačič", "Tianyi Xie"]
 language = "en"
 src = "src"
 title = "Physics-Based Simulation"
