@@ -1,4 +1,4 @@
-# Case Study: Position-Based Fluids Simulation
+# Case Study: Position-Based Fluids Simulation*
 
 The Position-Based Dynamics framework can be elegantly extended from solids to simulate incompressible fluids. The resulting method, known as Position-Based Fluids (PBF) {{#cite macklin2013position}}, replaces the complex pressure solves of traditional Smoothed Particle Hydrodynamics (SPH) {{#cite koschier2020smoothed}} with a set of geometric constraints. This approach inherits the stability and efficiency of PBD, allowing for large time steps suitable for real-time applications, while effectively enforcing the constant-density condition that characterizes incompressible flow.
 

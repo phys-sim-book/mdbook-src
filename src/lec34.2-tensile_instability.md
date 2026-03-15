@@ -1,4 +1,4 @@
-# Tensile Instability Correction
+## Tensile Instability Correction
 
 A well-known artifact in SPH-based fluid simulations is the "tensile instability," where particles near a free surface clump together due to an inability to satisfy the rest density. PBF offers a direct solution by incorporating an artificial pressure term.
 
@@ -14,7 +14,7 @@ $$
 $$
 This prevents clumping, and implicitly creates a surface tension-like effect at the fluid's boundary.
 
-## Implementation: Tensile Instability Correction
+### Implementation: Tensile Instability Correction
 
 The tensile instability correction is implemented as an additional artificial pressure term that creates repulsive forces between nearby particles:
 

@@ -1,4 +1,4 @@
-# Complete Mesh Simulation
+## Complete Mesh Simulation
 
 Now we combine the edge and volume constraints we've implemented to create a complete volumetric mesh simulation. The main simulation loop solves both constraint types iteratively, then updates velocities.
 
@@ -106,15 +106,15 @@ def pre_solve(dt: ti.f64, use_gravity: ti.i32):
 
 This provides basic collision detection and response, keeping particles within the simulation domain.
 
-## Simulation Results
+### Simulation Results
 
 The complete mesh implementation demonstrates realistic volumetric behavior through geometric constraints, showcasing proper deformation, incompressibility, and complex interactions with boundaries.
 
 <figure>
     <center>
         <img src="img/lec34/dragon.gif">
-        <figcaption><b>{{fig}}{fig:mesh:dragon}</b> Volumetric mesh simulation of a dragon model, demonstrating edge and volume constraints and unconditional stability.</figcaption>
     </center>
+        <figcaption><b>{{fig}}{fig:mesh:dragon}</b> Volumetric mesh simulation of a dragon model, demonstrating edge and volume constraints and unconditional stability.</figcaption>
 </figure>
 
 

@@ -1,6 +1,6 @@
-# Density Constraints in Position-Based Fluids
+## Density Constraints in Position-Based Fluids
 
-## The Per-Particle Density Constraint
+### The Per-Particle Density Constraint
 
 The fundamental principle of PBF is to ensure that the density around each fluid particle remains constant. The density at a given particle's location is estimated using a kernel-based summation over its neighbors.
 
@@ -45,7 +45,7 @@ $$
 \lambda_i = - \frac{C_i(\bm{p}_1, ..., \bm{p}_N)}{\sum_k \|\nabla_{\bm{p}_k} C_i\|^2 + \varepsilon}
 $$
 
-## Implementation: Kernel Functions
+### Implementation: Kernel Functions
 
 The PBF implementation requires two different kernel functions, each serving a specific purpose:
 
@@ -85,7 +85,7 @@ def spiky_gradient(r, h_):
 
 The Spiky kernel's linear falloff provides strong repulsive forces when particles are close together, which is essential for maintaining proper particle spacing and preventing clustering artifacts.
 
-## Implementation: Density Constraint Solver
+### Implementation: Density Constraint Solver
 
 The density constraint solver implements the three-phase PBD algorithm described in the theory section:
 

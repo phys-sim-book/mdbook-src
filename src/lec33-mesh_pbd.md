@@ -1,4 +1,5 @@
-# Case Study: Position-Based Mesh Simulation
+# Case Study: Position-Based Mesh Simulation*
+
 This case study demonstrates how to implement a complete volumetric mesh simulation system.
 
 The core algorithm implements two fundamental constraint types: distance constraints for stretching resistance and volume constraints for incompressibility. The simulation includes advanced features like decoupled simulation and visual meshes with barycentric skinning, enabling high-quality rendering while maintaining efficient simulation.

@@ -1,5 +1,6 @@
+**Author of this chapter: [Žiga Kovačič](https://zzigak.github.io), Cornell University*
+
 # Position Based Dynamics Framework
-**Author of this lecture: [Žiga Kovačič](https://zzigak.github.io), Cornell University*
 
 This section introduces Position Based Dynamics (PBD). In the field of physical simulation, several dominant paradigms exist, each with a different level of abstraction for describing motion. 
 
