@@ -6,7 +6,7 @@ While stretching constraints maintain the structural integrity of the cloth mesh
 
 The constraint is defined for a pair of triangles $(\bm{p}_1, \bm{p}_3, \bm{p}_2)$ and $(\bm{p}_1, \bm{p}_2, \bm{p}_4)$ sharing a common edge $(\bm{p}_1, \bm{p}_2)$. The bending resistance is a function of the **dihedral angle** $\phi$ between the two triangles, which is the initial angle between their respective normal vectors $\bm{n}_1$ and $\bm{n}_2$. The constraint aims to restore this angle to its rest value, $\phi_0$.
 
-<figure><img src="img/lec32/bending.png"><figcaption><b>{{fig}}{fig:viscoplastic:simulation}[Bending Constraints]</b> The provided illustration shows the dihedral angle for a pair of triangles in $\mathbb{R}^3$.</figcaption></figure>
+<figure><img src="img/lec32/bending.png"><figcaption><b>{{fig}}{fig:bending_constraints}[Bending Constraints]</b> The provided illustration shows the dihedral angle for a pair of triangles in $\mathbb{R}^3$.</figcaption></figure>
 
 > **{{def}}{def:cloth:bending_constraint}[Dihedral Angle Bending Constraint]**
  The bending constraint function $C_{\text{bend}}$ for four vertices forming two adjacent triangles is:
