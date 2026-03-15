@@ -1,12 +1,12 @@
-# 2D Viscoplastic Bars
+## 2D Viscoplastic Bars
 
-**Author of this lecture: [Žiga Kovačič](https://zzigak.github.io), Cornell University*
+**Author of this section: [Žiga Kovačič](https://zzigak.github.io), Cornell University*
 
 This chapter presents the implementation of a **viscoplastic** material model using the St. Venant-Kirchhoff (StVK) elasticity model. The viscoplastic model extends traditional plasticity by incorporating **rate-dependent behavior**, where the material's resistance to permanent deformation depends on how quickly it is being deformed. This makes it suitable for simulating materials like toothpaste, clay, or highly viscous fluids.
 
 Unlike standard rate-independent plasticity, viscoplastic materials exhibit a **yield stress that increases with plastic strain rate**. This means materials deform more readily under slower loading, while offering greater resistance under rapid deformation—characteristic of viscous fluid-like behavior.
 
-## St. Venant-Kirchhoff Elasticity Model
+### St. Venant-Kirchhoff Elasticity Model
 
 The viscoplastic model is built on top of the **St. Venant-Kirchhoff (StVK)** elasticity model, formulated in **logarithmic (Hencky) strain space**. The StVK model computes stress from the log strain using the SVD of the deformation gradient.
 
@@ -17,13 +17,14 @@ The **deviatoric log strain** is:
 $$\hat{\boldsymbol{\epsilon}} = \boldsymbol{\epsilon} - \frac{1}{d}\text{tr}(\boldsymbol{\epsilon})\mathbf{I}$$
 
 where $d$ is the spatial dimension and $\text{tr}(\boldsymbol{\epsilon}) = \epsilon_0 + \epsilon_1$ is the trace of the log strain.
+Intuitively, the deviatoric part removes the **pure volumetric** component of the log strain and keeps only the **distortional** part. The term $\frac{1}{d}\text{tr}(\boldsymbol{\epsilon})\mathbf{I}$ represents an equal expansion or compression in all directions, since $\text{tr}(\boldsymbol{\epsilon})$ measures the total logarithmic volume change. Subtracting this isotropic part leaves a trace-free tensor $\hat{\boldsymbol{\epsilon}}$ that captures only changes in **shape**, not **volume**.
 
 The **deviatoric stress** (Cauchy stress deviator) in StVK formulation is:
 $$\hat{\boldsymbol{s}} = 2\mu \hat{\boldsymbol{\epsilon}}$$
 
 where $\mu$ is the shear modulus. The stress is computed in the principal frame and then rotated back to the material frame using the SVD basis.
 
-## Rate-Dependent Plasticity Model
+### Rate-Dependent Plasticity Model
 
 The viscoplastic model is formulated in **log-strain space** using the SVD of the deformation gradient, similar to the Drucker-Prager model. The key difference is that the yield condition now includes a rate-dependent term.
 
@@ -35,7 +36,7 @@ $$\sigma_y(\dot{\epsilon}_p) = \sigma_0 + \eta_p |\dot{\epsilon}_p|$$
 
 Here, $\sigma_0$ is the static yield stress and $\eta_p$ is the plastic viscosity coefficient.
 
-## Viscoplastic Return Mapping
+### Viscoplastic Return Mapping
 
 When $y > 0$, the material yields and we apply viscoplastic return mapping. The viscous resistance is incorporated through a **denominator term** that depends on the plastic viscosity and time step:
 
@@ -47,8 +48,6 @@ The corrected stress magnitude is computed as:
 $$\|\hat{\boldsymbol{s}}^{n+1}\| = \|\hat{\boldsymbol{s}}_\text{trial}\| - \frac{y}{\text{denom}}$$
 
 This effectively reduces the stress correction by a factor proportional to the viscous resistance, making the material more resistant to rapid deformation.
-
-## Implementation
 
 The viscoplastic return mapping is implemented using SVD and log strain:
 
@@ -84,7 +83,7 @@ def viscoplastic_return_mapping_stvk_2d(F_trial, mu_p, lam_p, yield_stress_p, pl
 
 The return mapping computes the log strain from the SVD, extracts the deviatoric component, checks the yield condition, and if yielding occurs, applies a viscous correction that reduces the stress update. The corrected strain is then exponentiated and used to reconstruct the elastic deformation gradient.
 
-## Two-Bar Simulation Setup
+### Two-Bar Simulation Setup
 
 The simulation initializes two vertical bars side-by-side with different material properties to demonstrate how viscoplastic behavior depends on yield stress and plastic viscosity:
 
@@ -138,15 +137,15 @@ This function computes the first Piola-Kirchhoff stress from the elastic deforma
     </center>
 </figure>
 
-## Simulation Results
+### Simulation Results
 
 The complete viscoplastic implementation demonstrates realistic rate-dependent behavior through the StVK-based viscoplastic model. The simulation clearly shows how different material properties affect deformation behavior.
 
 <figure>
     <center>
         <img src="img/lec30/viscoplastic.gif">
-        <figcaption><b>{{fig}}{fig:viscoplastic:simulation}</b> Time evolution of two viscoplastic bars collapsing under gravity after wall removal at 3.0 seconds. Bar 1 (left, high yield stress and viscosity) maintains its shape better and deforms more slowly, while Bar 2 (right, low yield stress and viscosity) flows more readily and collapses faster, demonstrating the rate-dependent behavior of viscoplastic materials.</figcaption>
     </center>
+        <figcaption><b>{{fig}}{fig:viscoplastic:simulation}</b> Time evolution of two viscoplastic bars collapsing under gravity after wall removal at 3.0 seconds. Bar 1 (left, high yield stress and viscosity) maintains its shape better and deforms more slowly, while Bar 2 (right, low yield stress and viscosity) flows more readily and collapses faster, demonstrating the rate-dependent behavior of viscoplastic materials.</figcaption>
 </figure>
 
 In the simulation, we observe that:
