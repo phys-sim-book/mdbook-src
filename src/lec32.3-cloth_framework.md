@@ -1,4 +1,4 @@
-# Complete Cloth Simulation
+## Complete Cloth Simulation
 
 Now we combine the stretching and bending constraints we've implemented to create a complete cloth simulation. The main simulation loop solves both constraint types iteratively, then updates velocities.
 
@@ -81,14 +81,13 @@ def apply_grab(particle_idx: ti.i32, target_x: ti.f64, target_y: ti.f64, target_
 
 This allows for real-time interaction with the cloth, enabling users to grab and manipulate specific vertices, which is useful for testing material properties and creating animations.
 
-## Simulation Results
+### Simulation Results
 
 The complete cloth implementation demonstrates realistic fabric behavior through geometric constraints, showcasing proper draping, wrinkling, and response to external forces and manipulation.
 
 <figure>
     <center>
         <img src="img/lec34/cloth.gif">
-        <figcaption><b>{{fig}}{fig:cloth:bending}</b> Cloth draping under gravity with stretching and bending constraints enforcing length and curvature.</figcaption>
     </center>
-    
+        <figcaption><b>{{fig}}{fig:cloth:bending}</b> Cloth draping under gravity with stretching and bending constraints enforcing length and curvature.</figcaption>
 </figure>

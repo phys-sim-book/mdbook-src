@@ -1,4 +1,4 @@
-# Advanced Fluid Effects: Viscosity and Vorticity
+## Advanced Fluid Effects: Viscosity and Vorticity
 
 While the primary constraints in PBF operate on positions, velocity-level updates are still necessary to model phenomena like viscosity and to reintroduce lost energy. These are applied as a post-process after the main PBD solver loop has updated positions and velocities.
 
@@ -11,7 +11,7 @@ where $c$ is a positive viscosity coefficient, typically a small value like $0.0
 
 **Vorticity Confinement:** The iterative nature of PBD can introduce numerical damping, causing the fluid to lose rotational energy and appear overly viscous. Vorticity confinement can be used to counteract this by calculating the vorticity (curl of the velocity field) $\bm{\omega}_i = \nabla \times \bm{v}_i$ at each particle and applying a corrective force $\bm{f}_{\text{vorticity}} = \varepsilon (\bm{N} \times \bm{\omega}_i)$. Here, $\bm{N}$ is the normalized gradient of the vorticity's magnitude, $\bm{N} = \nabla|\bm{\omega}|/\|\nabla|\bm{\omega}|\|$, which points toward areas of increasing rotation. This force reintroduces small-scale rotational details.
 
-## Implementation: Advanced Fluid Effects
+### Implementation: Advanced Fluid Effects
 
 Both XSPH viscosity and vorticity confinement are implemented as post-processing steps after the main PBD solver to enhance fluid realism:
 

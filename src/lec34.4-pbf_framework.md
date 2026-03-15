@@ -1,4 +1,4 @@
-# Complete PBF Simulation
+## Complete PBF Simulation
 
 Now we combine the density constraints, tensile instability correction, and advanced fluid effects we've implemented to create a complete Position-Based Fluids simulation. The main simulation loop solves density constraints iteratively, then applies fluid-specific enhancements.
 
@@ -68,7 +68,7 @@ def build_hash_grid():
 
 This spatial acceleration structure allows for efficient neighbor finding during density constraint solving, making the simulation scalable to large numbers of particles.
 
-## Simulation Results
+### Simulation Results
 
 The complete PBF implementation demonstrates realistic fluid behavior through geometric constraints, showcasing incompressible flow, surface tension effects, and complex fluid interactions with dynamic boundaries.
 
@@ -76,8 +76,8 @@ The complete PBF implementation demonstrates realistic fluid behavior through ge
 <figure>
     <center>
         <img src="img/lec34/two_side_fluid.gif">
-        <figcaption><b>{{fig}}{fig:pbf:two_side_fluid}</b> Two-sided compression of a PBF fluid with moving boundaries, illustrating incompressibility and surface behavior.</figcaption>
     </center>
+        <figcaption><b>{{fig}}{fig:pbf:two_side_fluid}</b> Two-sided compression of a PBF fluid with moving boundaries, illustrating incompressibility and surface behavior.</figcaption>
 </figure>
 
 
@@ -86,6 +86,6 @@ The complete PBF implementation demonstrates realistic fluid behavior through ge
 <figure>
     <center>
         <img src="img/lec34/one_side_fluid.gif">
-        <figcaption><b>{{fig}}{fig:pbf:one_side_fluid}</b> One-sided compression of a PBF fluid against a moving boundary, illustrating incompressibility and surface behavior.</figcaption>
     </center>
+        <figcaption><b>{{fig}}{fig:pbf:one_side_fluid}</b> One-sided compression of a PBF fluid against a moving boundary, illustrating incompressibility and surface behavior.</figcaption>
 </figure>
