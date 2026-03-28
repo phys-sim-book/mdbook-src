@@ -42,7 +42,10 @@ To achieve different levels of elasticity, a stiffness parameter $k \in [0, 1]$ 
 
 ```python
 @ti.kernel
-def solve_stretching_constraints(compliance: ti.f64, dt: ti.f64):
+def solve_stretching_constraints(
+    compliance: ti.f64, dt: ti.f64, num_stretching_constraints: ti.i32,
+    pos: ti.template(), stretching_ids: ti.template(), stretching_lengths: ti.template(),
+    inv_mass: ti.template(), lambdas: ti.template()):
     """Solve stretching constraints using PBD projection - implements Equation {{eqref:eq:cloth:position_correction}}"""
     alpha = compliance / (dt * dt)
     for i in range(num_stretching_constraints):
@@ -50,18 +53,16 @@ def solve_stretching_constraints(compliance: ti.f64, dt: ti.f64):
         w0, w1 = inv_mass[id0], inv_mass[id1]
         w_sum = w0 + w1
         if w_sum == 0.0: continue
-        
         p0, p1 = pos[id0], pos[id1]
         delta = p0 - p1
         dist = delta.norm()
         if dist == 0.0: continue
-        
         grad = delta / dist
         C = dist - stretching_lengths[i]
-        s = -C / (w_sum + alpha)
-        
-        pos[id0] += s * w0 * grad
-        pos[id1] -= s * w1 * grad
+        dlambda = -(C + alpha * lambdas[i]) / (w_sum + alpha)
+        lambdas[i] += dlambda
+        pos[id0] += dlambda * w0 * grad
+        pos[id1] -= dlambda * w1 * grad
 ```
 
 The kernel implements Equation {{eqref:eq:cloth:position_correction}} directly. The constraint violation `C` is the difference between current distance and rest length. The Lagrange multiplier `s` follows Equation {{eqref:eq:cloth:lambda_stretch}} with compliance softening. Position corrections are applied with opposite signs to maintain momentum conservation.

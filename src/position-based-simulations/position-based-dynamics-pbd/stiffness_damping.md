@@ -57,12 +57,14 @@ The core idea of XPBD is to treat the Lagrange multiplier $\lambda$ not as a tem
 $$
 {{numeq}}{eq:pbd:xpbd_delta_lambda}
 
-\Delta\lambda = \frac{-C(\bm{p}) - \hat{\alpha} \lambda}{\sum_{j} w_j |\nabla_{\bm{p}_j} C(\bm{p})|^2 + \hat{\alpha}}
+\Delta\lambda = \frac{C(\bm{p}) + \hat{\alpha} \lambda}{\sum_{j} w_j |\nabla_{\bm{p}_j} C(\bm{p})|^2 + \hat{\alpha}}
 $$
 Here, $\lambda$ is the total accumulated Lagrange multiplier for the constraint from previous iterations within the current time step. The term $\hat{\alpha}$ is the time-step scaled compliance, defined as:
 $$
 \hat{\alpha} = \frac{\alpha}{(\Delta t)^2}
 $$
+
+
 This scaling ensures that the compliance parameter $\alpha$ has physically consistent units within the dynamical system. After computing $\Delta\lambda$, the solver updates both the particle positions and the accumulated Lagrange multiplier for that constraint:
 $$
 \Delta\bm{p}_i = - \Delta\lambda \, w_i \, \nabla_{\bm{p}_i} C(\bm{p}) \qquad \text{and} \qquad \lambda \leftarrow \lambda + \Delta\lambda
@@ -71,5 +73,8 @@ $$
 > **{{rem}}{rem:pbd:xpbd_benefits}[Interpretation of XPBD]**
 > The $+\hat{\alpha}$ term in the denominator of Equation {{eqref:eq:pbd:xpbd_delta_lambda}} acts to limit the magnitude of the corrective impulse $\Delta\lambda$. As compliance $\alpha$ increases (i.e., the material becomes softer), $\hat{\alpha}$ grows, thus reducing the impulse applied per iteration. In the case of zero compliance ($\alpha=0$), the $\hat{\alpha}$ terms vanish, and the formula for $\Delta\lambda$ reduces to the standard PBD formulation in Equation {{eqref:eq:solver:lambda}}.
 
+> **{{rem}}{rem:pbd:xpbd_convention}[Note on the sign]**
+> In the PBD derivation, we chose the convention that the correction ($\Delta p_i$) is written explicitly in the direction ($-\nabla_{p_i} C$). To remain consistent with that choice in XPBD, we define the accumulated multiplier with the opposite sign from the one used in the original paper. If you read the original paper or many of the survey papers keep in mind this difference. 
 
-The primary benefit of XPBD is **not faster convergence, but convergence to a physically consistent state that correctly reflects the user-defined compliance $\alpha$**, independent of the time step or iteration count. If the solver is terminated early, the system still exhibits the desired softness to some degree rather than an artificial, uncontrolled compliance. This makes material behavior more predictable and robust.
+
+The primary benefit of XPBD is **not faster convergence, but convergence to a physically consistent state that correctly reflects the user-defined compliance $\alpha$**, independent of the time step or iteration count. If the solver is terminated early, the system still exhibits the desired softness to some degree rather than an artificial, uncontrolled compliance. This makes material behavior more predictable and **robust**.

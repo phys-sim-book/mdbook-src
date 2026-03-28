@@ -38,9 +38,13 @@ These corrections distribute the constraint violation between the two vertices b
 
 ### Implementation: Edge Constraint Solver
 
+
 ```python
 @ti.kernel
-def solve_edges(compliance: ti.f64, dt: ti.f64):
+def solve_edges(
+    compliance: ti.f64, dt: ti.f64, num_edges: ti.i32,
+    pos: ti.template(), edge_ids: ti.template(), edge_lengths: ti.template(),
+    inv_mass: ti.template(), lambdas: ti.template()):
     """Solve edge constraints using PBD projection - implements Equation {{eqref:eq:mesh:edge_correction}}"""
     alpha = compliance / (dt * dt)
     for i in range(num_edges):
@@ -48,17 +52,15 @@ def solve_edges(compliance: ti.f64, dt: ti.f64):
         w0, w1 = inv_mass[id0], inv_mass[id1]
         w_sum = w0 + w1
         if w_sum == 0.0: continue
-        
         delta = pos[id0] - pos[id1]
         dist = delta.norm()
         if dist == 0.0: continue
-        
         grad = delta / dist
         C = dist - edge_lengths[i]
-        s = -C / (w_sum + alpha)
-        
-        pos[id0] += s * w0 * grad
-        pos[id1] -= s * w1 * grad
+        dlambda = -(C + alpha * lambdas[i]) / (w_sum + alpha)
+        lambdas[i] += dlambda
+        pos[id0] += dlambda * w0 * grad
+        pos[id1] -= dlambda * w1 * grad
 ```
 
 The kernel implements Equation {{eqref:eq:mesh:edge_correction}} directly. The constraint violation `C` is the difference between current distance and rest length. The Lagrange multiplier `s` follows Equation {{eqref:eq:mesh:edge_lambda}} with compliance softening. Position corrections are applied with opposite signs to maintain momentum conservation.
@@ -76,11 +78,13 @@ def init_physics():
 
 ```python
 def substep():
-    pre_solve(sdt, 1)
+    pre_solve(sdt, 1, num_particles, gravity, box_min, box_max, pos, prev_pos, vel, inv_mass)
+    # XPBD: reset lambdas once per substep (they accumulate across solver iterations)
+    reset_constraint_lambdas(num_edges, num_tets, edge_lambdas, vol_lambdas)
     for _ in range(solver_iterations):
-        solve_edges(edge_compliance, sdt)
-        solve_volumes(vol_compliance, sdt)
-    post_solve(sdt)
+        solve_edges(edge_compliance, sdt, num_edges, pos, edge_ids, edge_lengths, inv_mass, edge_lambdas)
+        solve_volumes(vol_compliance, sdt, num_tets, pos, tet_ids, rest_vol, inv_mass, vol_id_order, vol_lambdas)
+    post_solve(sdt, num_particles, pos, prev_pos, vel, inv_mass)
 ```
 
 Edge constraints are solved before volume constraints in each iteration. This ordering allows volume constraints to work with a more stable mesh structure after edge constraints have provided local structural integrity.
