@@ -51,7 +51,10 @@ This model is particularly effective for garment simulation where fabric is expe
 
 ```python
 @ti.kernel
-def solve_bending_constraints(compliance: ti.f64, dt: ti.f64):
+def solve_bending_constraints(
+    compliance: ti.f64, dt: ti.f64, num_bending_constraints: ti.i32,
+    pos: ti.template(), bending_ids: ti.template(), bending_lengths: ti.template(),
+    inv_mass: ti.template(), lambdas: ti.template()):
     """Solve bending constraints using distance-based approach"""
     alpha = compliance / (dt * dt)
     for i in range(num_bending_constraints):
@@ -59,18 +62,16 @@ def solve_bending_constraints(compliance: ti.f64, dt: ti.f64):
         w0, w1 = inv_mass[id0], inv_mass[id1]
         w_sum = w0 + w1
         if w_sum == 0.0: continue
-        
         p0, p1 = pos[id0], pos[id1]
         delta = p0 - p1
         dist = delta.norm()
         if dist == 0.0: continue
-        
         grad = delta / dist
         C = dist - bending_lengths[i]
-        s = -C / (w_sum + alpha)
-        
-        pos[id0] += s * w0 * grad
-        pos[id1] -= s * w1 * grad
+        dlambda = -(C + alpha * lambdas[i]) / (w_sum + alpha)
+        lambdas[i] += dlambda
+        pos[id0] += dlambda * w0 * grad
+        pos[id1] -= dlambda * w1 * grad
 ```
 
 This implementation uses a simplified distance-based approach where bending constraints are treated as distance constraints between non-adjacent vertices. While this doesn't capture the full dihedral angle behavior, it provides a computationally efficient approximation that works well for many cloth simulation scenarios.
