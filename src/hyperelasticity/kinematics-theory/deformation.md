@@ -16,7 +16,7 @@ We can compute the deformation gradient for the deformation map specified in Equ
 
 <figure>
     <center>
-    <img src="img/lec12/deformation_map.jpg" width="50%">
+    <img src="deformation_map.jpg" width="50%">
     <figcaption><b>{{fig}}{fig:lec12:deformation_map}[Deformation gradient]</b></figcaption>
     </center>
 </figure>

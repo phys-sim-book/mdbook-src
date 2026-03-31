@@ -4,14 +4,14 @@ Having gathered all necessary elements for our 2D mass-spring simulator, the nex
 
 {{imp}}{imp:lec4:simulator}[simulator.py]
 ```python
-{{#include solid-sim-tutorial/1_mass_spring/simulator.py}}
+{{#include ../../solid-sim-tutorial/1_mass_spring/simulator.py}}
 ```
 
 For 2D visualization in our simulator, we utilize the [Pygame library](https://www.pygame.org/). The simulation is initiated with a scene featuring a single square, which is initially elongated horizontally. During the simulation, the square begins to revert to its original horizontal dimensions. Subsequently, due to inertia, it will start to stretch vertically, oscillating back and forth until it eventually stabilizes at its rest shape, as illustrated in ({{ref: fig:lec4:stretched_square_sim}}).
 
 <figure>
     <center>
-    <img src="img/lec4/stretched_square.jpg">
+    <img src="stretched_square.jpg">
     </center>
     <figcaption><b>{{fig}}{fig:lec4:stretched_square_sim}</b> From left to right: initial, intermediate, and final static frame of the initially stretched square simulation. </figcaption>
 </figure>
@@ -27,7 +27,7 @@ For visualization purposes beyond our simulator, we enable the export of the mes
 
 {{imp}}{imp:lec4:square_mesh_output}[Output Square Mesh, square_mesh.py]
 ```python
-{{#include solid-sim-tutorial/1_mass_spring/square_mesh.py:write_to_file}}
+{{#include ../../solid-sim-tutorial/1_mass_spring/square_mesh.py:write_to_file}}
 ```
 
 With all components properly set up, the next phase involves initiating the simulation loop. This loop advances the time integration and visualizes the results at each time step. To execute the simulation program, the following command is used in the terminal:

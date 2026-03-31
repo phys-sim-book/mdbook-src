@@ -10,7 +10,7 @@ Following the approach used in the [Square on Slope](lec10-square_on_slope.md) p
 
 {{imp}}{imp:lec11:ceiling_dof}[Ceiling DOF setup, simulator.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/simulator.py:ceiling_dof}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/simulator.py:ceiling_dof}}
 ```
 
 The ceiling is initially positioned directly above the elastic square, as shown in the left image of {{ref: fig:lec11:compress_square}}. By doing so, we ensure that the nodal mass of this newly added DOF is consistent with the other simulated nodes on the square, as per our implementation.
@@ -19,19 +19,19 @@ With this additional DOF, we can straightforwardly model the contact between the
 
 {{imp}}{imp:lec11:barrier_val}[Barrier energy value, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_val}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_val}}
 ```
 {{imp}}{imp:lec11:barrier_grad}[Barrier energy gradient, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_grad}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_grad}}
 ```
 {{imp}}{imp:lec11:barrier_hess}[Barrier energy Hessian, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_hess}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_hess}}
 ```
 {{imp}}{imp:lec11:barrier_ccd}[Initial step size calculation, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_ccd}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/BarrierEnergy.py:ceiling_ccd}}
 ```
 Here for the distance between the ceiling $\bm{o}$ and a node $\mathbf{x}$, we have the stacked quantities locally:
 $$
@@ -48,47 +48,47 @@ Now we apply the moving BC on the ceiling to compress the elastic square. We set
 
 {{imp}}{imp:lec11:dbc_setup}[DBC setup, simulator.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/simulator.py:ceiling_dbc_setup}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/simulator.py:ceiling_dbc_setup}}
 ```
 
 Then we implement the penalty term according to Equation {{eqref: eq:lec11:DBC_penalty}}, which is essentially a quadratic spring energy for controlling the motion of the ceiling:
 
 {{imp}}{imp:lec11:spring_energy}[Spring energy computation, SpringEnergy.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/SpringEnergy.py}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/SpringEnergy.py}}
 ```
 
 Next, we focus on optimizing with the spring energies while properly handling the convergence check and penalty stiffness adjustments. At the start of each time step, the target position for each DBC node is computed, and the penalty stiffness, $k_\text{M}$, is initialized to $10$. If certain nodes reach their preset limit, we then set the target as their current position:
 
 {{imp}}{imp:lec11:dbc_initialization}[DBC initialization, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:dbc_initialization}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:dbc_initialization}}
 ```
 
 Entering the Newton loop, in each iteration, just before computing the search direction, we assess how many DBC nodes are close enough to their target positions. We store these results in the variable `DBC_satisfied`:
 
 {{imp}}{imp:lec11:dbc_check}[DBC satisfaction check, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:dbc_check}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:dbc_check}}
 ```
 Then we only eliminate the DOFs of those DBC nodes that already satisfy the boundary condition:
 
 {{imp}}{imp:lec11:dof_elimination}[DOF elimination, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:dof_elimination}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:dof_elimination}}
 ```
 The BC satisfaction information stored in `DBC_satisfied` is also used to check convergence and update $k_\text{M}$ when needed:
 
 {{imp}}{imp:lec11:convergence_criteria}[Convergence criteria, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:convergence_criteria}}
+{{#include ../../solid-sim-tutorial/5_mov_dirichlet/time_integrator.py:convergence_criteria}}
 ```
 
 Now, we proceed to run the simulation, which involves severely compressing the dropped elastic square as depicted in ({{ref: fig:lec11:compress_square}}). From the final static frame, we observe that the elastic springs on the edges are inverted due to extreme compression. This artifact is typical in mass-spring models of elasticity. In future chapters, we will explore how applying finite-element discretization to barrier-type elasticity models, such as the Neo-Hookean model, can prevent such issues. That approach is akin to the enforcement of non-interpenetrations in our current simulations.
 
 <figure>
     <center>
-    <img src="img/lec11/compress_square.jpg">
+    <img src="compress_square.jpg">
     </center>
     <figcaption><b>{{fig}}{fig:lec11:compress_square}</b> A square is dropped onto the ground and compressed by a ceiling until inverted. </figcaption>
 </figure>

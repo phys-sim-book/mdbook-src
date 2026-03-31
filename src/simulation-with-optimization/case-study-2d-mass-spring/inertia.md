@@ -8,7 +8,7 @@ which is straightforward to implement:
 
 {{imp}}{imp:lec4:inertia_energy}[InertiaEnergy.py]
 ```python
-{{#include solid-sim-tutorial/1_mass_spring/InertiaEnergy.py}}
+{{#include ../../solid-sim-tutorial/1_mass_spring/InertiaEnergy.py}}
 ```
 
 The functions `val()`, `grad()`, and `hess()` are designed to compute different components of the inertia term. Specifically:

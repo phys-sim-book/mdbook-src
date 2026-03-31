@@ -3,7 +3,7 @@
 To accurately simulate solids, it's essential to ensure that they don't interpenetrate, as shown in the figure below (left side). One effective approach is to enforce the **CFL** (Courant-Friedrichs-Lewy condition) upper limit on timestep sizes, particularly in methods like MPM. In Finite Element Methods (FEM), this requires precise modeling of contact forces. However, accurately modeling contact poses a challenge. Contact is inherently a non-smooth process, happening abruptly as solids make contact. There isn't a potential energy formulation that can accurately depict this phenomenon.
 
 <figure>
-    <img src="img/lec2/contact_and_friction.jpg">
+    <img src="contact_and_friction.jpg">
     <figcaption><b>{{fig}}{fig:lec2:contact_and_friction}[Simulation Examples of Contact and Friction]</b> On the left, an intriguing simulation shows four characters plunging into a funnel and then being extruded by a moving plane. The flawless execution, marked by the absence of any interpenetration during this complex interaction, highlights the precision of the models employed. On the right, we see a simulation of the classic table cloth trick, executed at varying speeds. The realism in this simulation, especially the accurate depiction of friction, becomes apparent as the cloth is pulled away without disturbing the table setting — mirroring what one would expect in real life. These simulations showcase the incredible capabilities and precision of contemporary computational models in simulating contact, vividly and engagingly bringing abstract physical concepts to life. </figcaption>
 </figure>
 

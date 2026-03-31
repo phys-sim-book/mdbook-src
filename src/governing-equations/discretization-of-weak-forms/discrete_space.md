@@ -5,7 +5,7 @@ To enable numerical evaluation of the integrals in the weak form, the first step
 > **{{exp}}{exp:lec17:1d_interpolation}[1D Function Interpolation]**
 > In 1D, to approximate a function $f(x)$ using three sample points $x_1 = 1$, $x_2 = 2$, $x_3 = 3$ ({{ref: fig:lec17:1d_interpolation}}), we can use interpolation functions $N_i(x) = 1 - |x - x_i|$ and form $f(x) \approx \sum_i f(x_i) N_i(x)$. <figure>
     <center>
-    <img src="img/lec17/shapeFun1D.jpg" width="550">
+    <img src="shapeFun1D.jpg" width="550">
     </center>
     <figcaption><b>{{fig}}{fig:lec17:1d_interpolation}</b> With interpolation functions $N_1(x)$, $N_2(x)$, $N_3(x)$ and sample points $x_1 = 1$, $x_2 = 2$, $x_3 = 3$, a function $f(x)$ can be approximated as $\sum_i f(x_i) N_i(x)$. </figcaption>
 </figure>

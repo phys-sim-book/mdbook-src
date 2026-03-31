@@ -4,14 +4,14 @@ Now, we have all the ingredients to solve for the search direction in a simulati
 
 {{imp}}{imp:lec21:BarrierEnergy_CCD}[Line search filtering, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/BarrierEnergy.py:line_search_filtering}}
+{{#include ../../solid-sim-tutorial/7_self_contact/BarrierEnergy.py:line_search_filtering}}
 ```
 
 Here, we perform an overlap check on the bounding boxes of the spans of the point and edge first to narrow down the number of point-edge pairs for which we need to compute the time of impact:
 
 {{imp}}{imp:lec21:CCD_broad}[Bounding box overlap check, CCD.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/distance/CCD.py:broad_phase}}
+{{#include ../../solid-sim-tutorial/7_self_contact/distance/CCD.py:broad_phase}}
 ```
 
 To calculate a sufficiently large conservative estimation of the time of impact (TOI), we cannot directly calculate the TOI and take a proportion of it as we did for point-ground contact in [Filter Line Search](./lec8-filter_line_search.md). Directly calculating the TOI for contact primitive pairs requires solving quadratic or cubic root-finding problems in 2D and 3D, which are prone to numerical errors, especially when distances are tiny and configurations are numerically degenerate (e.g., nearly parallel edge-edge pairs in 3D).
@@ -41,14 +41,14 @@ By taking a step with this lower bound $\alpha_l$, we are guaranteed to have no 
 
 {{imp}}{imp:lec21:CCD}[ACCD method implementation, CCD.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/distance/CCD.py:accd}}
+{{#include ../../solid-sim-tutorial/7_self_contact/distance/CCD.py:accd}}
 ```
 
 The final simulation results are demonstrated in {{ref: fig:lec21:compress_2_squares}}.
 
 <figure>
     <center>
-    <img src="img/lec21/compress_2_squares.jpg">
+    <img src="compress_2_squares.jpg">
     </center>
     <figcaption><b>{{fig}}{fig:lec21:compress_2_squares}</b> Two squares dropped onto the ground and compressed by a ceiling. The ground has friction coefficient $0.4$ but there is no friction between the squares so that the top square slides down to the ground without significantly changing the position of the bottom one. </figcaption>
 </figure>

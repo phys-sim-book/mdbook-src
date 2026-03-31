@@ -52,7 +52,7 @@ Next, let's look at the code. {{ref: imp:lec22:contact_point_and_normal}} calcul
 
 {{imp}}{imp:lec22:contact_point_and_normal}[Calculating contact point and normal, PointEdgeDistance.py]
 ```python
-{{#include solid-sim-tutorial/8_self_friction/distance/PointEdgeDistance.py:tangent}}
+{{#include ../../solid-sim-tutorial/8_self_friction/distance/PointEdgeDistance.py:tangent}}
 ```
 
 Then, {{ref: imp:lec22:fric_precomp}} traverses all non-incident point-edge pairs with a distance smaller than $\hat{d}$, calculates $\lambda$, and calls the above function to calculate $\mathbf{n}$ and $r$. 
@@ -61,5 +61,5 @@ As in [Frictional Contact](./lec9-friction.md), these lines of code are executed
 
 {{imp}}{imp:lec22:fric_precomp}[Semi-implicit friction precomputation, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/8_self_friction/BarrierEnergy.py:fric_precomp}}
+{{#include ../../solid-sim-tutorial/8_self_friction/BarrierEnergy.py:fric_precomp}}
 ```

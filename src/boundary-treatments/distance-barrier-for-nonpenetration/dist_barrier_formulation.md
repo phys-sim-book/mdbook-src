@@ -38,7 +38,7 @@ In this formulation, \\( b() \\) represents the barrier energy density function.
 
 <figure>
     <center>
-    <img src="img/lec7/barrier_clamping.jpg" width="350">
+    <img src="barrier_clamping.jpg" width="350">
     </center>
     <figcaption><b>{{fig}}{fig:lec7:barrier_func}</b> The barrier energy density function plotted with different $\hat{d}$. Decreasing $\hat{d}$ asymptotically matches the discontinuous definition of the contact condition. </figcaption>
 </figure>

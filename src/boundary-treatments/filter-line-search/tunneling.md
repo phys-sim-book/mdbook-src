@@ -15,7 +15,7 @@ $$
  
 <figure>
     <center>
-    <img src="img/lec8/filter_ls.jpg">
+    <img src="filter_ls.jpg">
     </center>
     <figcaption><b>{{fig}}{fig:lec8:filter_ls}</b> An illustration of the tunneling issue. With the projected Newton method introduced earlier, tunneling artifact could happen as shown in the middle. The physically plausible result shown on the right could be obtained with the filter line search scheme. The blue arrows show the optimization path. </figcaption>
 </figure>

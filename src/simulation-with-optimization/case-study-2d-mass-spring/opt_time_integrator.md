@@ -5,7 +5,7 @@ Having established the capability to evaluate the Incremental Potential for arbi
 
 {{imp}}{imp:lec4:time_integrator}[time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/1_mass_spring/time_integrator.py}}
+{{#include ../../solid-sim-tutorial/1_mass_spring/time_integrator.py}}
 ```
 
 Here `step_forward()` is essentially a direct translation of the projected Newton method with line search ({{ref: alg:lec3:PN_method_IE}}), and we implemented the Incremental Potential value (`IP_val()`), gradient (`IP_grad()`), and Hessian (`IP_hess()`) evaluations as separate functions for clarity. 

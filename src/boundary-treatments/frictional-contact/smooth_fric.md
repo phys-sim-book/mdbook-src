@@ -33,7 +33,7 @@ with $\mathbf{s}(\mathbf{v}_k) = \frac{\mathbf{v}_k}{\|\mathbf{v}_k\|}$ when $\|
 
 <figure>
     <center>
-    <img src="img/lec9/friction_illustration.jpg" width="150">
+    <img src="friction_illustration.jpg" width="150">
     </center>
     <figcaption><b>{{fig}}{fig:lec9:friction_illustration}</b> An illustration of $T_k$, $\mathbf{v}_k$, $\mathbf{n}_k$, and $F_k$ when a point slides on a sphere. </figcaption>
 </figure>
@@ -56,7 +56,7 @@ where $f_1'(\epsilon_v) = 0$ and a velocity magnitude bound $\epsilon_v$ (in uni
 
 <figure>
     <center>
-    <img src="img/lec9/friction_clamping.jpg" width="320">
+    <img src="friction_clamping.jpg" width="320">
     </center>
     <figcaption><b>{{fig}}{fig:lec9:friction_plot}</b> A 1D illustration of the smoothed relation between friction force and sliding velocity. Decreasing $\epsilon_v$ asymptotically matches the discontinuous Coulomb friction model. </figcaption>
 </figure>

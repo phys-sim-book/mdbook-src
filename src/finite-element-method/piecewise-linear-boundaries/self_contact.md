@@ -32,7 +32,7 @@ Fortunately, due to the local support of $b$, where the contact force only exist
 
 <figure>
     <center>
-    <img src="img/lec20/corner.jpg" width="300">
+    <img src="corner.jpg" width="300">
     </center>
     <figcaption><b>{{fig}}{fig:lec20:corner}</b> In this simple two-edge illustration, the yellow and green regions are only counted once by the summation, but the blue region and the yellow-green overlap are counted twice. If we subtract once the blue region, then for the right-top boundary (convex), it becomes perfect, but for the left-bottom boundary (concave), we can still see some overlap that are counted twice. </figcaption>
 </figure>

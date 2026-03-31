@@ -20,7 +20,7 @@ Combining it with Equation {{eqref: eq:lec7:barrier_grad}} and Equation {{eqref:
 
 {{imp}}{imp:lec8:barrier_val_grad_hess}[Barrier energy value, gradient, and Hessian, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/3_contact/BarrierEnergy.py:val_grad_hess}}
+{{#include ../../solid-sim-tutorial/3_contact/BarrierEnergy.py:val_grad_hess}}
 ```
 
 For the filter line search, with the position in the last iteration \\(\mathbf{x}\\) and a search direction \\(\mathbf{p}\\) of a specific node, the signed distance function is simply
@@ -31,7 +31,7 @@ where \\(\alpha\\) is the step size, and there is only one positive real root \\
 
 {{imp}}{imp:lec8:ground_CCD}[Ground CCD, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/3_contact/BarrierEnergy.py:init_step_size}}
+{{#include ../../solid-sim-tutorial/3_contact/BarrierEnergy.py:init_step_size}}
 ```
 Here we scale the upper bound by \\(0.9\times\\) so that exact touching configurations with \\(d=0\\) and \\(b = \infty\\) (floating-point number overflow) can be avoided.
 
@@ -39,19 +39,19 @@ Then once we make sure the step size upper bound is used to initialize the line 
 
 {{imp}}{imp:lec8:filter_ls}[Filter line search, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/3_contact/time_integrator.py:filter_ls}}
+{{#include ../../solid-sim-tutorial/3_contact/time_integrator.py:filter_ls}}
 ```
 and that the contact area weights for all nodes are calculated
 
 {{imp}}{imp:lec8:contact_area}[Contact area, simulator.py]
 ```python
-{{#include solid-sim-tutorial/3_contact/simulator.py:contact_area}}
+{{#include ../../solid-sim-tutorial/3_contact/simulator.py:contact_area}}
 ```
 and passed to our simulator, we can simulate the square drop with mass-spring stiffness `k=2e4` and time step size `h=0.01` as shown in {{ref: fig:lec8:square_drop}}.
 
 <figure>
     <center>
-    <img src="img/lec8/square_drop.jpg">
+    <img src="square_drop.jpg">
     </center>
     <figcaption><b>{{fig}}{fig:lec8:square_drop}</b> A mass-spring elastic square is dropped onto the ground with $0$ initial velocity under gravity. Here we show the frames when the square is: just dropped, first touching the ground, compressed to the maximum in this simulation, and becoming static. </figcaption>
 </figure>

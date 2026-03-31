@@ -8,7 +8,7 @@ We begin by setting up the discretization of the simulation domain and the mater
 
 {{imp}}{imp:lec29:property_def}[Physical and Numerical Parameters, simulator.py]
 ```python
-{{#include solid-sim-tutorial/10_mpm_elasticity/simulator.py:property_def}}
+{{#include ../../solid-sim-tutorial/10_mpm_elasticity/simulator.py:property_def}}
 ```
 
 These parameters define a uniform dense background grid, particle resolution, and time integration step size. The entire simulation domain spans from `[0, 0]` to `[1, 1]` meters, and we aim for around 8 particles per grid cell on average. The blocks are set to have mass density at $1000kg/m^3$, Young's modulus at $10^4 Pa$, and Poisson's ratio at $0.3$.
@@ -23,7 +23,7 @@ Here we adopt uniform sampling **for simplicity and clarity**, keeping the focus
 
 {{imp}}{imp:lec29:setting}[Initial Particle Sampling and Scene Setup, simulator.py]
 ```python
-{{#include solid-sim-tutorial/10_mpm_elasticity/simulator.py:setting}}
+{{#include ../../solid-sim-tutorial/10_mpm_elasticity/simulator.py:setting}}
 ```
 
 Each block consists of uniformly distributed material points representing a homogeneous elastic body. The left block is given an initial velocity of \([+10, 0]\) m/s, and the right block \([-10, 0]\) m/s, setting up a symmetric, head-on collision scenario with **zero net linear momentum**. This configuration mimics a controlled impact experiment.
@@ -34,5 +34,5 @@ We define data fields to represent the state of each material point (particle) a
 
 {{imp}}{imp:lec29:data_def}[Particle and Grid Data Fields, simulator.py]
 ```python
-{{#include solid-sim-tutorial/10_mpm_elasticity/simulator.py:data_def}}
+{{#include ../../solid-sim-tutorial/10_mpm_elasticity/simulator.py:data_def}}
 ```

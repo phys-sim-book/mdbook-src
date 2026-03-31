@@ -30,7 +30,7 @@ In addition, since the mass matrix in \\(\nabla^2 E(x^i)\\) is Symmetric Positiv
 <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec3:PN_method_IE}[Projected Newton Method for Backward Euler Time Integration]</figcaption></b>
-    <img src="img/lec3/PN_method_IE_algorithm.jpg" width="650">
+    <img src="PN_method_IE_algorithm.jpg" width="650">
     </center>
 </figure>
 

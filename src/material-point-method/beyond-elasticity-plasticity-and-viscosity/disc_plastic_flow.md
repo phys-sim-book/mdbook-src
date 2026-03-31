@@ -14,7 +14,7 @@ This decomposition separates material behavior into two parts:
 
 <figure>
     <center>
-    <img src="img/lec27/decomposition_of_deformation_gradient.png">
+    <img src="decomposition_of_deformation_gradient.png">
     </center>
     <figcaption><b>{{fig}}{fig:lec27:decomposition_of_deformation_gradient}</b> Multiplicative decomposition of the deformation gradient. </figcaption>
 </figure>

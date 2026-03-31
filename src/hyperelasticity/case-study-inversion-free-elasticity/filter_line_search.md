@@ -34,7 +34,7 @@ In practice, we also need to allow some slackness so that the step size to be ta
 
 {{imp}}{imp:lec15:filter_line_search}[Filter line search, NeoHookeanEnergy.py]
 ```python
-{{#include solid-sim-tutorial/6_inv_free/NeoHookeanEnergy.py:filter_line_search}}
+{{#include ../../solid-sim-tutorial/6_inv_free/NeoHookeanEnergy.py:filter_line_search}}
 ```
 Here, if the equation does not have a positive real root, that means for this specific triangle, the step size can be taken arbitrarily large and it will not trigger inversion.
 
@@ -42,7 +42,7 @@ The quadratic equation can be solved as
 
 {{imp}}{imp:lec15:find_positive_real_root}[Solve quadratic equation, utils.py]
 ```python
-{{#include solid-sim-tutorial/6_inv_free/utils.py:find_positive_real_root}}
+{{#include ../../solid-sim-tutorial/6_inv_free/utils.py:find_positive_real_root}}
 ```
 With scaled coefficients, we simply use a unitless threshold, e.g. `1e-6`, to check for degeneracies. If no positive real roots are found, the function simply returns `-1`.
 
@@ -50,13 +50,13 @@ Now as we filter the initial step size in addition to non-interpenetration:
 
 {{imp}}{imp:lec15:apply_filter}[Apply filter, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/6_inv_free/time_integrator.py:apply_filter}}
+{{#include ../../solid-sim-tutorial/6_inv_free/time_integrator.py:apply_filter}}
 ```
 and make sure all added data structures and modified functions are reflected in the time integrator, we can finally simulate the compressing square example from [Moving Boundary Condition](lec11-mov_DBC.md) with guaranteed non-inversion (see {{ref: fig:lec15:compress_square_inv_free}}).
 
 <figure>
     <center>
-    <img src="img/lec15/inv_free_compress_square.jpg">
+    <img src="inv_free_compress_square.jpg">
     </center>
     <figcaption><b>{{fig}}{fig:lec15:compress_square_inv_free}</b> A square is dropped onto the ground and compressed severely by a ceiling while maintaining inversion-free throughout the simulation. The ground has friction coefficient $0.11$ so that the bottom of the square slides less than the top, where the ceiling has no friction. </figcaption>
 </figure>

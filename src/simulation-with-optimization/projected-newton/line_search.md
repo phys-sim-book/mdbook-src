@@ -9,7 +9,7 @@ Specifically, for Newton's method, line 4 in {{ref: alg:lec1:newton_method_IE}} 
 > **{{met}}{met:lec3:backtracking}[Backtracking Line Search]** Given a descent direction, we can find a reasonably large \\(\alpha\\) by simply halving it starting from \\(1\\) until the energy at the new location is smaller than the current (see {{ref: alg:lec3:line_search}}). <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec3:line_search}[The Backtracking Line Search Algorithm]</figcaption></b>
-    <img src="img/lec3/line_search_algorithm.jpg" width="650">
+    <img src="line_search_algorithm.jpg" width="650">
     </center>
 </figure>
 

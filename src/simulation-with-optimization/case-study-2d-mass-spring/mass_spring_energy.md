@@ -32,12 +32,12 @@ where the summation is taken over all edges in the mesh.
 
 {{imp}}{imp:lec4:mass_spring_energy}[MassSpringEnergy.py]
 ```python
-{{#include solid-sim-tutorial/1_mass_spring/MassSpringEnergy.py}}
+{{#include ../../solid-sim-tutorial/1_mass_spring/MassSpringEnergy.py}}
 ```
 
 In dealing with the Hessian matrix of the mass-spring energy, a key consideration is its non-symmetric positive definite (SPD) nature. To address this, a specific modification is employed: we neutralize the negative eigenvalues of the local Hessian corresponding to each edge. This is done prior to incorporating these local Hessians into the global matrix. The process involves setting negative eigenvalues to zero, thus ensuring that the resulting global Hessian matrix adheres more closely to the desired SPD properties. This modification is crucial for Newton's method.
 
 {{imp}}{imp:lec4:utils}[Positive Semi-Definite Projection]
 ```python
-{{#include solid-sim-tutorial/1_mass_spring/utils.py}}
+{{#include ../../solid-sim-tutorial/1_mass_spring/utils.py}}
 ```

@@ -132,7 +132,7 @@ This function computes the first Piola-Kirchhoff stress from the elastic deforma
 
 <figure>
     <center>
-        <img src="img/lec30/visco_plastic.png">
+        <img src="visco_plastic.png">
         <figcaption><b>{{fig}}{fig:viscoplastic:bars}</b> Two viscoplastic bars with different material properties: Bar 1 (left) has higher yield stress and viscosity, while Bar 2 (right) is softer and more fluid-like.</figcaption>
     </center>
 </figure>
@@ -143,7 +143,7 @@ The complete viscoplastic implementation demonstrates realistic rate-dependent b
 
 <figure>
     <center>
-        <img src="img/lec30/viscoplastic.gif">
+        <img src="viscoplastic.gif">
     </center>
         <figcaption><b>{{fig}}{fig:viscoplastic:simulation}</b> Time evolution of two viscoplastic bars collapsing under gravity after wall removal at 3.0 seconds. Bar 1 (left, high yield stress and viscosity) maintains its shape better and deforms more slowly, while Bar 2 (right, low yield stress and viscosity) flows more readily and collapses faster, demonstrating the rate-dependent behavior of viscoplastic materials.</figcaption>
 </figure>

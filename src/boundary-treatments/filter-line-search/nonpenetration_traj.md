@@ -4,7 +4,7 @@ The most straightforward way of defining the motion trajectory between \\(x^n\\)
 
 <figure>
     <center>
-    <img src="img/lec8/altered_min.jpg" width="550">
+    <img src="altered_min.jpg" width="550">
     </center>
     <figcaption><b>{{fig}}{fig:lec8:altered_min}</b> For the setup in the tunneling example, enforcing non-negative signed distance along the motion trajectory approximated by the line segment between $x^n$ and $x^{n+1}$ results in a nonphysical simulation result. </figcaption>
 </figure>
@@ -42,7 +42,7 @@ $$
     \alpha^C = \min(1, \min_{j,k} \alpha^C_{jk})
 $$ <figure>
     <center>
-    <img src="img/lec8/CCD.jpg" width="250">
+    <img src="CCD.jpg" width="250">
     </center>
     <figcaption><b>{{fig}}{fig:lec8:CCD}</b> An illustration of CCD with a solid particle at $(0, 0)$ hitting a fixed vertical plane at $x=0.3$. With the intended displacement $\mathbf{p}=(0.5, 0)$, we obtain $\alpha^C = 0.6$. </figcaption>
 </figure>
@@ -55,7 +55,7 @@ This new scheme differs from the traditional backtracking line search method in 
 <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec8:filter_line_search}[Filter Backtracking Line Search]</figcaption></b>
-    <img src="img/lec8/alg_filter_ls.jpg" width="610">
+    <img src="alg_filter_ls.jpg" width="610">
     </center>
 </figure>
 
@@ -65,7 +65,7 @@ This new scheme differs from the traditional backtracking line search method in 
 > An intuition is that the search direction in every PN iteration always significantly decreases the Incremental Potential (IP), and so it is unlikely to walk around any contacts which often results in iterations that do not sufficiently decrease the IP.
 > In fact, this kind of issue also happens in elastodynamics simulation without contact. Elasticity energy itself is also nonconvex, which can result in multiple local optima for the IP. The key to obtaining physical behaviors is to **locally minimize** IP, in other words, finding the nearby local minimum as the solution. <figure>
     <center>
-    <img src="img/lec8/still_tunnel.jpg" width="500">
+    <img src="still_tunnel.jpg" width="500">
     </center>
     <figcaption><b>{{fig}}{fig:lec8:still_tunnel}</b> For the setup in the tunneling example, even with the filter line search scheme, if an optimization method other than projected Newton is applied, it could still lead to the tunneling issue. </figcaption>
 </figure>

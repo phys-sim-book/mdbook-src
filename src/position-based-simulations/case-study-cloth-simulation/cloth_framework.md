@@ -87,7 +87,7 @@ The complete cloth implementation demonstrates realistic fabric behavior through
 
 <figure>
     <center>
-        <img src="img/lec34/cloth.gif">
+        <img src="cloth.gif">
     </center>
         <figcaption><b>{{fig}}{fig:cloth:bending}</b> Cloth draping under gravity with stretching and bending constraints enforcing length and curvature.</figcaption>
 </figure>

@@ -19,7 +19,7 @@ g(x) = f(2) + f'(2)(x-2) + \frac{1}{2}f''(2)(x-2)^2.
 $$
 The joint plot of $f(x)$ and $g(x)$ ({{ref: fig:lec3:newton_issue_plot}}) distinctly exhibits that the next iteration would exceed the actual target, landing at a point ($x=-11.645$) further from the actual solution at $x=0$. The subsequent iterations amplify this deviation, leading to a trajectory that diverges. It's worth noting that this demonstration involves a convex function $f(x) = \ln\left(e^{-x}+e^{x}\right)$. The problem can become even more complex when Newton's method is applied to non-convex elasticity energies. <figure>
     <center>
-    <img src="img/lec3/newton_issue_plot.jpg" width="350">
+    <img src="newton_issue_plot.jpg" width="350">
     </center>
     <figcaption><b>{{fig}}{fig:lec3:newton_issue_plot}</b> An iteration of Newton's method for $\min_x E(x) = \ln\left(e^{-x}+e^{x}\right)$ at $x=2$. </figcaption>
 </figure>

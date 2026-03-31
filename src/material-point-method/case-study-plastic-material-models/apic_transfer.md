@@ -6,7 +6,7 @@ During the particle-to-grid (P2G) transfer, we adopt the **APIC formulation** fo
 
 {{imp}}{imp:lec30:apic_p2g}[Affine Transfer in APIC Particle-to-Grid (P2G), simulator.py]
 ```python
-{{#include solid-sim-tutorial/11_mpm_plastic/simulator.py:apic_p2g}}
+{{#include ../../solid-sim-tutorial/11_mpm_plastic/simulator.py:apic_p2g}}
 ```
 
 Here, `dpos` is the offset from the particle to the grid node.
@@ -15,19 +15,19 @@ During the grid-to-particle (G2P) transfer, we gather both the updated velocity 
 
 {{imp}}{imp:lec30:apic_g2p}[Affine Transfer in APIC Grid-to-Particle (G2P), simulator.py]
 ```python
-{{#include solid-sim-tutorial/11_mpm_plastic/simulator.py:apic_g2p}}
+{{#include ../../solid-sim-tutorial/11_mpm_plastic/simulator.py:apic_g2p}}
 ```
 
 Here, $D$ is a constant factor when using the Quadratic B-spline interpolation function:
 
 {{imp}}{imp:lec30:D_def}[Constant D for Quadratic B-spline used for APIC, simulator.py]
 ```python
-{{#include solid-sim-tutorial/11_mpm_plastic/simulator.py:D_def}}
+{{#include ../../solid-sim-tutorial/11_mpm_plastic/simulator.py:D_def}}
 ```
 
 <figure>
     <center>
-    <img src="img/lec30/mpm_sand_simulation_result.png">
+    <img src="mpm_sand_simulation_result.png">
     </center>
     <figcaption><b>{{fig}}{fig:lec30:mpm_sand_simulation_result}</b> Time sequence of a 2D sand block falling onto a static red sphere collider. The sand undergoes irreversible deformation and splashing upon impact, demonstrating granular flow and frictional boundary response. </figcaption>
 </figure>

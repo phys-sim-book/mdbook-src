@@ -112,7 +112,7 @@ The complete mesh implementation demonstrates realistic volumetric behavior thro
 
 <figure>
     <center>
-        <img src="img/lec34/dragon.gif">
+        <img src="dragon.gif">
     </center>
         <figcaption><b>{{fig}}{fig:mesh:dragon}</b> Volumetric mesh simulation of a dragon model, demonstrating edge and volume constraints and unconditional stability.</figcaption>
 </figure>

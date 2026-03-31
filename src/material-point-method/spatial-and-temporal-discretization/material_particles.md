@@ -31,7 +31,7 @@ To initialize an MPM simulation, the continuous solid domain is sampled into a f
 
 <figure>
     <center>
-    <img src="img/lec26/random_vs_poisson_disk.png">
+    <img src="random_vs_poisson_disk.png">
     </center>
     <figcaption><b>{{fig}}{fig:lec26:random_vs_poisson_disk}</b> Comparison of random sampling and Poisson-disk sampling in a unit square with the same number of samples: Poisson-disk sampling produces more uniform spacing between points. </figcaption>
 </figure>

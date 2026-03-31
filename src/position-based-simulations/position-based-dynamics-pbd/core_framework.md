@@ -13,7 +13,7 @@ The PBD framework simulates a physical object by discretizing it into a set of $
 The simulation proceeds in discrete time steps of size $\Delta t$. The central loop of the PBD algorithm can be described as follows. 
 
 
-<figure><img src="img/lec31/pbd_alg.png"><figcaption><b>{{fig}}{fig:lec11:pbd_algo}[PBD Main Algorithm]</b> The core of the loop is a multi-phase process: velocity and position prediction, constraint construction, constraint solving, and state update. </figcaption></figure>
+<figure><img src="pbd_alg.png"><figcaption><b>{{fig}}{fig:lec11:pbd_algo}[PBD Main Algorithm]</b> The core of the loop is a multi-phase process: velocity and position prediction, constraint construction, constraint solving, and state update. </figcaption></figure>
 
 
 Note that since the algorithm simulates a system which is 2nd order in $t$, we need to specify both positions and velocities before the simulation loop starts. This loop structure ensures that velocities are implicitly updated based on the geometric corrections performed by the solver, producing the correct behavior for a 2nd-order dynamical system. 

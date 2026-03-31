@@ -11,7 +11,7 @@ and friction update until convergence ({{ref: alg:lec9:friction_iter}}).
 <figure>
     <center>
     <b><figcaption>{{alg}}{alg:lec9:friction_iter}[Fixed-Point Iteration for Fully-Implicit Friction]</figcaption></b>
-    <img src="img/lec9/alg_friction_iter.jpg" width="610">
+    <img src="alg_friction_iter.jpg" width="610">
     </center>
 </figure>
 

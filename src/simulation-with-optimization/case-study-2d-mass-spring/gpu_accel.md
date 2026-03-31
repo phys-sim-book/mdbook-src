@@ -9,8 +9,8 @@ The architecture of the GPU-accelerated simulator is similar to the Python versi
 
 <figure>
     <center>
-    <img src="img/lec4/cpu_gif.gif">
-    <img src="img/lec4/gpu_gif.gif">
+    <img src="cpu_gif.gif">
+    <img src="gpu_gif.gif">
     </center>
     <figcaption><b>{{fig}}{fig:lec4:cpu_vs_gpu}</b> An illustration of simulation speed of the Numpy CPU (left) and the MUDA GPU (right) versions.</figcaption>
 </figure>
@@ -29,7 +29,7 @@ To make the code more readable, the variables begin with `device_` are stored in
 
 {{imp}}{imp:lec4:energy_definition}[Data structure, MassSpringEnergy.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:definition}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:definition}}
 ```
 As shown in the code above, the energy values and their derivatives, as well as all the necessary parameters are stored in a `DeviceBuffer` object, which is a wrapper of the CUDA device memory implemented by the MUDA library. This allows us to perform computations directly on the GPU without the need for data transfer between the CPU and GPU.
 
@@ -39,7 +39,7 @@ The iterations of Newton's method is a serial process and cannot be parallelized
 
 {{imp}}{imp:lec4:gpu_time_integrator}[Newton's method, simulator.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:step_forward}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:step_forward}}
 ```
 In this function, `step_forward`, the projected Newton method with line search is implemented, performing necessary computations on the GPU while controlling the process on the CPU.
 Any variable begin with `device_` here is a `DeviceBuffer` object on the GPU. To print the values in `DeviceBuffer` for debugging purposes, the common practice is to transfer the data back to the CPU, or call the `display_vec` function (which calls `printf` in parallel on the GPU) implemented in `uti.cu`.
@@ -48,20 +48,20 @@ The `update_x` function updates the positions of the nodes to all Energy classes
 
 {{imp}}{imp:lec4:gpu_update_x}[Update positions, simulator.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:update_x}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:update_x}}
 ```
 As the Energy classes has already updated its positions, the `IP_val` function no loner needs to pass any parameters, avoiding unnecessary data transfer. 
 In fact, it only calls the `val` function of all energy classes and then sum the results together:
 
 {{imp}}{imp:lec4:gpu_ip_val}[Computing IP, simulator.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:IP_val}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:IP_val}}
 ``` 
 Similarly for the `IP_grad` and `IP_hess` functions:
 
 {{imp}}{imp:lec4:gpu_ip_grad_hess}[Computing IP gradient and Hessian, simulator.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:IP_grad and IP_hess}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/simulator.cu:IP_grad and IP_hess}}
 ``` 
 Notice that they utilize the parallel operations (`add_vector` and `add_triplet`, which are implemented in `uti.cu`) on the GPU to perform the summation for gradients and Hessians.
 
@@ -72,14 +72,14 @@ In our implementation, parallel computation is primarily employed in the computa
 #### Energy Computation
 {{imp}}{imp:lec4:MassSpringEnergyVal}[Computing energy, MassSpringEnergy.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:val}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:val}}
 ```
 The `ParallelFor` function distributes the computation across multiple GPU threads. The captured variables in the lambda function allow access to the necessary data structures within each thread.
 
 #### Gradient Computation
 {{imp}}{imp:lec4:MassSpringEnergyGrad}[Computing gradients, MassSpringEnergy.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:grad}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:grad}}
 ```
 The `atomicAdd` function is crucial in the gradient computation to ensure safe concurrent updates to shared data (different edges can update the gradient of the same node), thus preventing race conditions.
 
@@ -88,6 +88,6 @@ We utilized the Sparse Matrix data structure to store the Hessian matrix. The co
 
 {{imp}}{imp:lec4:MassSpringEnergyHess}[Computing Hessians, MassSpringEnergy.cu]
 ```cpp
-{{#include solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:hess}}
+{{#include ../../solid-sim-tutorial-gpu/simulators/1_mass_spring/src/MassSpringEnergy.cu:hess}}
 ```
 

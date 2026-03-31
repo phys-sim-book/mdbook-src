@@ -19,7 +19,7 @@ rho = 500 # Density
 
 <figure>
     <center>
-        <img src="img/lec25/modes_1-6.gif">
+        <img src="modes_1-6.gif">
         <figcaption><b>{{fig}}{fig:lec25:modes_1-6}</b> Visualization of the First Six Computed Vibration Modes. The modes, ordered from lowest frequency (left) to highest (right), display increasingly complex deformation patterns, from simple bending to S-curves and compressional shapes.</figcaption>
     </center>
 </figure>
@@ -40,7 +40,7 @@ As the tip displacement increases, the linear model incorrectly predicts that **
 
 <figure>
     <center>
-        <img src="img/lec25/linear_model_artifacts.gif">
+        <img src="linear_model_artifacts.gif">
     </center>
     <figcaption><b>{{fig}}{fig:lec25:linear_model_artifacts}</b> Animation Demonstrating Artifacts of the Linear Model. (Left) The beam deforms according to the first linear mode. (Middle) A plot traces the erroneous increase in centerline length as a function of tip displacement. (Right) A plot traces the erroneous decrease in total area.</figcaption>
 </figure>

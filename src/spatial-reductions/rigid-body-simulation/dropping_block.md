@@ -6,7 +6,7 @@ We begin by introducing a function to compute the reduced basis. In ABD, we cons
 
 {{imp}}{imp:lec25:compute_reduced_basis}[Compute reduced basis, utils.py]
 ```python
-{{#include solid-sim-tutorial/9_reduced_DOF/utils.py:compute_reduced_basis}}
+{{#include ../../solid-sim-tutorial/9_reduced_DOF/utils.py:compute_reduced_basis}}
 ```
 
 Here, `method=0` refers to full-space simulation and returns immediately without computing a basis.  
@@ -17,14 +17,14 @@ After computing the basis, we restrict the simulation to the corresponding subsp
 
 {{imp}}{imp:lec25:search_dir}[Compute reduced search direction, time_integrator.py]
 ```python
-{{#include solid-sim-tutorial/9_reduced_DOF/time_integrator.py:search_dir}}
+{{#include ../../solid-sim-tutorial/9_reduced_DOF/time_integrator.py:search_dir}}
 ```
 
 These changes enable us to run the ABD version of the square-drop simulation:
 
 <figure>
     <center>
-        <img src="img/lec25/abd_sim.gif">
+        <img src="abd_sim.gif">
         <figcaption><b>{{fig}}{fig:lec25:abd_sim}</b> ABD simulation of a square dropped onto the ground.</figcaption>
     </center>
 </figure>

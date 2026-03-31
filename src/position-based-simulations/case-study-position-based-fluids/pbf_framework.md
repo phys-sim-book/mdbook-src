@@ -75,7 +75,7 @@ The complete PBF implementation demonstrates realistic fluid behavior through ge
 
 <figure>
     <center>
-        <img src="img/lec34/two_side_fluid.gif">
+        <img src="two_side_fluid.gif">
     </center>
         <figcaption><b>{{fig}}{fig:pbf:two_side_fluid}</b> Two-sided compression of a PBF fluid with moving boundaries, illustrating incompressibility and surface behavior.</figcaption>
 </figure>
@@ -85,7 +85,7 @@ The complete PBF implementation demonstrates realistic fluid behavior through ge
 
 <figure>
     <center>
-        <img src="img/lec34/one_side_fluid.gif">
+        <img src="one_side_fluid.gif">
     </center>
         <figcaption><b>{{fig}}{fig:pbf:one_side_fluid}</b> One-sided compression of a PBF fluid against a moving boundary, illustrating incompressibility and surface behavior.</figcaption>
 </figure>

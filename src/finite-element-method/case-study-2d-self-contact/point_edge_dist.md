@@ -25,18 +25,18 @@ where the smooth expression can be determined by checking whether the node is in
 
 {{imp}}{imp:lec21:PointEdgeDistance}[Point-Edge distance calculation (Hessian omitted), PointEdgeDistance.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/distance/PointEdgeDistance.py:PE_val_grad}}
+{{#include ../../solid-sim-tutorial/7_self_contact/distance/PointEdgeDistance.py:PE_val_grad}}
 ```
 It can be verified that the point-edge distance function is $C^1$-continuous everywhere, including at the interfaces between different segments. For the point-point case, we have:
 
 {{imp}}{imp:lec21:PointPointDistance}[Point-Point distance calculation, PointPointDistance.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/distance/PointPointDistance.py}}
+{{#include ../../solid-sim-tutorial/7_self_contact/distance/PointPointDistance.py}}
 ```
 
 For the point-line case, the distance evaluations can be implemented as follows, and the derivatives can be obtained using symbolic differentiation tools.
 
 {{imp}}{imp:lec21:PointLineDistance}[Point-Line distance calculation (Hessian omitted), PointLineDistance.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/distance/PointLineDistance.py:PL_val_grad}}
+{{#include ../../solid-sim-tutorial/7_self_contact/distance/PointLineDistance.py:PL_val_grad}}
 ```

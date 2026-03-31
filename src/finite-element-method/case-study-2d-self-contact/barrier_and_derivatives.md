@@ -30,15 +30,15 @@ The energy, gradient, and Hessian of the barrier contact potential are implement
 
 {{imp}}{imp:lec21:BarrierEnergy_value}[Barrier energy computation, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/BarrierEnergy.py:value}}
+{{#include ../../solid-sim-tutorial/7_self_contact/BarrierEnergy.py:value}}
 ```
 
 {{imp}}{imp:lec21:BarrierEnergy_grad}[Barrier energy gradient computation, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/BarrierEnergy.py:gradient}}
+{{#include ../../solid-sim-tutorial/7_self_contact/BarrierEnergy.py:gradient}}
 ```
 
 {{imp}}{imp:lec21:BarrierEnergy_hess}[Barrier energy Hessian computation, BarrierEnergy.py]
 ```python
-{{#include solid-sim-tutorial/7_self_contact/BarrierEnergy.py:Hessian}}
+{{#include ../../solid-sim-tutorial/7_self_contact/BarrierEnergy.py:Hessian}}
 ```

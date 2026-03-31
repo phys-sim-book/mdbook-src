@@ -47,7 +47,7 @@ $$
 $$
 > From {{ref: fig:lec7:VDB_exp}} we also see that to approximate a solid boundary smoothly in this setting, a higher-order interpolation scheme such as quadratic b-spline interpolation is needed. <figure>
     <center>
-    <img src="img/lec7/VDB.jpg" width="550">
+    <img src="VDB.jpg" width="550">
     </center>
     <figcaption><b>{{fig}}{fig:lec7:VDB_exp}</b> The signed distance between the grid nodes and the sphere boundary is precomputed and stored (left). With bilinear interpolation, part of the sphere boundary is approximated as the blue polyline (right). </figcaption>
 </figure>
