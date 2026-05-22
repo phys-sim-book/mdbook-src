@@ -61,7 +61,7 @@ $$
     \begin{aligned}
         \frac{d}{dt}(\int_{\mathcal{B}} \rho (\bm{x} - \bm{c}) \times (\bm{v} - \bm{v}_{\bm{C}}) d\bm{x}) &= \frac{d}{dt}(\int_{\mathcal{B}} \rho (\bm{x} - \bm{c}) \times (\bm{\omega} \times (\bm{x} - \bm{c})) d\bm{x}) \\ 
         &= \frac{d}{dt}(\int_{\mathcal{B}} \rho(\langle \bm{x} - \bm{c}, \bm{x} - \bm{c}\rangle \bm{\omega} - \langle \bm{x} - \bm{c},\bm{\omega}\rangle (\bm{x} - \bm{c}) )d\bm{x}) \\
-        &= \mathbf{I}_{\mathcal{B}}^{\bm{c}} \bm{\omega}.
+        &= \frac{d}{dt}(\mathbf{I}_{\mathcal{B}}^{\bm{c}} \bm{\omega}).
     \end{aligned}
 $$
 
