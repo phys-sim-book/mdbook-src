@@ -3,6 +3,7 @@ authors = ["Minchen Li", "Chenfanfu Jiang", "Zhaofeng Luo", "Wenxin Du", "Chang 
 language = "en"
 src = "src"
 title = "Physics-Based Simulation"
+description = "An open-source online book on the theory and algorithms of physics-based simulation."
 
 [output.html]
 mathjax-support = true
