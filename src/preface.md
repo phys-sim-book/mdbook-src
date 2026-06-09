@@ -28,11 +28,13 @@ Minchen Li ([@liminchen](https://github.com/liminchen)), Chenfanfu Jiang ([@cffj
 
 ```
 @book{li2026physics,
-  title   = {Physics-Based Simulation},
-  author  = {Minchen Li and Chenfanfu Jiang and Zhaofeng Luo and Wenxin Du and Chang Yu and {\v{Z}}iga Kova{\v{c}}i{\v{c}} and Tianyi Xie},
-  year    = {2026},
-  month   = Mar,
-  version = {1.0.3},
-  url     = {https://phys-sim-book.github.io/}
+  title     = {Physics-Based Simulation},
+  author    = {Li, Minchen and Jiang, Chenfanfu and Luo, Zhaofeng and Du, Wenxin and Yu, Chang and Kova{\v{c}}i{\v{c}}, {\v{Z}}iga and Xie, Tianyi},
+  year      = {2026},
+  month     = mar,
+  version   = {1.0.3},
+  doi       = {10.5281/zenodo.20597655},
+  url       = {https://doi.org/10.5281/zenodo.20597655},
+  note      = {Open-source online book. Live version available at \url{https://phys-sim-book.github.io/}}
 }
 ```
